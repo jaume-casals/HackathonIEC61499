@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EthernetList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Ethernet EquipmentGuid="9d62bb13-d483-458c-a312-180f90ee2946">
+    <Interface Identifier="Ethernet Interface">
+      <PhysicalAddress />
+      <Endpoint Identifier="IP Address">
+        <IPAddress>192.168.10.10</IPAddress>
+        <Domain>7f93ae11-cd8e-4bc1-9148-f91ad20da26a</Domain>
+      </Endpoint>
+    </Interface>
+    <Port Identifier="Port1" Side="Top" />
+  </Ethernet>
+  <Ethernet EquipmentGuid="ce0f809e-a74e-457c-ac04-c7654301581f">
+    <Port Identifier="Port1" Side="Left" />
+    <Port Identifier="Port2" Side="Any" />
+    <Port Identifier="Port3" Side="Default" />
+    <Port Identifier="Port4" Side="Default" />
+    <Port Identifier="Port5" Side="Default" />
+    <Port Identifier="Port6" Side="Default" />
+    <Port Identifier="Port7" Side="Default" />
+    <Port Identifier="Port8" Side="Default" />
+  </Ethernet>
+  <Ethernet EquipmentGuid="e4e7c9b6-a01e-4d9d-8466-3a3adb9cf1d7">
+    <Interface Identifier="Ethernet1 Interface">
+      <PhysicalAddress />
+      <Endpoint Identifier="IP Address">
+        <IPAddress>192.168.10.89</IPAddress>
+        <Domain>7f93ae11-cd8e-4bc1-9148-f91ad20da26a</Domain>
+      </Endpoint>
+    </Interface>
+    <Interface Identifier="Ethernet2 Interface">
+      <PhysicalAddress />
+      <Endpoint Identifier="IP Address">
+        <IPAddress>0.0.0.0</IPAddress>
+        <Domain>00000000-0000-0000-0000-000000000000</Domain>
+      </Endpoint>
+    </Interface>
+    <Port Identifier="Ethernet1_1" Side="Left" />
+    <Port Identifier="Ethernet1_2" Side="Default" />
+    <Port Identifier="Ethernet2" Side="Default" />
+  </Ethernet>
+</EthernetList>

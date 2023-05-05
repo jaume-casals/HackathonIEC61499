@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System Name="System" ProjectName="hackathon_v1" ProjectGuid="{3094307A-52AE-4C09-8CA3-AA619761D361}" BuildTime="2023-05-05 13:35:51Z" DeployTime="" StudioVersion="IEC 61499 IDE, Neo v22.0 g4711 32b857d Sun Sep 25 16:17:52 2022" SnapshotGuid="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}">
+  <Device ID="e9e9fd0d-3ec6-48af-a236-e62b4e987d7a" Name="CheckpointIB1" Type="ECORT" Namespace="nxtControl.Standard">
+    <Resource ID="852F57E5FD2EB994" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="64D10FBFE6DA0299" Name="Checkpoint1" Type="CHECKPOINT_CAT" Namespace="Main">
+          <Parameter Name="SD_ID" Value="'checkpoint_1'" />
+          <Parameter Name="mqtt_endpoint" Value="'192.168.8.1:1883'" />
+          <Parameter Name="order_data" Value="'product1.red.drill.bake.sort'" />
+        </FB>
+        <FB Name="START" Type="E_RESTART" Namespace="IEC61499.Standard" />
+        <EventConnections>
+          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" />
+          <Connection Source="START.WARM" Destination="Checkpoint1.INIT" />
+        </EventConnections>
+        <DataConnections />
+        <AdapterConnections />
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+</System>

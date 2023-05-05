@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="ab8bf66c-9954-4600-92b0-aac8f153aef4" Name="CHECKPOINT_CAT_HMI" Comment="Service Interface Function Block Type" Namespace="Main">
+  <Attribute Name="Runtime.Persistence.Storage" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event ID="64C79FCFF9BDFDD5" Name="INIT">
+        <With Var="QI" />
+      </Event>
+      <Event ID="F313A59ABD4ED800" Name="INITIALIZED" />
+      <Event ID="DA815BA24C425AF1" Name="PUBLISHED" />
+      <Event ID="A7189AD578C261DA" Name="RESET" />
+    </EventInputs>
+    <EventOutputs>
+      <Event ID="E8B1A492B4772725" Name="INITO">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration ID="C6563D5243D54C17" Name="QI" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration ID="FC636B21E25AF6A" Name="QO" Type="BOOL" Comment="Event Output Qualifier" />
+      <VarDeclaration ID="2E4C106A543742BD" Name="STATUS" Type="STRING" Comment="Service Status" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="" LeftInterface="">
+    <ServiceSequence Name="" />
+  </Service>
+</FBType>

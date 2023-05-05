@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{F5A0D60C-53A5-48C9-A47F-C89AE4A29A60}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HMI</RootNamespace>
+    <AssemblyName>HMI</AssemblyName>
+    <ProjectType>HMI</ProjectType>
+    <HMILibraries>HMIBaseSymbols:</HMILibraries>
+    <Theme>DefaultLight:Default|DefaultLight</Theme>
+    <NxtVersion>22.0.0.0</NxtVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <CanvasLookAndFeel>Theme</CanvasLookAndFeel>
+    <CanvasSize>1024,520,1024,600,Default,True,140,30</CanvasSize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'Windows' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\$(Platform)\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\$(Platform)\Release</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows' ">
+    <DefineConstants>DEBUG%3bTRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Windows' ">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommunicationProfile">
+      <HintPath>CommunicationProfile</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HMIBaseSymbols">
+      <HintPath>HMIBaseSymbols</HintPath>
+    </Reference>
+    <Reference Include="NxtControl.ComponentModel">
+      <HintPath>NxtControl.ComponentModel</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NxtControl.GuiFramework">
+      <HintPath>NxtControl.GuiFramework</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SE.AppBase.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppBase.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppCommonProcess.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppCommonProcess.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppConveying.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppConveying.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppLiquidFood.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppLiquidFood.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppSequence.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppSequence.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppSingleLinePowerMonitoring.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppSingleLinePowerMonitoring.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppStateManagement.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppStateManagement.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.AppWWW.HMI">
+      <Version>22.0.0.16</Version>
+      <HintPath>SE.AppWWW.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.DPAC.HMI">
+      <Version>22.0.0.24</Version>
+      <HintPath>SE.DPAC.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.FieldDevice.HMI">
+      <Version>22.0.0.21</Version>
+      <HintPath>SE.FieldDevice.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.HwCommon.HMI">
+      <Version>22.0.0.14</Version>
+      <HintPath>SE.HwCommon.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.IoATV.HMI">
+      <Version>22.0.0.21</Version>
+      <HintPath>SE.IoATV.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.IoNet.HMI">
+      <Version>22.0.0.1</Version>
+      <HintPath>SE.IoNet.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.IoTMx.HMI">
+      <Version>22.0.0.15</Version>
+      <HintPath>SE.IoTMx.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.IoX80.HMI">
+      <Version>22.0.0.14</Version>
+      <HintPath>SE.IoX80.HMI</HintPath>
+    </Reference>
+    <Reference Include="SE.ModbusGateway.HMI">
+      <Version>22.0.0.9</Version>
+      <HintPath>SE.ModbusGateway.HMI</HintPath>
+    </Reference>
+    <Reference Include="Standard.IoEtherNetIP.HMI">
+      <Version>22.0.0.13</Version>
+      <HintPath>Standard.IoEtherNetIP.HMI</HintPath>
+    </Reference>
+    <Reference Include="Standard.IoModbus.HMI">
+      <Version>22.0.0.24</Version>
+      <HintPath>Standard.IoModbus.HMI</HintPath>
+    </Reference>
+    <Reference Include="Standard.IoModbusSlave.HMI">
+      <Version>22.0.0.13</Version>
+      <HintPath>Standard.IoModbusSlave.HMI</HintPath>
+    </Reference>
+    <Reference Include="Standard.OPCUAClient.HMI">
+      <Version>22.0.0.6</Version>
+      <HintPath>Standard.OPCUAClient.HMI</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Canvas1.cnv.cs">
+      <Canvas>true</Canvas>
+    </Compile>
+    <Compile Include="Canvas1.cnv.Designer.cs">
+      <DependentUpon>Canvas1.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas2.cnv.cs">
+      <Canvas>true</Canvas>
+    </Compile>
+    <Compile Include="Canvas2.cnv.Designer.cs">
+      <DependentUpon>Canvas2.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas3.cnv.cs">
+      <Canvas>true</Canvas>
+    </Compile>
+    <Compile Include="Canvas3.cnv.Designer.cs">
+      <DependentUpon>Canvas3.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas4.cnv.cs">
+      <Canvas>true</Canvas>
+    </Compile>
+    <Compile Include="Canvas4.cnv.Designer.cs">
+      <DependentUpon>Canvas4.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHECKPOINT_CAT\CHECKPOINT_CAT.def.cs" />
+    <Compile Include="CHECKPOINT_CAT\CHECKPOINT_CAT.event.cs" />
+    <Compile Include="CHECKPOINT_CAT\CHECKPOINT_CAT_sDefault.cnv.cs" />
+    <Compile Include="CHECKPOINT_CAT\CHECKPOINT_CAT_sDefault.cnv.Designer.cs">
+      <DependentUpon>CHECKPOINT_CAT_sDefault.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colors\ProjectColors.cs" />
+    <Compile Include="Colors\ProjectDrawingObjects.cs" />
+    <Compile Include="Courier.cnv.cs">
+      <Canvas>true</Canvas>
+    </Compile>
+    <Compile Include="Courier.cnv.Designer.cs">
+      <DependentUpon>Courier.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COURIER_CAT\COURIER_CAT.def.cs" />
+    <Compile Include="COURIER_CAT\COURIER_CAT.event.cs" />
+    <Compile Include="COURIER_CAT\COURIER_CAT_sDefault.cnv.cs" />
+    <Compile Include="COURIER_CAT\COURIER_CAT_sDefault.cnv.Designer.cs">
+      <DependentUpon>COURIER_CAT_sDefault.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiscoveryMonitor.cnv.cs">
+      <Canvas>true</Canvas>
+    </Compile>
+    <Compile Include="DiscoveryMonitor.cnv.Designer.cs">
+      <DependentUpon>DiscoveryMonitor.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MOTOR_SWITCH\MOTOR_SWITCH.def.cs" />
+    <Compile Include="MOTOR_SWITCH\MOTOR_SWITCH.event.cs" />
+    <Compile Include="MOTOR_SWITCH\MOTOR_SWITCH_sDefault.cnv.cs" />
+    <Compile Include="MOTOR_SWITCH\MOTOR_SWITCH_sDefault.cnv.Designer.cs">
+      <DependentUpon>MOTOR_SWITCH_sDefault.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER.def.cs" />
+    <Compile Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER.event.cs" />
+    <Compile Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_sDefault.cnv.cs" />
+    <Compile Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_sDefault.cnv.Designer.cs">
+      <DependentUpon>PRODUCTION_SCHEDULER_sDefault.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartCanvas.cnv.cs" />
+    <Compile Include="StartCanvas.cnv.Designer.cs">
+      <DependentUpon>StartCanvas.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartCanvas_2.cnv.cs" />
+    <Compile Include="StartCanvas_2.cnv.Designer.cs">
+      <DependentUpon>StartCanvas_2.cnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartCanvas_3.cnv.cs" />
+    <Compile Include="StartCanvas_3.cnv.Designer.cs">
+      <DependentUpon>StartCanvas_3.cnv.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Alarms\AlarmClasses.xml" />
+    <None Include="Colors\Default.color.theme" />
+    <None Include="Colors\Default.do.theme" />
+    <None Include="Colors\DefaultLight.color.theme" />
+    <None Include="Colors\DefaultLight.do.theme" />
+    <None Include="Colors\ProjectColors.xml" />
+    <None Include="Colors\ProjectDrawingObjects.xml" />
+    <None Include="ImageStorage\ImageStorage.xml" />
+    <none Include="Languages\neutral\Dictionary.Resources.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alarms\AlarmClasses.xml" />
+    <EmbeddedResource Include="Alarms\SystemAlarmClasses.xml" />
+    <EmbeddedResource Include="Canvas1.cnv.resx">
+      <DependentUpon>Canvas1.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas2.cnv.resx">
+      <DependentUpon>Canvas2.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas3.cnv.resx">
+      <DependentUpon>Canvas3.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas4.cnv.resx">
+      <DependentUpon>Canvas4.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CHECKPOINT_CAT\CHECKPOINT_CAT.Design.resx" />
+    <EmbeddedResource Include="CHECKPOINT_CAT\CHECKPOINT_CAT_sDefault.cnv.resx">
+      <DependentUpon>CHECKPOINT_CAT_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CHECKPOINT_CAT\CHECKPOINT_CAT_sDefault.cnv.xml">
+      <DependentUpon>CHECKPOINT_CAT_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configurations\HistoryTrend.xml" />
+    <EmbeddedResource Include="Configurations\Journalling.xml" />
+    <EmbeddedResource Include="Configurations\TagValueEditor.xml" />
+    <EmbeddedResource Include="Courier.cnv.resx">
+      <DependentUpon>Courier.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURIER_CAT\COURIER_CAT.Design.resx" />
+    <EmbeddedResource Include="COURIER_CAT\COURIER_CAT_sDefault.cnv.resx">
+      <DependentUpon>COURIER_CAT_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURIER_CAT\COURIER_CAT_sDefault.cnv.xml">
+      <DependentUpon>COURIER_CAT_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiscoveryMonitor.cnv.resx">
+      <DependentUpon>DiscoveryMonitor.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOTOR_SWITCH\MOTOR_SWITCH.Design.resx" />
+    <EmbeddedResource Include="MOTOR_SWITCH\MOTOR_SWITCH_sDefault.cnv.resx">
+      <DependentUpon>MOTOR_SWITCH_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOTOR_SWITCH\MOTOR_SWITCH_sDefault.cnv.xml">
+      <DependentUpon>MOTOR_SWITCH_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER.Design.resx" />
+    <EmbeddedResource Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_sDefault.cnv.resx">
+      <DependentUpon>PRODUCTION_SCHEDULER_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_sDefault.cnv.xml">
+      <DependentUpon>PRODUCTION_SCHEDULER_sDefault.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartCanvas.cnv.resx">
+      <DependentUpon>StartCanvas.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartCanvas_2.cnv.resx">
+      <DependentUpon>StartCanvas_2.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartCanvas_3.cnv.resx">
+      <DependentUpon>StartCanvas_3.cnv.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flexbridge.Iceblock\HMI\Flexbridge.Iceblock.HMI.csproj">
+      <Project>{09626101-5769-46ed-be66-0bdd7e9dd1a8}</Project>
+      <Name>Flexbridge.Iceblock.HMI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UAO.Hackathon\HMI\UAO.Hackathon.HMI.csproj">
+      <Project>{4e59be9c-18da-40c3-8fbc-29269408a10e}</Project>
+      <Name>UAO.Hackathon.HMI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(SharpDevelopBinPath)\SharpDevelop.Build.CSharp.targets" />
+</Project>

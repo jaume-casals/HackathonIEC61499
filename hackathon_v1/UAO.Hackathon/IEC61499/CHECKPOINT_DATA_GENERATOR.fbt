@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="5fd0220d-7867-4a95-a030-a2b985937442" Name="CHECKPOINT_DATA_GENERATOR" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="3" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT">
+        <With Var="SD_ID" />
+        <With Var="order_data" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="SD_ID" Type="STRING[64]" />
+      <VarDeclaration Name="order_data" Type="STRING[64]" Comment="Indication Data from Plug" />
+    </InputVars>
+    <Plugs>
+      <AdapterDeclaration Name="OrderData" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" x="1160" y="280" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <Input Name="SD_ID" x="240" y="492" Type="Data" />
+    <Input Name="INIT" x="340" y="172" Type="Event" />
+    <Input Name="order_data" x="245.1354" y="552" Type="Data" />
+    <Output Name="INITO" x="3060" y="172" Type="Event" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="INITO" />
+      <Connection Source="OrderData.REQ" Destination="OrderData.UPD" dx1="47.3125" dx2="30" dy="-110" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="SD_ID" Destination="OrderData.SD_ID" />
+      <Connection Source="order_data" Destination="OrderData.order_data" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BroadcastDomainList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BroadcastDomains>
+    <BroadcastDomain Uuid="edf5c13e-06ca-4203-bcba-4e68a8088bad" Identifier="Default Network">
+      <IpV4Address>192.168.0.0</IpV4Address>
+      <IpV4Mask>255.255.0.0</IpV4Mask>
+      <IpV4Gateway>192.168.0.254</IpV4Gateway>
+    </BroadcastDomain>
+    <BroadcastDomain Uuid="7f93ae11-cd8e-4bc1-9148-f91ad20da26a" Identifier="Logical Network_1">
+      <IpV4Address>192.168.10.0</IpV4Address>
+      <IpV4Mask>255.255.0.0</IpV4Mask>
+      <IpV4Gateway>0.0.0.0</IpV4Gateway>
+    </BroadcastDomain>
+  </BroadcastDomains>
+</BroadcastDomainList>

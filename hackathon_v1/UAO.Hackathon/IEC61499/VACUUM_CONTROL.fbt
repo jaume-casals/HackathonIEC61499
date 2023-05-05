@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="93b052ea-5391-43e6-9ff0-ac6adab0e311" Name="VACUUM_CONTROL" Comment="Extracted Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="4" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Author="Dmitrii" Date="4/29/2023" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initializes the symbolic link data source FB with N (1 &lt;= N &lt;= 16) variables" />
+      <Event Name="GRIP" Comment="Grip workpiece" />
+      <Event Name="RELEASE" Comment="Release workpiece" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization confirm" />
+      <Event Name="COMPRESSOR_ON" Comment="Request to turn on compressor" />
+      <Event Name="COMPRESSOR_OFF" Comment="Request ot turn off compressor" />
+      <Event Name="CNF" Comment="Vacuum operation confirmation" />
+    </EventOutputs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="WaitGrip" Type="E_DELAY" x="1860" y="800" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#500ms" />
+    </FB>
+    <FB ID="2" Name="ValveControl" Type="E_SR" x="1080" y="800" Namespace="IEC61499.Standard" />
+    <FB ID="3" Name="PLC_OUT" Type="SYMLINKMULTIVARSRC_1559B0FF8170C9BA0" x="1480" y="1440" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=1;VALUE${I}:BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}vacuum_valve'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="4" Name="FB1" Type="E_SPLIT" x="2740" y="1200" Namespace="IEC61499.Standard" />
+    <Input Name="INIT" x="320" y="1452" Type="Event" />
+    <Input Name="GRIP" x="320" y="272" Type="Event" />
+    <Input Name="RELEASE" x="300" y="872" Type="Event" />
+    <Output Name="COMPRESSOR_ON" x="2740" y="252" Type="Event" />
+    <Output Name="INITO" x="2240" y="1452" Type="Event" />
+    <Output Name="COMPRESSOR_OFF" x="3260" y="1312" Type="Event" />
+    <Output Name="CNF" x="3260" y="1172" Type="Event" />
+    <EventConnections>
+      <Connection Source="ValveControl.EO" Destination="WaitGrip.START" />
+      <Connection Source="ValveControl.EO" Destination="PLC_OUT.REQ" dx1="68.35413" />
+      <Connection Source="INIT" Destination="PLC_OUT.INIT" />
+      <Connection Source="PLC_OUT.INITO" Destination="INITO" />
+      <Connection Source="GRIP" Destination="ValveControl.S" dx1="40" />
+      <Connection Source="RELEASE" Destination="ValveControl.R" />
+      <Connection Source="GRIP" Destination="COMPRESSOR_ON" dx1="40" />
+      <Connection Source="WaitGrip.EO" Destination="FB1.EI" dx1="48.5" />
+      <Connection Source="FB1.EO1" Destination="CNF" dx1="44.3125" />
+      <Connection Source="FB1.EO2" Destination="COMPRESSOR_OFF" dx1="44.3125" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="ValveControl.Q" Destination="PLC_OUT.VALUE1" dx1="48.35413" dx2="110" dy="90" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

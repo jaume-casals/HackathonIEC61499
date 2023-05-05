@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="53be846a-25fe-47fa-940d-d123b83cdf37" Name="COURIER_CAT" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="HMI.Alias" Value="" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="11" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <AdapterOutputs>
+      <Adapter Name="DataDownstream" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" />
+    </AdapterOutputs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="FB1" Type="CHECKPOINT_DATA_SUBSCRIBER" x="2680" y="1520" Namespace="UAO.Hackathon" />
+    <FB ID="3" Name="FB2" Type="ORDER_DATA_STORAGE" x="3800" y="1360" Namespace="UAO.Hackathon" />
+    <FB ID="5" Name="FB4" Type="COURIER_DISCOVERY" x="1640" y="1300" Namespace="UAO.Hackathon">
+      <Parameter Name="SD_ID" Value="'courier_1'" />
+    </FB>
+    <FB ID="6" Name="FB3" Type="EVENTCHAIN" x="940" y="1200" Namespace="Runtime.Standard">
+      <Parameter Name="NAME" Value="'INIT'" />
+      <Parameter Name="PRIO" Value="1" />
+    </FB>
+    <FB ID="8" Name="FB5" Type="BLINKER" x="4600" y="2540" Namespace="Main" />
+    <FB ID="10" Name="IThis" Type="COURIER_CAT_HMI" x="3520" y="2440" Namespace="Main" />
+    <FB ID="11" Name="FB6" Type="E_DELAY" x="2940" y="2500" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#15s" />
+    </FB>
+    <Frame Name="FRAME1" X="2400" Y="2320" Width="2840" Height="920">
+      <Parameter Name="BackgroundColor" Value="AliceBlue" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopLeft" />
+      <Parameter Name="MoveStyle" Value="AnyContained" />
+      <Parameter Name="Text" Value="HMI" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Output Name="DataDownstream" x="4840" y="1252" Type="Adapter" />
+    <EventConnections>
+      <Connection Source="FB3.EO" Destination="FB4.INIT" dx1="40" />
+      <Connection Source="FB4.STARTO" Destination="FB3.ACK" dx1="150" dx2="70" dy="-270" />
+      <Connection Source="FB4.INITO" Destination="FB2.INIT" dx1="122.6875" />
+      <Connection Source="FB2.INITO" Destination="FB5.INIT" dx1="66.41699" />
+      <Connection Source="FB5.INITO" Destination="FB4.START">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB4.REQ_SERVICE_DETAIL_CNF" Destination="FB6.START">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB5.INITO" Destination="IThis.INIT" dx1="120" dx2="170" dy="-210" />
+      <Connection Source="FB4.STARTO" Destination="IThis.SD_SUBSCRIBED">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB4.REQ_SERVICE_DETAIL_CNF" Destination="IThis.REQ_SERVICE_DETAIL_CNF">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB6.EO" Destination="IThis.TIMEOUT" dx1="48.5" />
+      <Connection Source="FB1.REQ_SENT" Destination="IThis.REQ_SENT">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.DATA_RECEIVED" Destination="IThis.DATA_RECEIVED">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.DATA_RECEIVED" Destination="FB6.START">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="FB4.SERVICE_DETAIL_TXT" Destination="IThis.SERVICE_DETAIL_TXT">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.RecPayload1" Destination="IThis.RecPayload1">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+    </DataConnections>
+    <AdapterConnections>
+      <Connection Source="FB1.Data" Destination="FB2.DataIn" dx1="112" />
+      <Connection Source="FB1.blinker" Destination="FB5.ADP1" dx1="992" />
+      <Connection Source="FB2.DataOut" Destination="DataDownstream" dx1="70" />
+      <Connection Source="FB4.ServiceInfo" Destination="FB1.ServiceInfo" dx1="42.6875" />
+    </AdapterConnections>
+  </FBNetwork>
+</FBType>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <author>
+       <personname>
+          <firstname>Dmitrii</firstname>
+          <surname>Drozdov</surname>
+       </personname>
+       <email>dd@flexbridge.se</email>
+    </author>
+    <abstract><wysiwyg_a><p>Simple encoder axis driver. Uses simple HSC (M251 High speed counter) with single-ended counter signal.</p><p> </p><p>
+  </p></wysiwyg_a></abstract>
+  </info>
+<wysiwyg><p>Simple encoder axis driver. Uses simple HSC (M251 High speed counter) with single-ended counter signal. </p><p>Movement is done in 2 stages: <strong>coarse move</strong> - continous movement that stops within 30 counts from a setpoint, then <strong>fine move</strong> in "stepper" mode, when the motor will move in small increments to reach setpoint as close as possible. Normal under/overshoot is within 10-15 counts from setpoint. You can control it by <em>position</em> output when you get <em>DONE</em> event.<br /></p><div class="caution" style="MARGIN-LEFT: 0.5in; MARGIN-RIGHT: 0.5in">
+<table border="0">
+<tbody>
+<tr>
+<td valign="top" rowspan="2" width="25" align="center"><img src="${DocImages}/caution.png" /></td>
+<th align="left">WARNING</th></tr>
+<tr>
+<td valign="top" align="left">
+<p>There is a bug that lets the driver accumulate positioning error when you try do make several consecutive moves. It is recommended to reset to initial position (0) as often as possible to get rid of the error.</p></td></tr></tbody></table></div><p> </p><p>
+  </p></wysiwyg></section>
+

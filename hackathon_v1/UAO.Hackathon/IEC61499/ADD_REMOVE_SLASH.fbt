@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="36a4e3d7-dd3a-4756-9156-fba04d1b0084" Name="ADD_REMOVE_SLASH" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="SESA489471" Date="20/01/2022" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="ADD_SLASH" Comment="Initialization Request">
+        <With Var="InputString" />
+      </Event>
+      <Event Name="REMOVE_SLASH" Comment="Normal Execution Request">
+        <With Var="InputString" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="ADD_SLASHO" Comment="Initialization Confirm">
+        <With Var="OutputString" />
+      </Event>
+      <Event Name="REMOVE_SLASHO" Comment="Execution Confirmation">
+        <With Var="OutputString" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="InputString" Type="STRING[512]" Comment="Input event qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="OutputString" Type="STRING[512]" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="AddSlash,RemoveSlash1" />
+    <InternalVars>
+      <VarDeclaration Name="Position" Type="DINT" />
+      <VarDeclaration Name="PositionTemp" Type="DINT" />
+    </InternalVars>
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="552.9412" y="429.4117" />
+      <ECState Name="AddSlash" Comment="Initialization" x="2175.529" y="349.1765">
+        <ECAction Algorithm="AddSlash" Output="ADD_SLASHO" />
+      </ECState>
+      <ECState Name="RemoveSlash" x="2080" y="952">
+        <ECAction Algorithm="RemoveSlash1" Output="REMOVE_SLASHO" />
+      </ECState>
+      <ECTransition Source="START" Destination="AddSlash" Condition="ADD_SLASH" x="1334.478" y="259.9657">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="252.7521,60.59362,411.9036,55.33708" />
+      </ECTransition>
+      <ECTransition Source="AddSlash" Destination="START" Condition="1" x="1354.489" y="470.9369">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="394.6338,119.7046,283.228,125.2139" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="RemoveSlash" Condition="REMOVE_SLASH" x="1336.193" y="612.8341">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="282.4461,130.2812,386.2101,165.7912" />
+      </ECTransition>
+      <ECTransition Source="RemoveSlash" Destination="START" Condition="1" x="1294.202" y="764.9476">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="378.1154,214.4444,274.3515,178.9344" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="AddSlash" Comment="Initialization algorithm">
+      <ST Text="&#xD;&#xA;OutputString := InputString;&#xD;&#xA;Position := 0;&#xD;&#xA;PositionTemp := 0;&#xD;&#xA; &#xD;&#xA;PositionTemp:= FIND(InputString,'&quot;');&#xD;&#xA;    &#xD;&#xA;WHILE PositionTemp &lt;&gt;0	DO&#xD;&#xA;	Position := Position + PositionTemp - 1;&#xD;&#xA;	OutputString := INSERT(OutputString,'\',Position);&#xD;&#xA;	Position := Position +2; //slash is added&#xD;&#xA;	&#xD;&#xA;	InputString := DELETE(InputString,PositionTemp,1);&#xD;&#xA;	PositionTemp:= FIND(InputString,'&quot;');&#xD;&#xA;END_WHILE;" />
+    </Algorithm>
+    <Algorithm Name="RemoveSlash1" Comment="Normally executed algorithm">
+      <ST Text="OutputString := InputString;&#xD;&#xA;Position := 0;&#xD;&#xA;PositionTemp := 0;&#xD;&#xA; &#xD;&#xA;PositionTemp:= FIND(InputString,'\');&#xD;&#xA;    &#xD;&#xA;WHILE PositionTemp &lt;&gt;0	DO&#xD;&#xA;	Position := Position + PositionTemp;&#xD;&#xA;	&#xD;&#xA;	OutputString := DELETE(OutputString,1,Position);&#xD;&#xA;	Position := Position - 1; //slash is removed&#xD;&#xA;	&#xD;&#xA;	InputString := DELETE(InputString,PositionTemp,1);&#xD;&#xA;	PositionTemp:= FIND(InputString,'\');&#xD;&#xA;END_WHILE;&#xD;&#xA;&#xD;&#xA;// for some reason Avahi function during the message parsing is adding additionally quotes (e.g.: &quot;msg txt&quot;), &#xD;&#xA; //which need to be removed, othervise JSON_PARSER can not decode the message&#xD;&#xA; &#xD;&#xA; OutputString := DELETE(OutputString,1,1);&#xD;&#xA; OutputString := DELETE(OutputString,1,LEN(OutputString));&#xD;&#xA; " />
+    </Algorithm>
+  </BasicFB>
+</FBType>

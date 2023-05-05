@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="4923367c-6cf2-485d-bb55-84a394bc387d" Name="SENSOR_DRIVER_SINGLE_PHASE" Comment="Extracted Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="6" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Author="Dmitrii" Date="4/28/2023" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initializes the symbolic link data destination FB with N (1 &lt;= N &lt;= 16) variables">
+        <With Var="QI" />
+      </Event>
+      <Event Name="HSC_START" Comment="Triggers cyclic reading (polling)" />
+      <Event Name="HSC_SYNC" Comment="Synchronization" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization confirm">
+        <With Var="QO" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="counter" />
+        <With Var="switch" />
+      </Event>
+      <Event Name="RefSwitch_EO" Comment="Event Output" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" Comment="INIT event input qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="counter" Type="DINT" Comment="Result: IN1 - IN2 - IN3 - ..." />
+      <VarDeclaration Name="switch" Type="BOOL" Comment="Current value(i) in the named variable array element" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="PLC_IN" Type="SYMLINKMULTIVARDST_1970440D3083DA789" x="2380" y="2880" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=2;VALUE${I}:DWORD,BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}counter_value'" />
+      <Parameter Name="NAME2" Value="'$${PATH}ref_switch'" />
+    </FB>
+    <FB ID="2" Name="FB2" Type="SUB_112C76C471B7A99C2" x="4000" y="3060" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:DINT" />
+      <Parameter Name="IN1" Value="100000" />
+    </FB>
+    <FB ID="3" Name="TypeConversion" Type="ANY2ANY_224D31E05D5CB53B5" x="3220" y="3100" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=1;IN${CNT}:DWORD;OUT${CNT}:DINT" />
+    </FB>
+    <FB ID="4" Name="RefSwitch" Type="E_R_TRIG" x="3260" y="2600" Namespace="IEC61499.Standard" />
+    <FB ID="5" Name="HscAction" Type="hscAction" x="3180" y="1600" Namespace="SE.IoTMx" />
+    <FB ID="6" Name="FB1" Type="E_MERGE" x="4480" y="2380" Namespace="IEC61499.Standard" />
+    <Input Name="INIT" x="1660" y="2712" Type="Event" />
+    <Input Name="QI" x="1640" y="3012" Type="Data" />
+    <Input Name="HSC_START" x="1866.073" y="1672" Type="Event" />
+    <Input Name="HSC_SYNC" x="1836.729" y="1792" Type="Event" />
+    <Output Name="INITO" x="4100" y="1612" Type="Event" />
+    <Output Name="CNF" x="4522.521" y="3072" Type="Event" />
+    <Output Name="RefSwitch_EO" x="3728.271" y="2612" Type="Event" />
+    <Output Name="QO" x="3260" y="3512" Type="Data" />
+    <Output Name="counter" x="4522.521" y="3272" Type="Data" />
+    <Output Name="switch" x="4600" y="2852" Type="Data" />
+    <EventConnections>
+      <Connection Source="PLC_IN.CNF" Destination="TypeConversion.REQ" dx1="101.625" />
+      <Connection Source="TypeConversion.CNF" Destination="FB2.REQ" dx1="50" />
+      <Connection Source="PLC_IN.CNF" Destination="RefSwitch.EI" dx1="70" />
+      <Connection Source="INIT" Destination="PLC_IN.INIT" dx1="161.4166" />
+      <Connection Source="PLC_IN.INITO" Destination="HscAction.INIT" dx1="50" />
+      <Connection Source="FB2.CNF" Destination="FB1.EI2" dx1="50" />
+      <Connection Source="RefSwitch.EO" Destination="RefSwitch_EO" />
+      <Connection Source="HscAction.INITO" Destination="INITO" />
+      <Connection Source="HSC_START" Destination="HscAction.START" />
+      <Connection Source="HSC_SYNC" Destination="HscAction.SYNC" />
+      <Connection Source="PLC_IN.CNF" Destination="FB1.EI1" dx1="70" />
+      <Connection Source="FB1.EO" Destination="CNF" dx1="41.5415" dx2="32.521" dy="290" />
+      <Connection Source="HscAction.CNF" Destination="FB1.EI1" dx1="40" />
+      <Connection Source="PLC_IN.INITO" Destination="PLC_IN.REQ" dx1="121.625" dx2="70" dy="-110" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="PLC_IN.VALUE1" Destination="TypeConversion.IN1" dx1="61.625" />
+      <Connection Source="TypeConversion.OUT1" Destination="FB2.IN2" dx1="43.75" />
+      <Connection Source="PLC_IN.VALUE2" Destination="RefSwitch.QI" dx1="130" />
+      <Connection Source="QI" Destination="PLC_IN.QI" dx1="40" />
+      <Connection Source="PLC_IN.QO" Destination="QO" dx1="81.625" />
+      <Connection Source="FB2.OUT" Destination="counter" />
+      <Connection Source="PLC_IN.VALUE2" Destination="switch">
+        <Points>
+          <Points>
+            <X>732.09375</X>
+            <Y>840</Y>
+          </Points>
+          <Points>
+            <X>764.59375</X>
+            <Y>840</Y>
+          </Points>
+          <Points>
+            <X>764.59375</X>
+            <Y>757.5</Y>
+          </Points>
+          <Points>
+            <X>892.5</X>
+            <Y>757.5</Y>
+          </Points>
+          <Points>
+            <X>892.5</X>
+            <Y>720</Y>
+          </Points>
+          <Points>
+            <X>1150</X>
+            <Y>720</Y>
+          </Points>
+        </Points>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

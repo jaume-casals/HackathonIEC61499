@@ -1,0 +1,7 @@
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\bin\Windows\Debug\Flexbridge.Iceblock.HMI.dll
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\bin\Windows\Debug\Flexbridge.Iceblock.HMI.pdb
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\bin\Windows\Debug\HMIBaseSymbols.dll
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\obj\Windows\Debug\Flexbridge.Iceblock.HMI.csproj.CoreCompileInputs.cache
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\obj\Windows\Debug\Flexbridge.Iceblock.HMI.csproj.CopyComplete
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\obj\Windows\Debug\Flexbridge.Iceblock.HMI.dll
+C:\Users\Jaume\Desktop\hackathon_v1\Flexbridge.Iceblock\HMI\obj\Windows\Debug\Flexbridge.Iceblock.HMI.pdb

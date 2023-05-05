@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="5.0" xml:id="UAO.Hackathon.article_top" xmlns="http://docbook.org/ns/docbook">
+  <info>
+    <authorgroup>
+      <author>
+        <email>dd@flexbridge.se</email>
+        <personname>
+          <firstname>Dmitrii</firstname>
+          <surname>Drozdov</surname>
+        </personname>
+        <affiliation>
+          <jobtitle />
+          <org>
+            <address>
+              <street />
+              <city />
+              <country />
+              <postcode />
+              <phone />
+              <fax />
+            </address>
+          </org>
+        </affiliation>
+      </author>
+    </authorgroup>
+    <org>
+      <orgname>Flexbridge AB</orgname>
+      <address>
+        <street>Aurorum 1C</street>
+        <city>Luleå</city>
+        <country>Sweden</country>
+        <postcode>977 75</postcode>
+        <phone />
+        <fax />
+      </address>
+    </org>
+    <abstract />
+  </info>
+</article>

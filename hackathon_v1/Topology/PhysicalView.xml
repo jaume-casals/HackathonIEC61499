@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PhysicalViewList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Identifier="Physical Views">
+  <PhysicalView Identifier="Default Physical View">
+    <Reference EquipmentGuid="ae8b46a7-66fd-4975-87c0-def6449535e4">
+      <Position>
+        <X>54</X>
+        <Y>4</Y>
+      </Position>
+    </Reference>
+    <Reference EquipmentGuid="ce0f809e-a74e-457c-ac04-c7654301581f">
+      <Position>
+        <X>245</X>
+        <Y>193.58798828125</Y>
+      </Position>
+    </Reference>
+    <Reference EquipmentGuid="e4e7c9b6-a01e-4d9d-8466-3a3adb9cf1d7">
+      <Position>
+        <X>351.65</X>
+        <Y>-0.77402343750003411</Y>
+      </Position>
+    </Reference>
+  </PhysicalView>
+</PhysicalViewList>

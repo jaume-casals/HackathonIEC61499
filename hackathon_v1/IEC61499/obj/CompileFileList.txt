@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompileFileList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/DeploySnapshot.xsd">
+  <FileItem Name="Main#BLINKER.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>16926168CC914EB4D</Hash>
+  </FileItem>
+  <FileItem Name="Main#CHECKPOINT_CAT_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>43D932EC88AD2253</Hash>
+  </FileItem>
+  <FileItem Name="Main#CHECKPOINT_CAT.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>16491E3D46527C9DD</Hash>
+  </FileItem>
+  <FileItem Name="Main#COURIER_CAT_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>2348F49AAE45DAD52</Hash>
+  </FileItem>
+  <FileItem Name="Main#COURIER_CAT.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>163A211B6E644DE95</Hash>
+  </FileItem>
+  <FileItem Name="Main#MOTOR_SWITCH_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>206397A9423320C9C</Hash>
+  </FileItem>
+  <FileItem Name="Main#AND_88A3DD8EC65DD11C.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>88A3DD8EC65DD11C</Hash>
+  </FileItem>
+  <FileItem Name="Main#NOT_42C76073DCEB1A7A.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>42C76073DCEB1A7A</Hash>
+  </FileItem>
+  <FileItem Name="Main#MOTOR_SWITCH.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>2407712EC5C80C7BF</Hash>
+  </FileItem>
+  <FileItem Name="Main#PRODUCTION_SCHEDULER.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>158EF39808B140ED5</Hash>
+  </FileItem>
+  <FileItem Name="Main#PRODUCTION_SCHEDULER_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>2462C4ED97C60F248</Hash>
+  </FileItem>
+  <FileItem Name="Main#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="IEC61499.exe" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:32</Modified>
+    <Hash>1559B0FF8170C9BA0</Hash>
+  </FileItem>
+  <LibraryItem Name="nxtControl.AvahiXMPP" Version="22.0.0.0" />
+  <LibraryItem Name="nxtControl.CommProtocols" Version="22.0.0.0" />
+  <LibraryItem Name="nxtControl.Standard" Version="22.0.0.6" />
+  <LibraryItem Name="Runtime.Base" Version="22.0.0.15" />
+  <LibraryItem Name="SE.AppBase" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppCommonProcess" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppConveying" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppLiquidFood" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppSequence" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppSingleLinePowerMonitoring" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppStateManagement" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppWWW" Version="22.0.0.16" />
+  <LibraryItem Name="SE.DPAC" Version="22.0.0.24" />
+  <LibraryItem Name="SE.FieldDevice" Version="22.0.0.21" />
+  <LibraryItem Name="SE.HwCommon" Version="22.0.0.14" />
+  <LibraryItem Name="SE.IoATV" Version="22.0.0.21" />
+  <LibraryItem Name="SE.IoNet" Version="22.0.0.1" />
+  <LibraryItem Name="SE.IoTMx" Version="22.0.0.15" />
+  <LibraryItem Name="SE.IoX80" Version="22.0.0.14" />
+  <LibraryItem Name="SE.ModbusGateway" Version="22.0.0.9" />
+  <LibraryItem Name="SE.Standard" Version="22.0.0.3" />
+  <LibraryItem Name="Standard.IoEtherNetIP" Version="22.0.0.13" />
+  <LibraryItem Name="Standard.IoModbus" Version="22.0.0.24" />
+  <LibraryItem Name="Standard.IoModbusSlave" Version="22.0.0.13" />
+  <LibraryItem Name="Standard.OPCUAClient" Version="22.0.0.6" />
+  <LibraryItem Name="SE.AppAsset" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppFunctional" Version="22.0.0.16" />
+</CompileFileList>

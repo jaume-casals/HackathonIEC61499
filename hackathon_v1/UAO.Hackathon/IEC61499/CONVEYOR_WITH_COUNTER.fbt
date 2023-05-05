@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="9f120f1b-45dc-4a77-8881-17ad1dfdb0e4" Name="CONVEYOR_WITH_COUNTER" Comment="Extracted Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="32" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Author="brink" Date="1/9/2023" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization request" />
+      <Event Name="START" Comment="Start motor &amp; reset counter" />
+      <Event Name="STOP" Comment="Stop motor" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization response" />
+      <Event Name="STARTO" Comment="Motor started " />
+      <Event Name="STOPO" Comment="Motor stopped">
+        <With Var="move_count" />
+      </Event>
+      <Event Name="CNT" Comment="Count pulse. Fired on every raising AND falling edge of the sensor signal.">
+        <With Var="move_count" />
+      </Event>
+    </EventOutputs>
+    <OutputVars>
+      <VarDeclaration Name="move_count" Type="UINT" Comment="Number of pulses(edges) that conveyor moved since last START" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="28" UID="1" Name="pulse_counter_in" Type="SYMLINKMULTIVARDST_1559B0FF8170C9BA0" x="840" y="920" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=1;VALUE${I}:BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}pulse_counter'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="2" Name="motor_conveyor_belt_out" Type="SYMLINKMULTIVARSRC_1559B0FF8170C9BA0" x="2840" y="920" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=1;VALUE${I}:BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}motor_conveyor_belt'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="20" Name="move_counter" Type="E_CTU" x="1540" y="420" Namespace="IEC61499.Standard">
+      <Parameter Name="PV" Value="0" />
+    </FB>
+    <FB ID="26" Name="start_stop_motor" Type="E_SR" x="2020" y="1040" Namespace="IEC61499.Standard" />
+    <FB ID="30" Name="FB1" Type="E_SWITCH" x="3540" y="1160" Namespace="IEC61499.Standard" />
+    <Input Name="INIT" x="240" y="932" Type="Event" />
+    <Input Name="START" x="240" y="492" Type="Event" />
+    <Input Name="STOP" x="240" y="1492" Type="Event" />
+    <Output Name="STOPO" x="3940" y="1172" Type="Event" />
+    <Output Name="CNT" x="3940" y="432" Type="Event" />
+    <Output Name="move_count" x="3940" y="752" Type="Data" />
+    <Output Name="INITO" x="3940" y="932" Type="Event" />
+    <Output Name="STARTO" x="3940" y="1232" Type="Event" />
+    <EventConnections>
+      <Connection Source="pulse_counter_in.INITO" Destination="motor_conveyor_belt_out.INIT" />
+      <Connection Source="INIT" Destination="pulse_counter_in.INIT" />
+      <Connection Source="motor_conveyor_belt_out.INITO" Destination="INITO" />
+      <Connection Source="start_stop_motor.EO" Destination="motor_conveyor_belt_out.REQ" dx1="50" />
+      <Connection Source="START" Destination="move_counter.R" />
+      <Connection Source="motor_conveyor_belt_out.CNF" Destination="FB1.EI" dx1="40" />
+      <Connection Source="FB1.EO1" Destination="STARTO" />
+      <Connection Source="FB1.EO0" Destination="STOPO" />
+      <Connection Source="move_counter.RO" Destination="start_stop_motor.S" dx1="60" />
+      <Connection Source="STOP" Destination="start_stop_motor.R" dx1="1375.833">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="pulse_counter_in.CNF" Destination="move_counter.CU" dx1="70" />
+      <Connection Source="move_counter.CUO" Destination="CNT" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="start_stop_motor.Q" Destination="motor_conveyor_belt_out.VALUE1" />
+      <Connection Source="move_counter.CV" Destination="move_count" />
+      <Connection Source="start_stop_motor.Q" Destination="FB1.G" dx1="48.35425" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

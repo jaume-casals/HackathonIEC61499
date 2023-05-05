@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="{A26DB02F-239E-448F-861B-D55384B760CC}" Version="1.5" xmlns="http://www.nxtcontrol.com/IEC61499.xsd">
+  <Folders>
+    <Folder Type="Basic" Name=".ComponentControl" />
+    <Folder Type="Basic" Name=".ComponentControl.Internals" />
+    <Folder Type="Basic" Name=".Misc" />
+    <Folder Type="Composite" Name=".ComponentControl" />
+    <Folder Type="Composite" Name=".ComponentControl.Internals" />
+    <Folder Type="Composite" Name=".Misc" />
+    <Folder Type="Composite" Name=".RemoteService" />
+    <Folder Type="Composite" Name=".RemoteService.Internals" />
+    <Folder Type="CAT" Name=".RemoteService" />
+  </Folders>
+  <Archive>
+    <ExcludeDir>
+      <string>Exports</string>
+      <string>Imports</string>
+      <string>Documentation</string>
+      <string>TestReports</string>
+    </ExcludeDir>
+  </Archive>
+  <References />
+  <Graphics Name="Graphics" IsExternal="false" />
+  <WebGraphics Name="WebGraphics" IsExternal="false" />
+  <PluginGUIDs />
+</ProjectDatabase>

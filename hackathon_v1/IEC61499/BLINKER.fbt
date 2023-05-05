@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="9e5e4981-df9e-4c95-bca2-1ccaeb5c9b96" Name="BLINKER" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="11" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="1/1/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm" />
+    </EventOutputs>
+    <Sockets>
+      <AdapterDeclaration ID="10" Name="ADP1" Type="ADP_INDICATION" Namespace="UAO.Hackathon" x="300" y="620" />
+    </Sockets>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="FB1" Type="DIO_OUT" x="3100" y="280" Namespace="Flexbridge.Iceblock" />
+    <FB ID="4" Name="FB2" Type="E_CYCLE" x="1020" y="640" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#500ms" />
+    </FB>
+    <FB ID="7" Name="FB3" Type="E_SR" x="1600" y="640" Namespace="IEC61499.Standard" />
+    <FB ID="8" Name="FB4" Type="E_DELAY" x="2220" y="580" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#200ms" />
+    </FB>
+    <FB ID="11" Name="FB5" Type="E_DELAY" x="940" y="1180" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#5s" />
+    </FB>
+    <Input Name="INIT" x="12" y="12" Type="Event" />
+    <Output Name="INITO" x="3760" y="292" Type="Event" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="FB1.INIT" dx1="49.41669" />
+      <Connection Source="FB1.INITO" Destination="INITO" />
+      <Connection Source="FB3.EO" Destination="FB4.START" dx1="50" />
+      <Connection Source="FB4.EO" Destination="FB3.R" dx1="48.5" dx2="70" dy="-110" />
+      <Connection Source="FB2.EO" Destination="FB3.S" />
+      <Connection Source="FB3.EO" Destination="FB1.WRITE" dx1="50" />
+      <Connection Source="ADP1.START" Destination="FB2.START" dx1="40" />
+      <Connection Source="ADP1.STOP" Destination="FB2.STOP" dx1="40" />
+      <Connection Source="ADP1.ONCE" Destination="FB2.START" dx1="92.20837" />
+      <Connection Source="ADP1.ONCE" Destination="FB5.START" dx1="40" />
+      <Connection Source="FB5.EO" Destination="FB2.STOP" dx1="48.5" dx2="50" dy="-110" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="FB3.Q" Destination="FB1.DO3">
+        <Points>
+          <Points>
+            <X>460.4115</X>
+            <Y>235</Y>
+          </Points>
+          <Points>
+            <X>477.9115</X>
+            <Y>235</Y>
+          </Points>
+          <Points>
+            <X>477.9115</X>
+            <Y>242.5</Y>
+          </Points>
+          <Points>
+            <X>652.5</X>
+            <Y>242.5</Y>
+          </Points>
+          <Points>
+            <X>652.5</X>
+            <Y>190</Y>
+          </Points>
+          <Points>
+            <X>770</X>
+            <Y>190</Y>
+          </Points>
+        </Points>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

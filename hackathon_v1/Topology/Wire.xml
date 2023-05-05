@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WireList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Wire Label="Wire 56" Identifier="Wire 56" SourceEquipmentUuid="ce0f809e-a74e-457c-ac04-c7654301581f" SourcePortIdentifier="Port1" DestinationEquipmentUuid="9d62bb13-d483-458c-a312-180f90ee2946" DestinationPortIdentifier="Port1" />
+  <Wire Label="Wire 79" Identifier="Wire 79" SourceEquipmentUuid="ce0f809e-a74e-457c-ac04-c7654301581f" SourcePortIdentifier="Port2" DestinationEquipmentUuid="e4e7c9b6-a01e-4d9d-8466-3a3adb9cf1d7" DestinationPortIdentifier="Ethernet1_1" />
+</WireList>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topology xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Identifier="Topology">
+  <Equipment Identifier="Workstation_1" CatalogReference="Workstation_V01.00_01.00" Uuid="ae8b46a7-66fd-4975-87c0-def6449535e4">
+    <Property PropertyName="IsUnderConstruction" PropertyValue="False" />
+    <Property PropertyName="CommCardReference" />
+    <Equipment Identifier="NIC_1" CatalogReference="NIC_V01.00_01.00" Uuid="9d62bb13-d483-458c-a312-180f90ee2946" />
+  </Equipment>
+  <Equipment Identifier="Switch_1" CatalogReference="GenericL2UnmanagedSwitch8Ports_V01.00_01.00" Uuid="ce0f809e-a74e-457c-ac04-c7654301581f">
+    <Property PropertyName="IsUnderConstruction" PropertyValue="False" />
+  </Equipment>
+  <Equipment Identifier="M251dPAC_1" CatalogReference="M050_V01.00_01.00" Uuid="e4e7c9b6-a01e-4d9d-8466-3a3adb9cf1d7" PartNumber="TM251MDESE">
+    <Property PropertyName="IsUnderConstruction" PropertyValue="False" />
+  </Equipment>
+</Topology>

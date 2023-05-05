@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="BUFFER_196036C8B0617F9B3" Comment="Generic Buffer Function Block" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.FBType.ImplementingType" Value="Runtime.Standard#DYNGEN_BUFFER" />
+  <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;DIN${CNT}:STRING(64),STRING(64)" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="1.0" Author="SESA471741" Date="03/07/2019" Remarks="initial" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialize FB clear buffer">
+        <With Var="QI" />
+        <With Var="MODE" />
+        <With Var="MAXSIZE" />
+      </Event>
+      <Event Name="PUT" Comment="Put new DIN into buffer">
+        <With Var="QI" />
+        <With Var="DIN1" />
+        <With Var="DIN2" />
+      </Event>
+      <Event Name="GET" Comment="Get next DOUT from buffer">
+        <With Var="QI" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="INIT done">
+        <With Var="QO" />
+        <With Var="STATUS" />
+        <With Var="SIZE" />
+      </Event>
+      <Event Name="PUTO" Comment="PUT done success">
+        <With Var="QO" />
+        <With Var="SIZE" />
+      </Event>
+      <Event Name="PUTFULL" Comment="PUT failed because buffer is full">
+        <With Var="QO" />
+        <With Var="SIZE" />
+      </Event>
+      <Event Name="GETO" Comment="GET success">
+        <With Var="QO" />
+        <With Var="SIZE" />
+        <With Var="DOUT1" />
+        <With Var="DOUT2" />
+      </Event>
+      <Event Name="GETEMPTY" Comment="GET failed because buffer is empty">
+        <With Var="QO" />
+        <With Var="SIZE" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" Comment="TRUE for normal operation" />
+      <VarDeclaration Name="MODE" Type="UINT" Comment="0:FIFO-Queue 1:LIFO-Stack" />
+      <VarDeclaration Name="MAXSIZE" Type="UINT" Comment="size of preallocated buffer " />
+      <VarDeclaration Name="DIN1" Type="STRING[64]" Comment="Input data to buffer" />
+      <VarDeclaration Name="DIN2" Type="STRING[64]" Comment="Input data to buffer" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="TRUE for normal operation" />
+      <VarDeclaration Name="STATUS" Type="STRING" Comment="OK or problem description" />
+      <VarDeclaration Name="SIZE" Type="UINT" Comment="actual number of buffered elements" />
+      <VarDeclaration Name="DOUT1" Type="STRING[64]" Comment="Output data from buffer" />
+      <VarDeclaration Name="DOUT2" Type="STRING[64]" Comment="Output data from buffer" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Name="START" />
+    </ECC>
+  </BasicFB>
+</FBType>

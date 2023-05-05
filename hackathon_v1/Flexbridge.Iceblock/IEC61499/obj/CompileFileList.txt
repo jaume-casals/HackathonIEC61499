@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompileFileList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/DeploySnapshot.xsd">
+  <FileItem Name="Flexbridge.Iceblock#AIO_IN.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>3646ED30B878974A</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#AIO_OUT.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>173F9977268A8DB58</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#AIO_TRIGGERED_IN.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>77264F670DA30FFE</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#DIO_IN_4CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>1836A0012B3DEC408</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#DIO_IN_8CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>203E2696A174E4A28</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#DIO_OUT.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T16:35:28</Modified>
+    <Hash>196E8C0D0080C3B72</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#DIO_TRIGGERED_IN_4CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>514DC52269F0C087</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#DIO_TRIGGERED_IN_8CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>1789442F8E48EA234</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#SYSFS_IO.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>16486541872115B0C</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#SYSTEM_TEMP.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>47F5D34C68514CA3</Hash>
+  </FileItem>
+  <FileItem Name="Flexbridge.Iceblock#SYSTEM_TIME.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Hash>141A15EA580A3C484</Hash>
+  </FileItem>
+  <LibraryItem Name="nxtControl.AvahiXMPP" Version="22.0.0.0" />
+  <LibraryItem Name="nxtControl.CommProtocols" Version="22.0.0.0" />
+  <LibraryItem Name="nxtControl.Standard" Version="22.0.0.6" />
+  <LibraryItem Name="Runtime.Base" Version="22.0.0.15" />
+  <LibraryItem Name="SE.AppBase" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppCommonProcess" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppConveying" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppLiquidFood" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppSequence" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppSingleLinePowerMonitoring" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppStateManagement" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppWWW" Version="22.0.0.16" />
+  <LibraryItem Name="SE.DPAC" Version="22.0.0.24" />
+  <LibraryItem Name="SE.FieldDevice" Version="22.0.0.21" />
+  <LibraryItem Name="SE.HwCommon" Version="22.0.0.14" />
+  <LibraryItem Name="SE.IoATV" Version="22.0.0.21" />
+  <LibraryItem Name="SE.IoNet" Version="22.0.0.1" />
+  <LibraryItem Name="SE.IoTMx" Version="22.0.0.15" />
+  <LibraryItem Name="SE.IoX80" Version="22.0.0.14" />
+  <LibraryItem Name="SE.ModbusGateway" Version="22.0.0.9" />
+  <LibraryItem Name="SE.Standard" Version="22.0.0.3" />
+  <LibraryItem Name="Standard.IoEtherNetIP" Version="22.0.0.13" />
+  <LibraryItem Name="Standard.IoModbus" Version="22.0.0.24" />
+  <LibraryItem Name="Standard.IoModbusSlave" Version="22.0.0.13" />
+  <LibraryItem Name="Standard.OPCUAClient" Version="22.0.0.6" />
+  <LibraryItem Name="SE.AppAsset" Version="22.0.0.16" />
+  <LibraryItem Name="SE.AppFunctional" Version="22.0.0.16" />
+</CompileFileList>

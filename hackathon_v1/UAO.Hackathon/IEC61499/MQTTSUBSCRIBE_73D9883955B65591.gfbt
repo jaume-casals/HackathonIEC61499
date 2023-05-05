@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="MQTTSUBSCRIBE_73D9883955B65591" Comment="Generic Interface Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.FBType.ImplementingType" Value="nxtControl.CommProtocols#DYNGEN_MQTTSUBSCRIBE" />
+  <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="nxtControl.CommProtocols#CNTX:=1" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmBH" Version="0.0" Author="SESA489471" Date="05/11/2020" Remarks="Template" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Request events for dedicated input data sets">
+        <With Var="QI" />
+        <With Var="ConnectionID" />
+      </Event>
+      <Event Name="SUBSCRIBE">
+        <With Var="Topic1" />
+        <With Var="QOS1" />
+        <With Var="RootPath" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INTO" Comment="Confirmation from Resource for a dedicated request">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="SUBSRIBEO" Comment="Indication from Resource">
+        <With Var="STATUS" />
+        <With Var="QO" />
+      </Event>
+      <Event Name="IND">
+        <With Var="STATUS" />
+        <With Var="QO" />
+      </Event>
+      <Event Name="TOPICINDEX1">
+        <With Var="RecPayload1" />
+        <With Var="RecTopic1" />
+        <With Var="STATUS" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" />
+      <VarDeclaration Name="ConnectionID" Type="STRING" Comment="MQTT Client ID" />
+      <VarDeclaration Name="RootPath" Type="STRING" />
+      <VarDeclaration Name="QOS1" Type="SINT" Comment="Quality of Service " />
+      <VarDeclaration Name="Topic1" Type="STRING" Comment="Topic to subscribe" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" />
+      <VarDeclaration Name="STATUS" Type="STRING" />
+      <VarDeclaration Name="RecTopic1" Type="STRING" />
+      <VarDeclaration Name="RecPayload1" Type="STRING" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Name="START" />
+    </ECC>
+  </BasicFB>
+</FBType>

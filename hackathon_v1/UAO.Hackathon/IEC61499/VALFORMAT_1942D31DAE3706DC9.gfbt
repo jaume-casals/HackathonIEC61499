@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="VALFORMAT_1942D31DAE3706DC9" Comment="MBus device interface function block type" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.FBType.ImplementingType" Value="Runtime.Standard#DYNGEN_VALFORMAT" />
+  <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#I:=3;VALUE${I}:STRING,STRING,STRING" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="1.0" Author="oberwal" Date="09.09.2008" Remarks="Initial Version" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="REQ" Comment="Request a formatting operation">
+        <With Var="FORMAT" />
+        <With Var="VALUE1" />
+        <With Var="VALUE2" />
+        <With Var="VALUE3" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CNF" Comment="Confirms a formattiong operation">
+        <With Var="RESULT" />
+        <With Var="STATUS" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="FORMAT" Type="STRING" Comment="Defines a standard C printf like format" />
+      <VarDeclaration Name="VALUE1" Type="STRING" Comment="A list of values to be converted into a string as defined in parameter FORMAT" />
+      <VarDeclaration Name="VALUE2" Type="STRING" Comment="A list of values to be converted into a string as defined in parameter FORMAT" />
+      <VarDeclaration Name="VALUE3" Type="STRING" Comment="A list of values to be converted into a string as defined in parameter FORMAT" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="RESULT" Type="STRING" Comment="The formatted result string" />
+      <VarDeclaration Name="STATUS" Type="STRING" Comment="Error information" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Name="START" />
+    </ECC>
+  </BasicFB>
+</FBType>

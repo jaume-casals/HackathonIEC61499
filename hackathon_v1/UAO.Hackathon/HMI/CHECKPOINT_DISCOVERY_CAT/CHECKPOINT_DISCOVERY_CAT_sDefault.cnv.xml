@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <EventInputs>
+    <Event Name="PUBLISH_CNF">SD_ID;mqtt_endpoint;request_topic;response_topic;SD_INTERFACE_STATUS</Event>
+    <Event Name="STARTO">SD_ID;mqtt_endpoint;request_topic;response_topic;SD_MANAGER_STATUS</Event>
+  </EventInputs>
+  <EventOutputs>
+    <Event Name="CNF" />
+  </EventOutputs>
+  <Inputs>
+    <Input Name="SD_ID" Type="STRING" />
+    <Input Name="mqtt_endpoint" Type="STRING" />
+    <Input Name="request_topic" Type="STRING" />
+    <Input Name="response_topic" Type="STRING" />
+    <Input Name="SD_INTERFACE_STATUS" Type="STRING" />
+    <Input Name="SD_MANAGER_STATUS" Type="BOOL" />
+  </Inputs>
+  <Outputs />
+</Mapping>

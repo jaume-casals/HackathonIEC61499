@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="23f6b5c5-3cf9-417f-b945-2394f3cd0e8c" Name="INSTRUCTION_EXTRACTOR" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="14" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/28/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="instruction" />
+        <With Var="input" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CNF" Comment="Requested instruction found and parsed">
+        <With Var="tail" />
+        <With Var="parameter" />
+      </Event>
+      <Event Name="BYPASS" Comment="Instruction not found">
+        <With Var="tail" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="input" Type="STRING[255]" Comment="Input string" />
+      <VarDeclaration Name="instruction" Type="STRING[255]" Comment="Instruction to search for" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="tail" Type="STRING[255]" Comment="Remaining 'tail' of the input string if instruction found, or the whole input string if not." />
+      <VarDeclaration Name="parameter" Type="STRING[15]" Comment="Instruction parameter" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="FB1" Type="INSTRUCTION_EXTRACTOR_BASIC" x="1120" y="480" Namespace="UAO.Hackathon" />
+    <FB ID="10" UID="2" Name="FB2" Type="COMPARE_5059E05E0748EACE" x="2000" y="700" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:STRING(255)" />
+    </FB>
+    <FB ID="9" UID="5" Name="FB4" Type="SELECT_5059E05E0748EACE" x="3420" y="780" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:STRING(255)" />
+    </FB>
+    <FB ID="8" UID="7" Name="FB3" Type="ANY2ANY_2559F3670C2742D4" x="2640" y="760" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=1;IN${CNT}:BOOL;OUT${CNT}:USINT" />
+    </FB>
+    <FB ID="13" Name="FB5" Type="E_SWITCH" x="4040" y="340" Namespace="IEC61499.Standard" />
+    <Input Name="instruction" x="220" y="1052" Type="Data" />
+    <Input Name="input" x="197.4271" y="692" Type="Data" />
+    <Input Name="REQ" x="169.7708" y="492" Type="Event" />
+    <Output Name="BYPASS" x="4400" y="352" Type="Event" />
+    <Output Name="parameter" x="4211" y="1352" Type="Data" />
+    <Output Name="CNF" x="4400" y="412" Type="Event" />
+    <Output Name="tail" x="4220" y="1192" Type="Data" />
+    <EventConnections>
+      <Connection Source="REQ" Destination="FB1.REQ" />
+      <Connection Source="FB3.CNF" Destination="FB4.REQ" dx1="63.75" />
+      <Connection Source="FB1.CNF" Destination="FB2.REQ" dx1="40" />
+      <Connection Source="FB2.CNF" Destination="FB3.REQ" dx1="89.85425" />
+      <Connection Source="FB4.CNF" Destination="FB5.EI" dx1="53.95825" />
+      <Connection Source="FB5.EO0" Destination="BYPASS" />
+      <Connection Source="FB5.EO1" Destination="CNF" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="input" Destination="FB1.input" />
+      <Connection Source="FB3.OUT1" Destination="FB4.SELECT" dx1="43.75" />
+      <Connection Source="FB1.tail" Destination="FB4.IN2">
+        <Points>
+          <Points>
+            <X>477.447876</X>
+            <Y>210</Y>
+          </Points>
+          <Points>
+            <X>482.447876</X>
+            <Y>210</Y>
+          </Points>
+          <Points>
+            <X>482.447876</X>
+            <Y>157</Y>
+          </Points>
+          <Points>
+            <X>584.999939</X>
+            <Y>157</Y>
+          </Points>
+          <Points>
+            <X>584.999939</X>
+            <Y>285</Y>
+          </Points>
+          <Points>
+            <X>850</X>
+            <Y>285</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB4.OUT" Destination="tail" dx1="40" />
+      <Connection Source="FB1.instruction" Destination="FB2.IN1" dx1="40.20825" dx2="70" dy="210" />
+      <Connection Source="instruction" Destination="FB2.IN2" dx1="47.77087" />
+      <Connection Source="FB2.EQ" Destination="FB3.IN1" dx1="219.8542">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.parameter" Destination="parameter" dx1="40.20825" />
+      <Connection Source="FB2.EQ" Destination="FB5.G" dx1="219.8542">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="input" Destination="FB4.IN1">
+        <Points>
+          <Points>
+            <X>184.367188</X>
+            <Y>180</Y>
+          </Points>
+          <Points>
+            <X>212.5</X>
+            <Y>180</Y>
+          </Points>
+          <Points>
+            <X>212.5</X>
+            <Y>335</Y>
+          </Points>
+          <Points>
+            <X>830</X>
+            <Y>335</Y>
+          </Points>
+          <Points>
+            <X>830</X>
+            <Y>270</Y>
+          </Points>
+          <Points>
+            <X>850</X>
+            <Y>270</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

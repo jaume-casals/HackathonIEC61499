@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="hackathon_v1" Guid="{3094307A-52AE-4C09-8CA3-AA619761D361}" Version="1.5.0.0" xmlns="http://www.nxtcontrol.com/IEC61499.xsd">
+  <Archive>
+    <ExcludeDir>
+      <string>Exports</string>
+      <string>Imports</string>
+      <string>Documentation</string>
+      <string>TestReports</string>
+    </ExcludeDir>
+  </Archive>
+  <References />
+  <CanvasResolution StartCanvasClass="" Width="-1" Height="-1" WorkAreaWidth="-1" WorkAreaHeight="-1" Template="" Login="true" NavigationControl="0" CurrentUser="true" LanguageButton="true" RuntimeConnection="true" Logger="false" NavigationBar="true" NewVersionDeployed="true" Exit="false" ShowWarningMessage="false" WarningText="" SiblingButtonCount="5" ChildButtonCount="5" IsCanvasTopologyPanel="true" ResizeBehaviour="None">
+    <Topology Name="Default" />
+  </CanvasResolution>
+  <CanvasResolution StartCanvasClass="HMI.Main.Canvases.StartCanvas_3" Width="800" Height="480" WorkAreaWidth="800" WorkAreaHeight="480" Template="Default" Login="true" NavigationControl="2" CurrentUser="true" LanguageButton="true" RuntimeConnection="true" Logger="false" NavigationBar="false" NewVersionDeployed="true" Exit="false" ShowWarningMessage="false" WarningText="" SiblingButtonCount="0" ChildButtonCount="0" IsCanvasTopologyPanel="true" ResizeBehaviour="Zoom">
+    <Topology Name="Default">
+      <Canvases>
+        <Canvas Name="DiscoveryMonitor" Title="Discovery monitor" Tooltip="" Instance="HMI.Main.Canvases.DiscoveryMonitor" />
+        <Canvas Name="Courier" Title="" Tooltip="" Instance="HMI.Main.Canvases.Courier" />
+      </Canvases>
+    </Topology>
+  </CanvasResolution>
+  <CanvasResolution StartCanvasClass="HMI.Main.Canvases.StartCanvas" Width="1024" Height="600" WorkAreaWidth="1024" WorkAreaHeight="520" Template="Default" Login="true" NavigationControl="2" CurrentUser="true" LanguageButton="true" RuntimeConnection="true" Logger="false" NavigationBar="true" NewVersionDeployed="true" Exit="false" ShowWarningMessage="false" WarningText="" SiblingButtonCount="0" ChildButtonCount="0" IsCanvasTopologyPanel="true" ResizeBehaviour="None">
+    <Topology Name="Default" />
+  </CanvasResolution>
+  <Graphics Name="Graphics" IsExternal="false" />
+  <WebGraphics Name="WebGraphics" IsExternal="false" />
+  <Security Level="Internal" IsActive="true">
+    <Info>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;UserManager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" HighestID="2"&gt;&lt;UserInfos Name="admin" Password="$1$E433FDA01754FDCAE710A80D6BA4B92D728455C7D8BD68D15684F9B290DE3290$CC78B8096EF75EE0BB84CB8AFE5970CDCB7DA33ED9831FAFB7BAB0FF0B07CA6D" SecurityToken="127" ID="1" MeetsCalLaw="true" /&gt;&lt;/UserManager&gt;</Info>
+  </Security>
+  <PluginGUIDs />
+  <ConnectableAdapterList>
+    <ConnectableAdapters>
+      <CompatibleType Type="IHwSlaveConfig" Namespace="SE.FieldDevice" />
+      <CompatibleType Type="IHwSlaveConfig" Namespace="Standard.IoModbus" />
+    </ConnectableAdapters>
+  </ConnectableAdapterList>
+</ProjectDatabase>

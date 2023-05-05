@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OPCUAObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OPCUAVariable UID="23F52CFADC841CDD" Enabled="false">
+    <Extensions>
+      <Extension>
+        <RTAddress>V1;${VariableFullPath};Trigger=CNF</RTAddress>
+      </Extension>
+    </Extensions>
+  </OPCUAVariable>
+  <OPCUAVariable UID="D7D48A17C8462FC8" Enabled="false">
+    <Extensions>
+      <Extension>
+        <RTAddress>V1;${VariableFullPath};Trigger=CNF</RTAddress>
+      </Extension>
+    </Extensions>
+  </OPCUAVariable>
+</OPCUAObject>

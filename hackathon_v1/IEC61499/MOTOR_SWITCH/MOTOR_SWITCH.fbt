@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="c2f4257c-4787-4405-b8db-0894ef0f1710" Name="MOTOR_SWITCH" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="HMI.Alias" Value="" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="9" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="1/16/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="QI" />
+      </Event>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="QI" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="QO" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="QO" />
+        <With Var="forward" />
+        <With Var="backward" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" Comment="Input event qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="forward" Type="BOOL" />
+      <VarDeclaration Name="backward" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="IThis" Type="MOTOR_SWITCH_HMI" x="820" y="560" Namespace="Main" />
+    <FB ID="6" Name="FB1" Type="AND_88A3DD8EC65DD11C" x="1780" y="600" Namespace="Main">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;OUT:BOOL" />
+    </FB>
+    <FB ID="7" Name="FB2" Type="AND_88A3DD8EC65DD11C" x="2260" y="1220" Namespace="Main">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;OUT:BOOL" />
+    </FB>
+    <FB ID="8" Name="FB3" Type="NOT_42C76073DCEB1A7A" x="1660" y="1220" Namespace="Main">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=1;OUT${CNT}:BOOL" />
+    </FB>
+    <FB ID="9" Name="FB4" Type="E_MERGE" x="2940" y="920" Namespace="IEC61499.Standard" />
+    <Input Name="INIT" x="12" y="12" Type="Event" />
+    <Input Name="REQ" x="12" y="72" Type="Event" />
+    <Input Name="QI" x="12" y="132" Type="Data" />
+    <Output Name="forward" x="3440" y="452" Type="Data" />
+    <Output Name="backward" x="3400" y="512" Type="Data" />
+    <Output Name="INITO" x="3560" y="272" Type="Event" />
+    <Output Name="CNF" x="3580" y="332" Type="Event" />
+    <Output Name="QO" x="3460" y="392" Type="Data" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="IThis.INIT" dx1="89.41669" />
+      <Connection Source="IThis.CNF" Destination="FB1.REQ" dx1="57.64587" />
+      <Connection Source="FB3.CNF" Destination="FB2.REQ" />
+      <Connection Source="IThis.CNF" Destination="FB3.REQ" dx1="80" />
+      <Connection Source="FB2.CNF" Destination="FB4.EI2" dx1="47.47925" />
+      <Connection Source="FB1.CNF" Destination="FB4.EI1" dx1="67.47925" />
+      <Connection Source="FB4.EO" Destination="CNF" dx1="41.54175" />
+      <Connection Source="IThis.INITO" Destination="INITO" dx1="57.64587" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="QI" Destination="IThis.QI" dx1="43.20837" />
+      <Connection Source="IThis.upDown" Destination="FB1.IN1" dx1="40" />
+      <Connection Source="IThis.motorOn" Destination="FB1.IN2" dx1="77.64587" />
+      <Connection Source="FB1.OUT" Destination="forward" dx1="70" />
+      <Connection Source="FB3.OUT1" Destination="FB2.IN1" />
+      <Connection Source="IThis.motorOn" Destination="FB2.IN2" dx1="717.6459" />
+      <Connection Source="IThis.upDown" Destination="FB3.IN1" dx1="60" />
+      <Connection Source="FB2.OUT" Destination="backward" dx1="70" />
+      <Connection Source="IThis.QO" Destination="QO" dx1="97.64587" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

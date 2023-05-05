@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="b6e4bcae-96f3-46d9-98f6-011b039092b1" Name="SYSFS_IO" Comment="Service Interface Function Block Type" Namespace="Flexbridge.Iceblock">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmBH" Version="0.0" Author="SESA515713" Date="17/02/2021" Remarks="template" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="READ" Comment="Service Initialization">
+        <With Var="FILE_PATH" />
+      </Event>
+      <Event Name="WRITE" Comment="Service Request">
+        <With Var="FILE_PATH" />
+        <With Var="WRITE_VALUE" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="READ_CNF" Comment="Initialization Confirm">
+        <With Var="QO" />
+        <With Var="STATUS" />
+        <With Var="READ_VALUE" />
+      </Event>
+      <Event Name="WRITE_CNF" Comment="Confirmation of Requested Service">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="FILE_PATH" Type="STRING" Comment="Event Input Qualifier" />
+      <VarDeclaration Name="WRITE_VALUE" Type="BOOL" Comment="Service Parameters" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" />
+      <VarDeclaration Name="STATUS" Type="STRING" />
+      <VarDeclaration Name="READ_VALUE" Type="BOOL" Comment="Service Status" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="RESOURCE" LeftInterface="SYSFS_IO">
+    <ServiceSequence Name="normal_establishment">
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="READ+" Parameters="WRITE_VALUE" />
+        <OutputPrimitive Interface="RESOURCE" Event="initialize" Parameters="WRITE_VALUE" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="READ_CNF+" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="unsuccessful_establishment">
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="READ+" Parameters="WRITE_VALUE" />
+        <OutputPrimitive Interface="RESOURCE" Event="initialize" Parameters="WRITE_VALUE" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="READ_CNF-" Parameters="READ_VALUE" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="request_confirm">
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="WRITE+" Parameters="SD" />
+        <OutputPrimitive Interface="RESOURCE" Event="request" Parameters="SD" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="WRITE_CNF+" Parameters="RD" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="request_inhibited">
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="WRITE-" Parameters="SD" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="WRITE_CNF-" Parameters="READ_VALUE" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="request_error">
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="WRITE+" Parameters="SD" />
+        <OutputPrimitive Interface="RESOURCE" Event="request" Parameters="SD" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="WRITE_CNF-" Parameters="READ_VALUE" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="indication_response">
+      <ServiceTransaction>
+        <InputPrimitive Interface="RESOURCE" Event="indicate" Parameters="RD" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="IND+" Parameters="RD" />
+      </ServiceTransaction>
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="RSP" Parameters="FILE_PATH,SD" />
+        <OutputPrimitive Interface="RESOURCE" Event="response" Parameters="FILE_PATH,SD" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="indication_inhibited">
+      <ServiceTransaction>
+        <InputPrimitive Interface="RESOURCE" Event="indicate" Parameters="RD,FILE_PATH=FALSE" />
+        <OutputPrimitive Interface="RESOURCE" Event="inhibited" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="error_indication">
+      <ServiceTransaction>
+        <InputPrimitive Interface="RESOURCE" Event="error" Parameters="READ_VALUE" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="IND-" Parameters="READ_VALUE" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="application_initiated_termination">
+      <ServiceTransaction>
+        <InputPrimitive Interface="SYSFS_IO" Event="READ-" />
+        <OutputPrimitive Interface="RESOURCE" Event="terminate" />
+        <OutputPrimitive Interface="SYSFS_IO" Event="READ_CNF-" Parameters="READ_VALUE" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="resource_initiated_termination">
+      <ServiceTransaction>
+        <OutputPrimitive Interface="SYSFS_IO" Event="READ_CNF-" Parameters="READ_VALUE" />
+      </ServiceTransaction>
+    </ServiceSequence>
+  </Service>
+</FBType>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <author>
+       <personname>
+          <firstname>Dmitrii</firstname>
+          <surname>Drozdov</surname>
+       </personname>
+       <email>dd@flexbridge.se</email>
+    </author>
+    <abstract><wysiwyg_a><p>Extracting first instruction from beginning of an input string.</p><p>If instruction found, it is removed from the input string and the remainder is passed as <em>tail.</em></p><p>If instruction is not found at the beginning of the input, the whole string is passed as <em>tail</em> and <em>BYPASS</em> event is fired.</p><p> </p><p /><p>
+  </p></wysiwyg_a></abstract>
+  </info>
+<wysiwyg><p>
+  </p><p><strong>Examples:</strong></p><p> </p><ol>
+<li>input='hello.world'; instruction='hello'; CNF event will be fired, and tail='world', </li>
+<li>input='world.hello'; instruction='hello'; BYPASS event will be fired and tail='hello.world'</li>
+<li>input='hello+uao.world'; instruction='hello'; CNF event will be fired, tail='world' and parameter='uao'</li></ol><p>
+  </p></wysiwyg></section>
+

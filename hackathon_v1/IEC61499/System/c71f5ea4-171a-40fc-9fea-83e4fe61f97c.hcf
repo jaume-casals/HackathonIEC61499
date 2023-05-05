@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceHwConfigurationItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeviceHwConfigurationItem ResourceId="CC17591F3619B5A0">
+    <ConfigurationBaseItem>
+      <Name>BMTM3</Name>
+      <ID>88A73DB9AA5DE69F</ID>
+      <Type>
+        <Name>BMTM3</Name>
+        <Namespace>SE.IoTMx</Namespace>
+      </Type>
+      <ItemProperties>
+        <ItemProperty>
+          <Name>busid</Name>
+          <Value xsi:type="xsd:string">TM3Config</Value>
+          <HWParameters>
+            <string>BUS_ID</string>
+          </HWParameters>
+        </ItemProperty>
+        <ItemProperty>
+          <Name>powerConsumption</Name>
+          <Value xsi:type="xsd:unsignedByte">0</Value>
+        </ItemProperty>
+        <ItemProperty>
+          <Name>buscycletime</Name>
+          <Value xsi:type="xsd:string">T#5ms</Value>
+          <HWParameters>
+            <string>busCycleTime</string>
+          </HWParameters>
+        </ItemProperty>
+        <ItemProperty>
+          <Name>buscycletolerance</Name>
+          <Value xsi:type="xsd:unsignedInt">30</Value>
+          <HWParameters>
+            <string>busCycleTolerance</string>
+          </HWParameters>
+        </ItemProperty>
+        <ItemProperty>
+          <Name>buscycleactionwhenmissed</Name>
+          <Value xsi:type="xsd:unsignedInt">1</Value>
+          <HWParameters>
+            <string>busCycleActionWhenMissed</string>
+          </HWParameters>
+        </ItemProperty>
+        <ItemProperty>
+          <Name>enableSymlinkOC</Name>
+          <Value xsi:type="xsd:string">TRUE</Value>
+          <HWParameters>
+            <string>enableSymlinkOC</string>
+          </HWParameters>
+        </ItemProperty>
+      </ItemProperties>
+      <ParameterValues>
+        <ParameterValue Name="busId" Value="'BMTM3'" />
+        <ParameterValue Name="enableSymlinkOC" Value="TRUE" />
+        <ParameterValue Name="phase" Value="T#0ms" />
+        <ParameterValue Name="busCycleTime" Value="T#5ms" />
+        <ParameterValue Name="busCycleTolerance" Value="30" />
+        <ParameterValue Name="busCycleActionWhenMissed" Value="1" />
+      </ParameterValues>
+      <MasterConfigFileName>${ProjectDir}\${SystemName}\RuntimeData\${DeviceName}\boot\${busid}.xml</MasterConfigFileName>
+      <Items>
+        <ConfigurationBaseItem>
+          <Name>TM251MDESE</Name>
+          <ID>129E7231A8408D9</ID>
+          <Type>
+            <Name>TM251MDESE</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ParameterValues />
+          <PreviousItem>
+            <Name>BMTM3</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items />
+        </ConfigurationBaseItem>
+        <ConfigurationBaseItem>
+          <Name>TM3XHSC202_G</Name>
+          <ID>A05466BE5DB2613E</ID>
+          <Type>
+            <Name>TM3XHSC202_G</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ItemProperties>
+            <ItemProperty>
+              <Name>OptionalModule</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+          </ItemProperties>
+          <ParameterValues />
+          <PreviousItem>
+            <Name>TM251MDESE</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items>
+            <ConfigurationBaseItem>
+              <Name>WH_Counter_Hor</Name>
+              <ID>1392BB4901C47672</ID>
+              <Type>
+                <Name>HSC_Simple</Name>
+                <Namespace>SE.IoTMx</Namespace>
+              </Type>
+              <ItemProperties>
+                <ItemProperty>
+                  <Name>ScanRate</Name>
+                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <HWParameters>
+                    <string>ScanRate</string>
+                  </HWParameters>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>General.CountingMode</Name>
+                  <Value xsi:type="xsd:unsignedByte">0</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Location</Name>
+                  <Value xsi:type="xsd:unsignedByte">0</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Filter</Name>
+                  <Value xsi:type="xsd:unsignedByte">3</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Preset</Name>
+                  <Value xsi:type="xsd:int">100000</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Modulo</Name>
+                  <Value xsi:type="xsd:int">2147483647</Value>
+                </ItemProperty>
+              </ItemProperties>
+              <ParameterValues>
+                <ParameterValue Name="InstanceName" Value="'WH_Counter_Hor'" />
+                <ParameterValue Name="ScanRate" Value="100" />
+                <ParameterValue Name="HscAction" Value="''" />
+                <ParameterValue Name="CurrentValue" Value="''" />
+                <ParameterValue Name="ModuloFlag" Value="''" />
+                <ParameterValue Name="Valid" Value="''" />
+                <ParameterValue Name="Run" Value="''" />
+                <ParameterValue Name="ErrorId" Value="''" />
+              </ParameterValues>
+              <MasterConfigFileName />
+              <PreviousItem>
+                <Name>TM3XHSC202_G</Name>
+                <PortName>IHscChannelOut</PortName>
+              </PreviousItem>
+              <Items />
+            </ConfigurationBaseItem>
+            <ConfigurationBaseItem>
+              <Name>WH_Counter_Vert</Name>
+              <ID>20B6D674B5C3B652</ID>
+              <Type>
+                <Name>HSC_Simple</Name>
+                <Namespace>SE.IoTMx</Namespace>
+              </Type>
+              <ItemProperties>
+                <ItemProperty>
+                  <Name>ScanRate</Name>
+                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <HWParameters>
+                    <string>ScanRate</string>
+                  </HWParameters>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>General.CountingMode</Name>
+                  <Value xsi:type="xsd:unsignedByte">0</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Location</Name>
+                  <Value xsi:type="xsd:unsignedByte">2</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Filter</Name>
+                  <Value xsi:type="xsd:unsignedByte">3</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Preset</Name>
+                  <Value xsi:type="xsd:int">100000</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Modulo</Name>
+                  <Value xsi:type="xsd:int">2147483647</Value>
+                </ItemProperty>
+              </ItemProperties>
+              <ParameterValues>
+                <ParameterValue Name="InstanceName" Value="'WH_Counter_Vert'" />
+                <ParameterValue Name="ScanRate" Value="100" />
+                <ParameterValue Name="HscAction" Value="''" />
+                <ParameterValue Name="CurrentValue" Value="''" />
+                <ParameterValue Name="ModuloFlag" Value="''" />
+                <ParameterValue Name="Valid" Value="''" />
+                <ParameterValue Name="Run" Value="''" />
+                <ParameterValue Name="ErrorId" Value="''" />
+              </ParameterValues>
+              <MasterConfigFileName />
+              <PreviousItem>
+                <Name>WH_Counter_Hor</Name>
+                <PortName>IHscChannelOut</PortName>
+              </PreviousItem>
+              <Items />
+            </ConfigurationBaseItem>
+            <ConfigurationBaseItem>
+              <Name>ROB_Counter_Vert</Name>
+              <ID>5805DF19ABFC6DAE</ID>
+              <Type>
+                <Name>HSC_Simple</Name>
+                <Namespace>SE.IoTMx</Namespace>
+              </Type>
+              <ItemProperties>
+                <ItemProperty>
+                  <Name>ScanRate</Name>
+                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <HWParameters>
+                    <string>ScanRate</string>
+                  </HWParameters>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>General.CountingMode</Name>
+                  <Value xsi:type="xsd:unsignedByte">0</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Location</Name>
+                  <Value xsi:type="xsd:unsignedByte">5</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Filter</Name>
+                  <Value xsi:type="xsd:unsignedByte">3</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Preset</Name>
+                  <Value xsi:type="xsd:int">100000</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Modulo</Name>
+                  <Value xsi:type="xsd:int">2147483647</Value>
+                </ItemProperty>
+              </ItemProperties>
+              <ParameterValues>
+                <ParameterValue Name="InstanceName" Value="'ROB_Counter_Vert'" />
+                <ParameterValue Name="ScanRate" Value="100" />
+                <ParameterValue Name="HscAction" Value="''" />
+                <ParameterValue Name="CurrentValue" Value="''" />
+                <ParameterValue Name="ModuloFlag" Value="''" />
+                <ParameterValue Name="Valid" Value="''" />
+                <ParameterValue Name="Run" Value="''" />
+                <ParameterValue Name="ErrorId" Value="''" />
+              </ParameterValues>
+              <MasterConfigFileName />
+              <PreviousItem>
+                <Name>WH_Counter_Vert</Name>
+                <PortName>IHscChannelOut</PortName>
+              </PreviousItem>
+              <Items />
+            </ConfigurationBaseItem>
+            <ConfigurationBaseItem>
+              <Name>ROB_Counter_Hor</Name>
+              <ID>728A3C849845A686</ID>
+              <Type>
+                <Name>HSC_Simple</Name>
+                <Namespace>SE.IoTMx</Namespace>
+              </Type>
+              <ItemProperties>
+                <ItemProperty>
+                  <Name>ScanRate</Name>
+                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <HWParameters>
+                    <string>ScanRate</string>
+                  </HWParameters>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>General.CountingMode</Name>
+                  <Value xsi:type="xsd:unsignedByte">0</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Location</Name>
+                  <Value xsi:type="xsd:unsignedByte">6</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Filter</Name>
+                  <Value xsi:type="xsd:unsignedByte">3</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Preset</Name>
+                  <Value xsi:type="xsd:int">100000</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Modulo</Name>
+                  <Value xsi:type="xsd:int">2147483647</Value>
+                </ItemProperty>
+              </ItemProperties>
+              <ParameterValues>
+                <ParameterValue Name="InstanceName" Value="'ROB_Counter_Hor'" />
+                <ParameterValue Name="ScanRate" Value="100" />
+                <ParameterValue Name="HscAction" Value="''" />
+                <ParameterValue Name="CurrentValue" Value="''" />
+                <ParameterValue Name="ModuloFlag" Value="''" />
+                <ParameterValue Name="Valid" Value="''" />
+                <ParameterValue Name="Run" Value="''" />
+                <ParameterValue Name="ErrorId" Value="''" />
+              </ParameterValues>
+              <MasterConfigFileName />
+              <PreviousItem>
+                <Name>ROB_Counter_Vert</Name>
+                <PortName>IHscChannelOut</PortName>
+              </PreviousItem>
+              <Items />
+            </ConfigurationBaseItem>
+            <ConfigurationBaseItem>
+              <Name>ROB_Counter_Rot</Name>
+              <ID>45B69FF72D7BD8C3</ID>
+              <Type>
+                <Name>HSC_Simple</Name>
+                <Namespace>SE.IoTMx</Namespace>
+              </Type>
+              <ItemProperties>
+                <ItemProperty>
+                  <Name>ScanRate</Name>
+                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <HWParameters>
+                    <string>ScanRate</string>
+                  </HWParameters>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>General.CountingMode</Name>
+                  <Value xsi:type="xsd:unsignedByte">0</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Location</Name>
+                  <Value xsi:type="xsd:unsignedByte">7</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>CountingInputs.AInput.Filter</Name>
+                  <Value xsi:type="xsd:unsignedByte">3</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Preset</Name>
+                  <Value xsi:type="xsd:int">100000</Value>
+                </ItemProperty>
+                <ItemProperty>
+                  <Name>Range.Modulo</Name>
+                  <Value xsi:type="xsd:int">2147483647</Value>
+                </ItemProperty>
+              </ItemProperties>
+              <ParameterValues>
+                <ParameterValue Name="InstanceName" Value="'ROB_Counter_Rot'" />
+                <ParameterValue Name="ScanRate" Value="100" />
+                <ParameterValue Name="HscAction" Value="''" />
+                <ParameterValue Name="CurrentValue" Value="''" />
+                <ParameterValue Name="ModuloFlag" Value="''" />
+                <ParameterValue Name="Valid" Value="''" />
+                <ParameterValue Name="Run" Value="''" />
+                <ParameterValue Name="ErrorId" Value="''" />
+              </ParameterValues>
+              <MasterConfigFileName />
+              <PreviousItem>
+                <Name>ROB_Counter_Hor</Name>
+                <PortName>IHscChannelOut</PortName>
+              </PreviousItem>
+              <Items />
+            </ConfigurationBaseItem>
+          </Items>
+        </ConfigurationBaseItem>
+        <ConfigurationBaseItem>
+          <Name>TM3DI16_G</Name>
+          <ID>B32927E9C1EA8422</ID>
+          <Type>
+            <Name>TM3DI16_G</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ItemProperties>
+            <ItemProperty>
+              <Name>OptionalModule</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_0.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_0.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_1.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_1.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_2.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_2.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_3.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_3.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_4.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_4.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_5.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_5.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_6.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_6.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_7.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_7.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_8.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_8.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_9.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_9.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_10.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_10.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_11.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_11.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_12.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_12.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_13.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_13.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_14.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_14.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_15.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_15.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+          </ItemProperties>
+          <ParameterValues>
+            <ParameterValue Name="DI00" Value="''" />
+            <ParameterValue Name="DI01" Value="''" />
+            <ParameterValue Name="DI02" Value="''" />
+            <ParameterValue Name="DI03" Value="''" />
+            <ParameterValue Name="DI04" Value="''" />
+            <ParameterValue Name="DI05" Value="''" />
+            <ParameterValue Name="DI06" Value="''" />
+            <ParameterValue Name="DI07" Value="''" />
+            <ParameterValue Name="DI08" Value="''" />
+            <ParameterValue Name="DI09" Value="''" />
+            <ParameterValue Name="DI10" Value="''" />
+            <ParameterValue Name="DI11" Value="''" />
+            <ParameterValue Name="DI12" Value="''" />
+            <ParameterValue Name="DI13" Value="''" />
+            <ParameterValue Name="DI14" Value="''" />
+            <ParameterValue Name="DI15" Value="''" />
+          </ParameterValues>
+          <PreviousItem>
+            <Name>TM3XHSC202_G</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items />
+        </ConfigurationBaseItem>
+        <ConfigurationBaseItem>
+          <Name>TM3DI16_G_1</Name>
+          <ID>B9FA2A8C580FF5B9</ID>
+          <Type>
+            <Name>TM3DI16_G</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ItemProperties>
+            <ItemProperty>
+              <Name>OptionalModule</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_0.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_0.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_1.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_1.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_2.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_2.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_3.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_3.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_4.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_4.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_5.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_5.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_6.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_6.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_7.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_7.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_8.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_8.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_9.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_9.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_10.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_10.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_11.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_11.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_12.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_12.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_13.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_13.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_14.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_14.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_15.Latch</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Channel_15.Filter</Name>
+              <Value xsi:type="xsd:unsignedByte">4</Value>
+            </ItemProperty>
+          </ItemProperties>
+          <ParameterValues>
+            <ParameterValue Name="DI00" Value="''" />
+            <ParameterValue Name="DI01" Value="''" />
+            <ParameterValue Name="DI02" Value="''" />
+            <ParameterValue Name="DI03" Value="''" />
+            <ParameterValue Name="DI04" Value="''" />
+            <ParameterValue Name="DI05" Value="''" />
+            <ParameterValue Name="DI06" Value="''" />
+            <ParameterValue Name="DI07" Value="''" />
+            <ParameterValue Name="DI08" Value="''" />
+            <ParameterValue Name="DI09" Value="''" />
+            <ParameterValue Name="DI10" Value="''" />
+            <ParameterValue Name="DI11" Value="''" />
+            <ParameterValue Name="DI12" Value="''" />
+            <ParameterValue Name="DI13" Value="''" />
+            <ParameterValue Name="DI14" Value="''" />
+            <ParameterValue Name="DI15" Value="''" />
+          </ParameterValues>
+          <PreviousItem>
+            <Name>TM3DI16_G</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items />
+        </ConfigurationBaseItem>
+        <ConfigurationBaseItem>
+          <Name>TM3AM6_G</Name>
+          <ID>DF30F1DD1E6811D7</ID>
+          <Type>
+            <Name>TM3AM6_G</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ItemProperties>
+            <ItemProperty>
+              <Name>OptionalModule</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_0.Type</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_0.Minimum</Name>
+              <Value xsi:type="xsd:int">-32768</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_0.Maximum</Name>
+              <Value xsi:type="xsd:int">32767</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_0.Input_filter</Name>
+              <Value xsi:type="xsd:unsignedShort">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_0.Sampling_Rate</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_1.Type</Name>
+              <Value xsi:type="xsd:unsignedByte">128</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_1.Minimum</Name>
+              <Value xsi:type="xsd:int">-32768</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_1.Maximum</Name>
+              <Value xsi:type="xsd:int">32767</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_1.Input_filter</Name>
+              <Value xsi:type="xsd:unsignedShort">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_1.Sampling_Rate</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_2.Type</Name>
+              <Value xsi:type="xsd:unsignedByte">128</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_2.Minimum</Name>
+              <Value xsi:type="xsd:int">-32768</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_2.Maximum</Name>
+              <Value xsi:type="xsd:int">32767</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_2.Input_filter</Name>
+              <Value xsi:type="xsd:unsignedShort">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_2.Sampling_Rate</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_3.Type</Name>
+              <Value xsi:type="xsd:unsignedByte">128</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_3.Minimum</Name>
+              <Value xsi:type="xsd:int">-32768</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_3.Maximum</Name>
+              <Value xsi:type="xsd:int">32767</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_3.Input_filter</Name>
+              <Value xsi:type="xsd:unsignedShort">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Input_Channel_3.Sampling_Rate</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Output_Channel_0.Type</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+            <ItemProperty>
+              <Name>Output_Channel_1.Type</Name>
+              <Value xsi:type="xsd:unsignedByte">32</Value>
+            </ItemProperty>
+          </ItemProperties>
+          <ParameterValues>
+            <ParameterValue Name="AI00" Value="''" />
+            <ParameterValue Name="AI01" Value="''" />
+            <ParameterValue Name="AI02" Value="''" />
+            <ParameterValue Name="AI03" Value="''" />
+            <ParameterValue Name="AO00" Value="''" />
+            <ParameterValue Name="AO01" Value="''" />
+            <ParameterValue Name="AO00_Status" Value="''" />
+            <ParameterValue Name="AO01_Status" Value="''" />
+          </ParameterValues>
+          <MasterConfigFileName />
+          <PreviousItem>
+            <Name>TM3DI16_G_1</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items />
+        </ConfigurationBaseItem>
+        <ConfigurationBaseItem>
+          <Name>TM3DQ16T_G</Name>
+          <ID>18C97C70FD4278A4</ID>
+          <Type>
+            <Name>TM3DQ16T_G</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ItemProperties>
+            <ItemProperty>
+              <Name>OptionalModule</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+          </ItemProperties>
+          <ParameterValues>
+            <ParameterValue Name="DO00" Value="''" />
+            <ParameterValue Name="DO01" Value="''" />
+            <ParameterValue Name="DO02" Value="''" />
+            <ParameterValue Name="DO03" Value="''" />
+            <ParameterValue Name="DO04" Value="''" />
+            <ParameterValue Name="DO05" Value="''" />
+            <ParameterValue Name="DO06" Value="''" />
+            <ParameterValue Name="DO07" Value="''" />
+            <ParameterValue Name="DO08" Value="''" />
+            <ParameterValue Name="DO09" Value="''" />
+            <ParameterValue Name="DO10" Value="''" />
+            <ParameterValue Name="DO11" Value="''" />
+            <ParameterValue Name="DO12" Value="''" />
+            <ParameterValue Name="DO13" Value="''" />
+            <ParameterValue Name="DO14" Value="''" />
+            <ParameterValue Name="DO15" Value="''" />
+          </ParameterValues>
+          <PreviousItem>
+            <Name>TM3AM6_G</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items />
+        </ConfigurationBaseItem>
+        <ConfigurationBaseItem>
+          <Name>TM3DQ32TK</Name>
+          <ID>FE0FA083014E9484</ID>
+          <Type>
+            <Name>TM3DQ32TK</Name>
+            <Namespace>SE.IoTMx</Namespace>
+          </Type>
+          <ItemProperties>
+            <ItemProperty>
+              <Name>OptionalModule</Name>
+              <Value xsi:type="xsd:unsignedByte">0</Value>
+            </ItemProperty>
+          </ItemProperties>
+          <ParameterValues>
+            <ParameterValue Name="DO00" Value="''" />
+            <ParameterValue Name="DO01" Value="''" />
+            <ParameterValue Name="DO02" Value="''" />
+            <ParameterValue Name="DO03" Value="''" />
+            <ParameterValue Name="DO04" Value="''" />
+            <ParameterValue Name="DO05" Value="''" />
+            <ParameterValue Name="DO06" Value="''" />
+            <ParameterValue Name="DO07" Value="''" />
+            <ParameterValue Name="DO08" Value="''" />
+            <ParameterValue Name="DO09" Value="''" />
+            <ParameterValue Name="DO10" Value="''" />
+            <ParameterValue Name="DO11" Value="''" />
+            <ParameterValue Name="DO12" Value="''" />
+            <ParameterValue Name="DO13" Value="''" />
+            <ParameterValue Name="DO14" Value="''" />
+            <ParameterValue Name="DO15" Value="''" />
+            <ParameterValue Name="DO16" Value="''" />
+            <ParameterValue Name="DO17" Value="''" />
+            <ParameterValue Name="DO18" Value="''" />
+            <ParameterValue Name="DO19" Value="''" />
+            <ParameterValue Name="DO20" Value="''" />
+            <ParameterValue Name="DO21" Value="''" />
+            <ParameterValue Name="DO22" Value="''" />
+            <ParameterValue Name="DO23" Value="''" />
+            <ParameterValue Name="DO24" Value="''" />
+            <ParameterValue Name="DO25" Value="''" />
+            <ParameterValue Name="DO26" Value="''" />
+            <ParameterValue Name="DO27" Value="''" />
+            <ParameterValue Name="DO28" Value="''" />
+            <ParameterValue Name="DO29" Value="''" />
+            <ParameterValue Name="DO30" Value="''" />
+            <ParameterValue Name="DO31" Value="''" />
+          </ParameterValues>
+          <PreviousItem>
+            <Name>TM3DQ16T_G</Name>
+            <PortName>BusOut</PortName>
+          </PreviousItem>
+          <Items />
+        </ConfigurationBaseItem>
+      </Items>
+    </ConfigurationBaseItem>
+  </DeviceHwConfigurationItem>
+</DeviceHwConfigurationItems>

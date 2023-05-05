@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE System SYSTEM "../LibraryElement.dtd">
+<System Name="System" Comment="System Configuration">
+  <Attribute Name="System.Device.FolderPath" Value="CourierIB,CheckpointIB1,M251" />
+  <Identification Standard="61499-1" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" />
+  <Application ID="9C129A166C2790CE" Name="APP1">
+    <SubAppNetwork>
+      <FB ID="C572B3FE51C06083" Name="Checkpoint1" Type="CHECKPOINT_CAT" x="1180" y="1040" Namespace="Main">
+        <Parameter Name="SD_ID" Value="'checkpoint_1'" />
+        <Parameter Name="mqtt_endpoint" Value="'192.168.8.1:1883'" />
+        <Parameter Name="order_data" Value="'product1.red.drill.bake.sort'" />
+      </FB>
+      <FB ID="6C927098A680CF2D" Name="Checkpoint2" Type="CHECKPOINT_CAT" x="1180" y="1640" Namespace="Main">
+        <Parameter Name="SD_ID" Value="'checkpoint_2'" />
+        <Parameter Name="mqtt_endpoint" Value="'192.168.8.1:1883'" />
+        <Parameter Name="order_data" Value="'product2.blue.bake.drill.sort'" />
+      </FB>
+      <FB ID="F5F4F764F78FC567" Name="Courier" Type="COURIER_CAT" x="2260" y="1380" Namespace="Main" />
+      <FB ID="7AE58CE596471883" Name="JustAnEmptyCAT" Type="PRODUCTION_SCHEDULER" x="3260" y="1380" Namespace="Main" />
+      <AdapterConnections>
+        <Connection Source="Courier.DataDownstream" Destination="JustAnEmptyCAT.OrderDataUpstream" />
+      </AdapterConnections>
+      <Frame Name="FRAME1" X="1080" Y="880" Width="1900" Height="2620">
+        <Parameter Name="BackgroundColor" Value="Plum" />
+        <Parameter Name="TextColor" Value="Black" />
+        <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+        <Parameter Name="TextAlignment" Value="TopLeft" />
+        <Parameter Name="MoveStyle" Value="AnyContained" />
+        <Parameter Name="Text" Value="Dynamic discovery here" />
+        <Parameter Name="NxtLayerIdentifier" Value="" />
+      </Frame>
+      <Frame Name="FRAME2" X="3120" Y="900" Width="1960" Height="2600">
+        <Parameter Name="BackgroundColor" Value="AliceBlue" />
+        <Parameter Name="TextColor" Value="Black" />
+        <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+        <Parameter Name="TextAlignment" Value="TopLeft" />
+        <Parameter Name="MoveStyle" Value="AnyContained" />
+        <Parameter Name="NxtLayerIdentifier" Value="" />
+      </Frame>
+      <Frame Name="COMMENT2" X="1180" Y="520" Width="1279.313" Height="220" IsComment="true">
+        <Parameter Name="BackgroundColor" Value="LemonChiffon" />
+        <Parameter Name="TextColor" Value="Black" />
+        <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+        <Parameter Name="TextAlignment" Value="TopCenter" />
+        <Parameter Name="MoveStyle" Value="None" />
+        <Parameter Name="Text" Value="In case it asks for a password somwhere, thy this:&#xD;&#xA;Login: admin&#xD;&#xA;Password: UAOadmin-" />
+        <Parameter Name="NxtLayerIdentifier" Value="" />
+      </Frame>
+      <Frame Name="COMMENT1" X="4120" Y="1000" Width="811.3018" Height="340" IsComment="true">
+        <Parameter Name="BackgroundColor" Value="LemonChiffon" />
+        <Parameter Name="TextColor" Value="Black" />
+        <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+        <Parameter Name="TextAlignment" Value="TopCenter" />
+        <Parameter Name="MoveStyle" Value="None" />
+        <Parameter Name="Text" Value="TODO&#xD;&#xA;&#xD;&#xA;place your control application here" />
+        <Parameter Name="NxtLayerIdentifier" Value="" />
+      </Frame>
+    </SubAppNetwork>
+  </Application>
+  <Device ID="b8d6a800-4123-4334-ac5b-ed67fabc9e0d" Name="CourierIB" Type="ECORT" x="542.4479" y="1280" Namespace="nxtControl.Standard">
+    <Resource ID="6A78331A0A575B8C" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="5B44B43444C22A16" Name="Courier" Type="COURIER_CAT" x="1400" y="1120" Namespace="Main" />
+        <FB ID="59FBA8E083D6D536" Name="FB5" Type="EVENTCHAINHEAD" x="980" y="220" Namespace="Runtime.Standard" Loaded="true">
+          <Parameter Name="NAME" Value="'INIT'" />
+        </FB>
+        <EventConnections>
+          <Connection Source="FB5.INITO" Destination="FB5.TRIGGER" dx1="41.875" dx2="70" dy="-110" />
+          <Connection Source="START.COLD" Destination="FB5.INIT" dx1="68.60419" />
+          <Connection Source="START.WARM" Destination="FB5.INIT" dx1="48.60419" />
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+  <Device ID="e9e9fd0d-3ec6-48af-a236-e62b4e987d7a" Name="CheckpointIB1" Type="ECORT" x="544.6666" y="1860" Namespace="nxtControl.Standard">
+    <Resource ID="852F57E5FD2EB994" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="64D10FBFE6DA0299" Name="Checkpoint1" Type="CHECKPOINT_CAT" x="1320" y="340" Namespace="Main">
+          <Parameter Name="SD_ID" Value="'checkpoint_1'" />
+          <Parameter Name="mqtt_endpoint" Value="'192.168.8.1:1883'" />
+          <Parameter Name="order_data" Value="'product1.red.drill.bake.sort'" />
+        </FB>
+        <EventConnections>
+          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" dx1="48.60425" />
+          <Connection Source="START.WARM" Destination="Checkpoint1.INIT" dx1="48.60425" />
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+  <Device ID="c71f5ea4-171a-40fc-9fea-83e4fe61f97c" Name="M251" Type="M251_dPAC" x="547.1146" y="3020" Namespace="SE.DPAC">
+    <Resource ID="CC17591F3619B5A0" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="A5FE0E2F95C965B2" Name="M251_HSCAction" Type="hscAction" x="2140" y="460" Namespace="SE.IoTMx" Loaded="true" />
+        <FB ID="B1EDD7D6E18D6172" UID="A5C9BFDE197A5DF2" Name="FB1" Type="SYMLINKMULTIVARSRC_1559B0FF8170C9BA0" x="3260" y="460" Namespace="Main" Loaded="true">
+          <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=1;VALUE${I}:BOOL" />
+          <Parameter Name="QI" Value="TRUE" />
+          <Parameter Name="NAME1" Value="'$${PATH}FEn'" />
+          <Parameter Name="VALUE1" Value="TRUE" />
+        </FB>
+        <FB ID="2C924BC8BA529D08" Name="FB2" Type="DPAC_FULLINIT" x="1040" y="480" Namespace="SE.DPAC" Loaded="true" />
+        <FB ID="876B93327C0BC7A3" Name="FB3" Type="EVENTCHAINHEAD" x="4040" y="320" Namespace="Runtime.Standard" Loaded="true">
+          <Parameter Name="NAME" Value="'INIT'" />
+        </FB>
+        <EventConnections>
+          <Connection Source="M251_HSCAction.INITO" Destination="FB1.INIT" />
+          <Connection Source="START.COLD" Destination="FB2.INIT" dx1="88.60419" />
+          <Connection Source="START.WARM" Destination="FB2.INIT" dx1="68.60419" />
+          <Connection Source="START.ONLINECHANGE" Destination="FB2.INIT" dx1="48.60419" />
+          <Connection Source="FB2.INITO" Destination="M251_HSCAction.INIT" dx1="40" />
+          <Connection Source="FB1.INITO" Destination="FB3.INIT" dx1="40" />
+          <Connection Source="FB3.INITO" Destination="FB3.TRIGGER" dx1="41.875" dx2="70" dy="-110" />
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+  <Mapping From="APP1.Courier" To="CourierIB.RES0" />
+  <Mapping From="APP1.Checkpoint1" To="CheckpointIB1.RES0" />
+</System>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="c4139984-4a42-4b53-af5e-b7ae2e496fb0" Name="DOUBLE_ACTING_CYLINDER_V2" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/29/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="atEnd" />
+        <With Var="atHome" />
+      </Event>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="atEnd" />
+        <With Var="atHome" />
+      </Event>
+      <Event Name="EXTEND" />
+      <Event Name="RETRACT" />
+      <Event Name="TIMEOUT" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="extend" />
+        <With Var="retract" />
+      </Event>
+      <Event Name="DONE" />
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="retract" />
+        <With Var="extend" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="atHome" Type="BOOL" Comment="Input event qualifier" />
+      <VarDeclaration Name="atEnd" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="extend" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="retract" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,STOP,extend,retract" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="604.9412" y="357.4117" />
+      <ECState Name="INIT" Comment="Initialization" x="1263.53" y="333.1765">
+        <ECAction Output="INITO" />
+        <ECAction Algorithm="retract" Output="CNF" />
+      </ECState>
+      <ECState Name="HOME" x="1560" y="788">
+        <ECAction Algorithm="STOP" Output="CNF" />
+        <ECAction Output="DONE" />
+      </ECState>
+      <ECState Name="EXTEND" x="2348" y="1696.001">
+        <ECAction Algorithm="extend" Output="CNF" />
+      </ECState>
+      <ECState Name="EXTENDED" x="1576" y="2328">
+        <ECAction Algorithm="STOP" Output="CNF" />
+        <ECAction Output="DONE" />
+      </ECState>
+      <ECState Name="RETRACT" x="676" y="1620">
+        <ECAction Algorithm="retract" Output="CNF" />
+      </ECState>
+      <ECState Name="TIMEOUT" x="1548" y="1592">
+        <ECAction Algorithm="STOP" Output="CNF" />
+      </ECState>
+      <ECState Name="RESET" x="1576" y="1172">
+        <ECAction Algorithm="retract" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="INIT" Condition="INIT" x="952.7577" y="258.8789">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="219.9888,61.82288,256.39,60.48337" />
+      </ECTransition>
+      <ECTransition Source="INIT" Destination="HOME" Condition="atHome" x="1471.969" y="545.6701">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="361.2379,120.5117,380.3694,149.837" />
+      </ECTransition>
+      <ECTransition Source="HOME" Destination="EXTEND" Condition="EXTEND" x="2335.569" y="1154.906">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="583.8434,252.8202,635.4941,311.5381" />
+      </ECTransition>
+      <ECTransition Source="EXTEND" Destination="EXTENDED" Condition="atEnd" x="2321.616" y="2041.76">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="625.98,492.9597,576.7053,532.7379" />
+      </ECTransition>
+      <ECTransition Source="EXTENDED" Destination="RETRACT" Condition="RETRACT" x="801.3911" y="2117.228">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="211.5393,562.9138,151.3419,516.8547" />
+      </ECTransition>
+      <ECTransition Source="RETRACT" Destination="HOME" Condition="atHome" x="718.047" y="1090.806">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="124.0089,290.7459,180.2348,238.1458" />
+      </ECTransition>
+      <ECTransition Source="EXTEND" Destination="TIMEOUT" Condition="TIMEOUT" x="1922.379" y="1724.383">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="502.8199,437.3268,457.5957,432.0128" />
+      </ECTransition>
+      <ECTransition Source="RETRACT" Destination="TIMEOUT" Condition="TIMEOUT" x="1112.753" y="1513.167">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="255.4633,376.1151,300.544,373.0658" />
+      </ECTransition>
+      <ECTransition Source="EXTENDED" Destination="TIMEOUT" Condition="TIMEOUT" x="1575.413" y="1964.802">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="395.9047,517.9341,393.4887,465.2671" />
+      </ECTransition>
+      <ECTransition Source="TIMEOUT" Destination="RESET" Condition="TIMEOUT" x="1617.801" y="1387.395">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="406.2574,360.4753,408.2091,334.1212" />
+      </ECTransition>
+      <ECTransition Source="RESET" Destination="HOME" Condition="atHome" x="1551.687" y="992.0516">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="387.6443,260.6682,386.6916,237.3662" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text=";" />
+    </Algorithm>
+    <Algorithm Name="STOP" Comment="Normally executed algorithm">
+      <ST Text="&#xD;&#xA;extend:=FALSE;&#xD;&#xA;retract:=FALSE;&#xD;&#xA;" />
+    </Algorithm>
+    <Algorithm Name="extend">
+      <ST Text=";&#xD;&#xA;extend:=TRUE;&#xD;&#xA;retract:=FALSE;&#xD;&#xA;" />
+    </Algorithm>
+    <Algorithm Name="retract">
+      <ST Text=";&#xD;&#xA;retract:=TRUE;&#xD;&#xA;extend:=FALSE;&#xD;&#xA;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

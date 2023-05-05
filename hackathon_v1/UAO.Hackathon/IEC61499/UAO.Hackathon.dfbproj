@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{A26DB02F-239E-448F-861B-D55384B760CC}</ProjectGuid>
+    <ProjectTypeGuids>{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Windows</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UAO.Hackathon</RootNamespace>
+    <AssemblyName>UAO.Hackathon</AssemblyName>
+    <NxtVersion>22.0.0.0</NxtVersion>
+    <CheckConnectionsStrictly>TRUE</CheckConnectionsStrictly>
+    <ProjectType>IEC61499</ProjectType>
+    <CheckGenericInstances>False</CheckGenericInstances>
+    <ConvertStringValues>False</ConvertStringValues>
+    <HMIProject>UAO.Hackathon.HMI</HMIProject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' " />
+  <PropertyGroup Condition=" '$(Platform)' == 'Windows' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows' ">
+    <Version>1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT.cfg">
+      <DependentUpon>CHECKPOINT_DISCOVERY_CAT.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="COLOR_DETECTOR.doc.xml">
+      <DependentUpon>COLOR_DETECTOR.fbt</DependentUpon>
+    </None>
+    <None Include="CONVEYOR_WITH_COUNTER.doc.xml">
+      <DependentUpon>CONVEYOR_WITH_COUNTER.fbt</DependentUpon>
+    </None>
+    <None Include="DO_ACTION.doc.xml">
+      <DependentUpon>DO_ACTION.fbt</DependentUpon>
+    </None>
+    <None Include="ENCODER_AXIS_SINGLE_PHASE.doc.xml">
+      <DependentUpon>ENCODER_AXIS_SINGLE_PHASE.fbt</DependentUpon>
+    </None>
+    <None Include="INSTRUCTION_EXTRACTOR.doc.xml">
+      <DependentUpon>INSTRUCTION_EXTRACTOR.fbt</DependentUpon>
+    </None>
+    <None Include="POSITION_MONITOR_V2.doc.xml">
+      <DependentUpon>POSITION_MONITOR_V2.fbt</DependentUpon>
+    </None>
+    <None Include="Project.doc.xml" />
+    <None Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default\UAO.Hackathon.snapshot" />
+    <None Include="SORTER_GET_COLOR.doc.xml">
+      <DependentUpon>SORTER_GET_COLOR.fbt</DependentUpon>
+    </None>
+    <None Include="SORTER_SAMPLE_COLOR.doc.xml">
+      <DependentUpon>SORTER_SAMPLE_COLOR.fbt</DependentUpon>
+    </None>
+    <None Include="TWO_POS_AXIS.doc.xml">
+      <DependentUpon>TWO_POS_AXIS.fbt</DependentUpon>
+    </None>
+    <None Include="UAO.Hackathon.iecproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration" />
+    <Folder Include="License" />
+    <Folder Include="Log" />
+    <Folder Include="SnapshotCompiles" />
+    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}" />
+    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADD_REMOVE_SLASH.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="ADPI_PRODUCTION_SERVICE.adp">
+      <IEC61499Type>Adapter</IEC61499Type>
+    </Compile>
+    <Compile Include="ADP_INDICATION.adp">
+      <IEC61499Type>Adapter</IEC61499Type>
+    </Compile>
+    <Compile Include="ADP_ORDER_DATA.adp">
+      <IEC61499Type>Adapter</IEC61499Type>
+    </Compile>
+    <Compile Include="ADP_PRODUCTION_TOKEN.adp">
+      <IEC61499Type>Adapter</IEC61499Type>
+    </Compile>
+    <Compile Include="ADP_SERVICE_INFO.adp">
+      <IEC61499Type>Adapter</IEC61499Type>
+    </Compile>
+    <Compile Include="BASIC_STORAGE_DINT.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="CHECKPOINT_DATA_GENERATOR.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService.Internals</Parent>
+    </Compile>
+    <Compile Include="CHECKPOINT_DATA_PUBLISHER.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService.Internals</Parent>
+    </Compile>
+    <Compile Include="CHECKPOINT_DATA_SUBSCRIBER.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService.Internals</Parent>
+    </Compile>
+    <Compile Include="CHECKPOINT_DISCOVERY.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService</Parent>
+    </Compile>
+    <Compile Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Parent>.RemoteService</Parent>
+    </Compile>
+    <Compile Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>CHECKPOINT_DISCOVERY_CAT.fbt</DependentUpon>
+      <HMI>..\HMI\CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="COARSE_MOVE_V2.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="COLOR_DETECTOR.fbt">
+      <Parent>.ComponentControl</Parent>
+      <IEC61499Type>Composite</IEC61499Type>
+    </Compile>
+    <Compile Include="CONVEYOR_WITH_COUNTER.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl</Parent>
+    </Compile>
+    <Compile Include="COURIER_DISCOVERY.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService</Parent>
+    </Compile>
+    <Compile Include="DATA_MERGE.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="DOUBLE_ACTING_CYLINDER_V2.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="DO_2ACTION.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.Misc</Parent>
+    </Compile>
+    <Compile Include="DO_ACTION.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.Misc</Parent>
+    </Compile>
+    <Compile Include="ENCODER_AXIS_SINGLE_PHASE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl</Parent>
+    </Compile>
+    <Compile Include="E_UCNTR.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="INSTRUCTION_EXTRACTOR.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.Misc</Parent>
+    </Compile>
+    <Compile Include="INSTRUCTION_EXTRACTOR_BASIC.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.Misc</Parent>
+    </Compile>
+    <Compile Include="MOTOR_DRIVER_SIMPLE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="ORDER_DATA_STORAGE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService.Internals</Parent>
+    </Compile>
+    <Compile Include="POSITION_MONITOR_V2.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="REAL_MIN.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="SENSOR_DRIVER_SINGLE_PHASE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="SERVICE_INFO_JSON_DESERIALIZE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService.Internals</Parent>
+    </Compile>
+    <Compile Include="SERVICE_INFO_JSON_SERIALIZE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.RemoteService.Internals</Parent>
+    </Compile>
+    <Compile Include="SHARED_COMPRESSOR.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl</Parent>
+    </Compile>
+    <Compile Include="SHARED_SWITCH.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="SIMPLE_INIT.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="SORTER_GET_COLOR.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="SORTER_SAMPLE_COLOR.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="STEPPER.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+      <Parent>.ComponentControl.Internals</Parent>
+    </Compile>
+    <Compile Include="TWO_POS_AXIS.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl</Parent>
+    </Compile>
+    <Compile Include="TWO_POS_CONVEYOR_TRANSPORT.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl</Parent>
+    </Compile>
+    <Compile Include="VACUUM_CONTROL.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+      <Parent>.ComponentControl</Parent>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nxtControl.AvahiXMPP">
+      <Version>22.0.0.0</Version>
+    </Reference>
+    <Reference Include="nxtControl.CommProtocols">
+      <Version>22.0.0.0</Version>
+    </Reference>
+    <Reference Include="Runtime.Base">
+      <Version>22.0.0.15</Version>
+    </Reference>
+    <Reference Include="SE.HwCommon">
+      <Version>22.0.0.14</Version>
+    </Reference>
+    <Reference Include="SE.IoTMx">
+      <Version>22.0.0.15</Version>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT_CAT.offline.xml">
+      <DependentUpon>CHECKPOINT_DISCOVERY_CAT.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT_CAT.opcua.xml">
+      <DependentUpon>CHECKPOINT_DISCOVERY_CAT.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT_HMI.offline.xml">
+      <DependentUpon>CHECKPOINT_DISCOVERY_CAT.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="CHECKPOINT_DISCOVERY_CAT\CHECKPOINT_DISCOVERY_CAT_HMI.opcua.xml">
+      <DependentUpon>CHECKPOINT_DISCOVERY_CAT.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(SharpDevelopBinPath)\NxtControl.Build.61499.Targets" />
+</Project>

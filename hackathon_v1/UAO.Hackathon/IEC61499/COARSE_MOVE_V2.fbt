@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="0f4a4713-c1d5-403e-ac34-d8ade62ccc76" Name="COARSE_MOVE_V2" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/28/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="TRIGGER" Comment="Normal Execution Request">
+        <With Var="setpoint" />
+        <With Var="threshold" />
+        <With Var="position" />
+        <With Var="refSwitch" />
+      </Event>
+      <Event Name="REQ">
+        <With Var="position" />
+        <With Var="refSwitch" />
+      </Event>
+      <Event Name="HOME" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="DONE" Comment="Execution Confirmation" />
+      <Event Name="MOVE_FORWARD" />
+      <Event Name="MOVE_BACKWARD" />
+      <Event Name="STOP" />
+      <Event Name="FORCE_RESET" Comment="Force position monitor reset" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="position" Type="DINT" />
+      <VarDeclaration Name="setpoint" Type="DINT" />
+      <VarDeclaration Name="threshold" Type="DINT" />
+      <VarDeclaration Name="refSwitch" Type="BOOL" />
+    </InputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,REQ" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="1976.941" y="413.4117" />
+      <ECState Name="READY" x="1992" y="828" />
+      <ECState Name="FWD" x="3184" y="988">
+        <ECAction Output="MOVE_FORWARD" />
+      </ECState>
+      <ECState Name="BWD" x="860" y="1068">
+        <ECAction Output="MOVE_BACKWARD" />
+      </ECState>
+      <ECState Name="DONE" x="2236" y="1784">
+        <ECAction Output="STOP" />
+        <ECAction Output="DONE" />
+      </ECState>
+      <ECState Name="HOME" x="1884" y="2256">
+        <ECAction Output="DONE" />
+        <ECAction Output="FORCE_RESET" />
+      </ECState>
+      <ECState Name="MOVE_HOME" x="424" y="1352">
+        <ECAction Output="MOVE_BACKWARD" />
+      </ECState>
+      <ECTransition Source="MOVE_HOME" Destination="HOME" Condition="refSwitch" x="890.3742" y="2159.818">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="164.371,541.4742,245.7977,592.1196" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="READY" Condition="1" x="2061.218" y="602.587">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="517.7769,136.1841,520.3419,162.0896" />
+      </ECTransition>
+      <ECTransition Source="READY" Destination="FWD" Condition="TRIGGER AND position &lt; setpoint - threshold" x="2612.358" y="835.6569">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="614.64,199.5579,693.0019,210" />
+      </ECTransition>
+      <ECTransition Source="FWD" Destination="DONE" Condition="REQ AND (position &gt;= setpoint - threshold)" x="2765.957" y="1432.585">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="727.8821,333.2933,659.9111,390.7633" />
+      </ECTransition>
+      <ECTransition Source="DONE" Destination="READY" Condition="1" x="1787.258" y="1348.981">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="434.75,376.7622,415.8738,304.8918" />
+      </ECTransition>
+      <ECTransition Source="READY" Destination="BWD" Condition="TRIGGER AND (position &gt; setpoint + threshold) AND setpoint &gt; 0" x="1365.194" y="814.8896">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="376.0869,187.7865,301.5943,203.58" />
+      </ECTransition>
+      <ECTransition Source="BWD" Destination="DONE" Condition="REQ AND (position &lt;= setpoint + threshold)" x="1459.02" y="1458.609">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="309.6714,340.7517,409.3469,393.1427" />
+      </ECTransition>
+      <ECTransition Source="READY" Destination="DONE" Condition="TRIGGER AND (position &gt;= setpoint - threshold) AND (position &lt;= setpoint + threshold)" x="2286.349" y="1231.91">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="573.4746,266.3185,591.5882,337.2881" />
+      </ECTransition>
+      <ECTransition Source="BWD" Destination="HOME" Condition="refSwitch" x="1185.3" y="1760.779">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="245.9019,403.275,323.7388,493.5779" />
+      </ECTransition>
+      <ECTransition Source="HOME" Destination="READY" Condition="1" x="1923.444" y="1790.782">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="473.5799,523.3303,485.6992,413.5246" />
+      </ECTransition>
+      <ECTransition Source="READY" Destination="MOVE_HOME" Condition="TRIGGER AND setpoint=0" x="849.285" y="609.1182">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="248.7502,98.32947,125.6597,134.7798" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text=";" />
+    </Algorithm>
+    <Algorithm Name="REQ" Comment="Normally executed algorithm">
+      <ST Text=";" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

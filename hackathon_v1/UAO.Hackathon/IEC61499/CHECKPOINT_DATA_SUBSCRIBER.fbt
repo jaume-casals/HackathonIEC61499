@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="323d5a30-9012-4cc7-88e3-04beccbf5361" Name="CHECKPOINT_DATA_SUBSCRIBER" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="18" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventOutputs>
+      <Event Name="REQ_SENT" />
+      <Event Name="DATA_RECEIVED">
+        <With Var="RecPayload1" />
+      </Event>
+    </EventOutputs>
+    <OutputVars>
+      <VarDeclaration Name="RecPayload1" Type="STRING" />
+    </OutputVars>
+    <Sockets>
+      <AdapterDeclaration ID="2" Name="ServiceInfo" Type="ADP_SERVICE_INFO" Namespace="UAO.Hackathon" x="520" y="500" />
+    </Sockets>
+    <Plugs>
+      <AdapterDeclaration Name="Data" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" x="7240" y="1040" />
+      <AdapterDeclaration ID="17" Name="blinker" Type="ADP_INDICATION" Namespace="UAO.Hackathon" x="2800" y="2200" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="4" Name="connection" Type="MQTT_CONNECTION" x="2240" y="560" Namespace="nxtControl.CommProtocols">
+      <Parameter Name="Username" Value="''" />
+      <Parameter Name="Password" Value="''" />
+      <Parameter Name="CleanSession" Value="TRUE" />
+      <Parameter Name="KeepAlive" Value="T#0ms" />
+      <Parameter Name="WillTopic" Value="''" />
+      <Parameter Name="WillMsg" Value="''" />
+      <Parameter Name="Certificate" Value="''" />
+      <Parameter Name="CACertFile" Value="''" />
+      <Parameter Name="CertificateKey" Value="''" />
+    </FB>
+    <FB ID="5" Name="response_subscriber" Type="MQTTSUBSCRIBE_73D9883955B65591" x="4360" y="560" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="nxtControl.CommProtocols#CNTX:=1" />
+      <Parameter Name="RootPath" Value="''" />
+      <Parameter Name="QOS1" Value="0" />
+    </FB>
+    <FB ID="7" UID="6" Name="FB4" Type="JSON_PARSER_2442D0DD1B0E13218" x="6100" y="620" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Base#CNT:=2;valueOut${CNT}:STRING,STRING" />
+      <Parameter Name="pathIn1" Value="'order.SD_ID'" />
+      <Parameter Name="pathIn2" Value="'order.data'" />
+    </FB>
+    <FB ID="9" Name="request_publisher" Type="MQTTPUBLISH_73D9883955B65591" x="3180" y="560" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="nxtControl.CommProtocols#CNTX:=1" />
+      <Parameter Name="QOS1" Value="0" />
+      <Parameter Name="IsRetain1" Value="TRUE" />
+      <Parameter Name="Payload1" Value="'GET'" />
+    </FB>
+    <FB ID="16" UID="14" Name="start_stop_select" Type="DS_SELECTX_2536758B411A6CE51" x="1460" y="500" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNTX:=2;CNTY:=1;DI${CNTX,_,CNTY}:BOOL" />
+      <Parameter Name="DI1_1" Value="TRUE" />
+      <Parameter Name="DI2_1" Value="FALSE" />
+    </FB>
+    <FB ID="15" Name="FB5" Type="E_PERMIT" x="5240" y="340" Namespace="IEC61499.Standard" />
+    <Output Name="REQ_SENT" x="4696.25" y="1952" Type="Event" />
+    <Output Name="DATA_RECEIVED" x="4693.75" y="2072" Type="Event" />
+    <Output Name="RecPayload1" x="4700" y="2212" Type="Data" />
+    <EventConnections>
+      <Connection Source="response_subscriber.TOPICINDEX1" Destination="FB4.LOAD" dx1="916.7295">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB4.LOAD_CNF" Destination="FB4.PARSE" dx1="68.146" dx2="60" dy="-170">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB4.PARSE_CNF" Destination="Data.UPD" dx1="80" />
+      <Connection Source="response_subscriber.SUBSRIBEO" Destination="FB4.SET_PATH">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="connection.INITO" Destination="request_publisher.INIT" />
+      <Connection Source="request_publisher.INITO" Destination="response_subscriber.INIT" />
+      <Connection Source="response_subscriber.INTO" Destination="FB5.EI" dx1="50" />
+      <Connection Source="FB5.EO" Destination="response_subscriber.SUBSCRIBE" dx1="47.1665" dx2="70" dy="-110" />
+      <Connection Source="ServiceInfo.UPD" Destination="start_stop_select.REQ1">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="start_stop_select.CNF1" Destination="connection.INIT" />
+      <Connection Source="start_stop_select.CNF2" Destination="connection.INIT" dx1="70" />
+      <Connection Source="FB4.SET_PATH_CNF" Destination="request_publisher.PUBLISH1" dx1="120" dx2="70" dy="-440">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB4.PARSE_CNF" Destination="start_stop_select.REQ2" dx1="288.146" dx2="70" dy="-660">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.UPD" Destination="blinker.START" dx1="125.9584" />
+      <Connection Source="FB4.PARSE_CNF" Destination="blinker.STOP" dx1="80" dx2="70" dy="830" />
+      <Connection Source="request_publisher.PUBLISHO1" Destination="REQ_SENT" dx1="60" />
+      <Connection Source="response_subscriber.TOPICINDEX1" Destination="DATA_RECEIVED" dx1="86.72949" dx2="43.75" dy="530" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="ServiceInfo.mqtt_endpoint" Destination="connection.URL">
+        <Points>
+          <Points>
+            <X>251.0104</X>
+            <Y>200</Y>
+          </Points>
+          <Points>
+            <X>280</X>
+            <Y>200</Y>
+          </Points>
+          <Points>
+            <X>280</X>
+            <Y>270</Y>
+          </Points>
+          <Points>
+            <X>467.5</X>
+            <Y>270</Y>
+          </Points>
+          <Points>
+            <X>467.5</X>
+            <Y>245</Y>
+          </Points>
+          <Points>
+            <X>555</X>
+            <Y>245</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.SD_ID" Destination="connection.ConnectionID">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.SD_ID" Destination="response_subscriber.ConnectionID">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="response_subscriber.RecPayload1" Destination="FB4.payload" dx1="656.7295">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB4.valueOut1" Destination="Data.SD_ID" dx1="60" />
+      <Connection Source="FB4.valueOut2" Destination="Data.order_data" />
+      <Connection Source="response_subscriber.QO" Destination="FB5.PERMIT" dx1="116.7295">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="start_stop_select.OUT1" Destination="connection.QI" />
+      <Connection Source="connection.QO" Destination="request_publisher.QI" dx1="285.6042">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="request_publisher.QO" Destination="response_subscriber.QI" />
+      <Connection Source="ServiceInfo.request_topic" Destination="request_publisher.Topic1">
+        <Points>
+          <Points>
+            <X>251.0104</X>
+            <Y>215</Y>
+          </Points>
+          <Points>
+            <X>270</X>
+            <Y>215</Y>
+          </Points>
+          <Points>
+            <X>270</X>
+            <Y>425</Y>
+          </Points>
+          <Points>
+            <X>735</X>
+            <Y>425</Y>
+          </Points>
+          <Points>
+            <X>735</X>
+            <Y>320</Y>
+          </Points>
+          <Points>
+            <X>790</X>
+            <Y>320</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.response_topic" Destination="response_subscriber.Topic1">
+        <Points>
+          <Points>
+            <X>251.0104</X>
+            <Y>230</Y>
+          </Points>
+          <Points>
+            <X>260</X>
+            <Y>230</Y>
+          </Points>
+          <Points>
+            <X>260</X>
+            <Y>455</Y>
+          </Points>
+          <Points>
+            <X>1070</X>
+            <Y>455</Y>
+          </Points>
+          <Points>
+            <X>1070</X>
+            <Y>305</Y>
+          </Points>
+          <Points>
+            <X>1085</X>
+            <Y>305</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.SD_ID" Destination="request_publisher.ConnectionID">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="response_subscriber.RecPayload1" Destination="RecPayload1" dx1="46.72949" dx2="30" dy="150" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

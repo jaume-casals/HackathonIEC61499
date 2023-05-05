@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="64f209f3-1754-48fa-a630-435e0894fb8b" Name="INSTRUCTION_EXTRACTOR_BASIC" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="input" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="tail" />
+        <With Var="instruction" />
+        <With Var="parameter" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="input" Type="STRING[255]" Comment="Input event qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="instruction" Type="STRING[255]" />
+      <VarDeclaration Name="parameter" Type="STRING[15]" />
+      <VarDeclaration Name="tail" Type="STRING[255]" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="REQ" />
+    <InternalVars>
+      <VarDeclaration Name="p" Type="DINT" />
+      <VarDeclaration Name="tmp" Type="STRING[255]" />
+    </InternalVars>
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="552.9412" y="429.4117" />
+      <ECState Name="REQ" Comment="Normal execution" x="1077.647" y="788.9412">
+        <ECAction Algorithm="REQ" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="REQ" Condition="REQ" x="869.5955" y="544.2324">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="202.4381,121.0391,233.4709,142.3028" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="START" Condition="1" x="808.3276" y="688.3802">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="219.3399,187.926,188.3071,166.6622" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="REQ" Comment="Normally executed algorithm">
+      <ST Text=";&#xD;&#xA;p := FIND(input, '.');&#xD;&#xA;IF p &gt; 0 THEN&#xD;&#xA;	tmp := LEFT(input, p-1);&#xD;&#xA;	tail := DELETE(input, p, 1);&#xD;&#xA;ELSE&#xD;&#xA;	tmp := input;&#xD;&#xA;	tail := '';&#xD;&#xA;END_IF;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;p:= FIND(tmp, '+');&#xD;&#xA;IF p &gt; 0 THEN&#xD;&#xA;	instruction := LEFT(tmp, p-1);&#xD;&#xA;	parameter := DELETE(tmp, p, 1);&#xD;&#xA;ELSE&#xD;&#xA;	instruction := tmp;&#xD;&#xA;	parameter := '';&#xD;&#xA;END_IF;&#xD;&#xA;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

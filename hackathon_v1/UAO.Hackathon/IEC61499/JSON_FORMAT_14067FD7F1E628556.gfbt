@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="JSON_FORMAT_14067FD7F1E628556" Comment="Generic Interface Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.FBType.ImplementingType" Value="Runtime.Standard#DYNGEN_JSON_FORMAT" />
+  <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Base#CNT:=2;value${CNT}:STRING,STRING" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Schneider Electric" Version="0.0" Author="SESA471728" Date="30/03/2021" Remarks="Template" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="SET_FORMAT" Comment="Execute verification of the format">
+        <With Var="format" />
+      </Event>
+      <Event Name="REQ" Comment="Execution process">
+        <With Var="value1" />
+        <With Var="value2" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="SET_FORMAT_CNF" Comment="SET_FORMAT confirmation">
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="CNF" Comment="Execution confirmation">
+        <With Var="STATUS" />
+        <With Var="payload" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="format" Type="STRING" Comment="JSON format" />
+      <VarDeclaration Name="value1" Type="STRING" Comment="Value" />
+      <VarDeclaration Name="value2" Type="STRING" Comment="Value" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="STATUS" Type="STRING" Comment="Status" />
+      <VarDeclaration Name="payload" Type="STRING" Comment="JSON payload" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Name="START" />
+    </ECC>
+  </BasicFB>
+</FBType>

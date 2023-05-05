@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="0ad90ef9-c9df-4f5d-a2a6-8b8973c9925c" Name="BASIC_STORAGE_DINT" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/30/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="RESET" Comment="Reset output to presetValue">
+        <With Var="presetValue" />
+      </Event>
+      <Event Name="UPDATE" Comment="Set output value to newValue">
+        <With Var="newValue" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="RESETO" Comment="Reset confirnmation">
+        <With Var="value" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="value" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="presetValue" Type="DINT" Comment="Reset value" />
+      <VarDeclaration Name="newValue" Type="DINT" Comment="New value to capture on UPDATE" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="value" Type="DINT" Comment="Output value" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,REQ" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="552.9412" y="429.4117" />
+      <ECState Name="RESET" Comment="Initialization" x="1183.529" y="197.1765">
+        <ECAction Algorithm="INIT" Output="RESETO" />
+      </ECState>
+      <ECState Name="UPDATE" Comment="Normal execution" x="217.647" y="752.9412">
+        <ECAction Algorithm="REQ" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="RESET" Condition="RESET" x="859.8505" y="231.5706">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="201.4436,59.07436,232.2997,47.71056" />
+      </ECTransition>
+      <ECTransition Source="RESET" Destination="START" Condition="1" x="902.124" y="390.4433">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="240.9395,96.1702,210.0834,107.534" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="UPDATE" Condition="UPDATE" x="454.146" y="646.6512">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="123.1467,156.6527,104.2188,174.9165" />
+      </ECTransition>
+      <ECTransition Source="UPDATE" Destination="START" Condition="1" x="372.8767" y="512.7991" />
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text=";&#xD;&#xA;value:=presetValue;" />
+    </Algorithm>
+    <Algorithm Name="REQ" Comment="Normally executed algorithm">
+      <ST Text=";&#xD;&#xA;value:=newValue;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

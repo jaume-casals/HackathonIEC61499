@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="69ed0092-48ae-4ab5-8006-2e0b5c9469ed" Name="STEPPER" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/28/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="TRIGGER" Comment="Start stepping towards the setpoint">
+        <With Var="position" />
+        <With Var="setpoint" />
+        <With Var="backwardFlag" />
+      </Event>
+      <Event Name="REQ" Comment="Update values">
+        <With Var="position" />
+        <With Var="backwardFlag" />
+      </Event>
+      <Event Name="STEP_TIMEOUT" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="DONE" Comment="Movement complete" />
+      <Event Name="START_STEP_TIMEOUT" />
+      <Event Name="MOVE_FORWARD" />
+      <Event Name="MOVE_BACKWARD" />
+      <Event Name="STOP" />
+      <Event Name="UPDATE_POSITION" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="setpoint" Type="DINT" Comment="Target position" />
+      <VarDeclaration Name="position" Type="DINT" Comment="current position" />
+      <VarDeclaration Name="backwardFlag" Type="BOOL" />
+    </InputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="2528.941" y="389.412" />
+      <ECState Name="READY" x="2524" y="852.0002" />
+      <ECState Name="FWD" x="3724" y="676.0002">
+        <ECAction Output="STOP" />
+        <ECAction Output="UPDATE_POSITION" />
+      </ECState>
+      <ECState Name="STEP_FWD" x="4236" y="1252">
+        <ECAction Output="START_STEP_TIMEOUT" />
+        <ECAction Output="MOVE_FORWARD" />
+      </ECState>
+      <ECState Name="DONE" x="2588" y="1356">
+        <ECAction Output="DONE" />
+        <ECAction Output="UPDATE_POSITION" />
+      </ECState>
+      <ECState Name="BWD" x="1452" y="640.0001">
+        <ECAction Output="STOP" />
+        <ECAction Output="UPDATE_POSITION" />
+      </ECState>
+      <ECState Name="STEP_BWD" x="1000" y="1292">
+        <ECAction Output="START_STEP_TIMEOUT" />
+        <ECAction Output="MOVE_BACKWARD" />
+      </ECState>
+      <ECTransition Source="START" Destination="READY" Condition="1" x="2601.669" y="610.8033">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="654.2036,138.7207,654.7057,165.0305" />
+      </ECTransition>
+      <ECTransition Source="FWD" Destination="STEP_FWD" Condition="REQ AND position &lt; setpoint" x="4155.972" y="943.5492">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="1037.917,221.5173,1060.724,246.9928" />
+      </ECTransition>
+      <ECTransition Source="STEP_FWD" Destination="FWD" Condition="STEP_TIMEOUT" x="3805.871" y="1028.411">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="958.971,279.4708,928.0819,245.4701" />
+      </ECTransition>
+      <ECTransition Source="DONE" Destination="READY" Condition="1" x="2491.666" y="1109.091">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="621.3469,294.3626,617.4862,261.0316" />
+      </ECTransition>
+      <ECTransition Source="FWD" Destination="DONE" Condition="REQ AND position &gt;= setpoint" x="3189.709" y="1082.571">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="836.9315,252.5148,758.5193,299.0692" />
+      </ECTransition>
+      <ECTransition Source="READY" Destination="FWD" Condition="TRIGGER AND (NOT backwardFlag)" x="3102.314" y="559.0121">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="734.3331,132.8246,816.1647,120.4818" />
+      </ECTransition>
+      <ECTransition Source="READY" Destination="BWD" Condition="TRIGGER AND backwardFlag" x="2012.935" y="513.8589">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="537.948,120.3396,468.4552,106.5967" />
+      </ECTransition>
+      <ECTransition Source="BWD" Destination="STEP_BWD" Condition="REQ AND position &gt; setpoint" x="990.9824" y="893.0957">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="249.1958,194.4855,217.5447,241.6285" />
+      </ECTransition>
+      <ECTransition Source="STEP_BWD" Destination="BWD" Condition="STEP_TIMEOUT" x="1336.625" y="986.9612">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="324.9507,271.3023,355.9607,225.6718" />
+      </ECTransition>
+      <ECTransition Source="BWD" Destination="DONE" Condition="REQ AND position &lt;= setpoint" x="2010.122" y="1068.416">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="463.7245,247.2864,544.5925,298.256" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text=";" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

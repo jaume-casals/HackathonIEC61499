@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="5b3ebe2d-dbe3-4e92-be40-6c4f25c8579a" Name="DO_2ACTION" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="2/8/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="S" Comment="Action start" />
+      <Event Name="OK_1" Comment="Action done" />
+      <Event Name="OK_2" />
+      <Event Name="NOK_1" />
+      <Event Name="NOK_2" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="S_O" />
+      <Event Name="OK_O" />
+      <Event Name="NOK1_O" />
+      <Event Name="NOK2_O" />
+    </EventOutputs>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="372.9408" y="1325.411" />
+      <ECState Name="S" x="1020" y="1328">
+        <ECAction Output="S_O" />
+      </ECState>
+      <ECState Name="OK_1" x="2112" y="1092" />
+      <ECState Name="NOK_1" x="2216" y="2148">
+        <ECAction Output="NOK1_O" />
+      </ECState>
+      <ECState Name="DONE" x="3172" y="1312">
+        <ECAction Output="OK_O" />
+      </ECState>
+      <ECState Name="OK_2" x="2208" y="1592" />
+      <ECState Name="NOK_2" x="2060" y="695.9999">
+        <ECAction Output="NOK2_O" />
+      </ECState>
+      <ECTransition Source="START" Destination="S" Condition="S" x="719.006" y="1327.849">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="159.9471,331.8769,197.6945,331.9813" />
+      </ECTransition>
+      <ECTransition Source="S" Destination="NOK_1" Condition="NOK_1" x="1493.893" y="1857.918">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="323.3491,443.7198,411.0432,503.4075" />
+      </ECTransition>
+      <ECTransition Source="NOK_1" Destination="START" Condition="1" x="1309.783" y="2343.735">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="397.5961,662.7362,262.5807,601.6058" />
+      </ECTransition>
+      <ECTransition Source="S" Destination="OK_1" Condition="OK_1" x="1551.864" y="1136.562">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="350.5349,287.7321,427.0472,271.0555" />
+      </ECTransition>
+      <ECTransition Source="DONE" Destination="START" Condition="1" x="1925.075" y="75.16579">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="595.8865,-80.59134,391.0376,-80.38538" />
+      </ECTransition>
+      <ECTransition Source="OK_1" Destination="DONE" Condition="OK_2" x="2623.331" y="1123.387">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="624.1783,270.6388,685.1234,282.5779" />
+      </ECTransition>
+      <ECTransition Source="S" Destination="OK_2" Condition="OK_2" x="1601.03" y="1514.31">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="361.3897,373.0664,440.9696,391.669" />
+      </ECTransition>
+      <ECTransition Source="OK_2" Destination="DONE" Condition="OK_1" x="2786.803" y="1497.707">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="674.8715,384.7863,732.1027,368.3274" />
+      </ECTransition>
+      <ECTransition Source="OK_2" Destination="NOK_1" Condition="NOK_1" x="2251.737" y="1851.537">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="564.8517,442.5502,565.5052,480.1414" />
+      </ECTransition>
+      <ECTransition Source="S" Destination="NOK_2" Condition="NOK_2" x="1522.245" y="941.5226">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="344.8441,252.4024,419.1883,207.224" />
+      </ECTransition>
+      <ECTransition Source="OK_1" Destination="NOK_2" Condition="NOK_2" x="2132.95" y="917.3333">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="537.1586,243.4292,533.9672,219.1263" />
+      </ECTransition>
+      <ECTransition Source="NOK_2" Destination="START" Condition="1" x="1607.477" y="447.4848">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="491.8293,47.08127,372.8027,91.488" />
+      </ECTransition>
+    </ECC>
+  </BasicFB>
+</FBType>

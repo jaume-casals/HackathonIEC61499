@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <author>
+       <personname>
+          <firstname>Dmitrii</firstname>
+          <surname>Drozdov</surname>
+       </personname>
+       <email>dd@flexbridge.se</email>
+    </author>
+    <abstract><wysiwyg_a><p>Color detection for sorting station.</p><p>Color values defined internally as constants. Calibrate if necessary.</p><p /><p>
+  </p></wysiwyg_a></abstract>
+  </info>
+<wysiwyg><p>The sensor is measuring value continuously, to avoid misfiring when the workpiece is missing or positioned incorrectly inside the chamber, actual color indexing is done only between <em>START</em> and <em>STOP</em> events. </p><p /><p>
+  </p></wysiwyg></section>
+

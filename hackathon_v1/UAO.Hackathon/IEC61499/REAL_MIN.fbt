@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="7794eeed-e3ac-4335-99bc-5026722fe67d" Name="REAL_MIN" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="1/27/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="in1" />
+        <With Var="in2" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="min_out" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="in1" Type="REAL" Comment="Input event qualifier" />
+      <VarDeclaration Name="in2" Type="REAL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="min_out" Type="REAL" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="REQ" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="240.9412" y="269.4117" />
+      <ECState Name="REQ" Comment="Normal execution" x="893.647" y="268.9412">
+        <ECAction Algorithm="REQ" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="REQ" Condition="REQ" x="582.1053" y="183.0109">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="127.8801,42.30416,163.1726,42.27872" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="START" Condition="1" x="582.1053" y="355.3207">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="163.1726,92.27872,127.8801,92.30417" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="REQ" Comment="Normally executed algorithm">
+      <ST Text="min_out := MIN(in1, in2);" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

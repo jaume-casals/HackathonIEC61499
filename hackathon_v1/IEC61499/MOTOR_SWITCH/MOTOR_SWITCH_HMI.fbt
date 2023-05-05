@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="f9f09465-6daa-4a09-a3e0-aecc70eec862" Name="MOTOR_SWITCH_HMI" Comment="Service Interface Function Block Type" Namespace="Main">
+  <Attribute Name="Runtime.Persistence.Storage" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="1/16/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event ID="CF914A49D8F4E190" Name="INIT">
+        <With Var="QI" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event ID="BE27F20AE6C02B29" Name="INITO">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+      <Event ID="2F1376FF1CBD88D4" Name="CNF">
+        <With Var="upDown" />
+        <With Var="motorOn" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration ID="966167FF98764D9" Name="QI" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration ID="E85ED81AAC4ADCE2" Name="QO" Type="BOOL" Comment="Event Output Qualifier" />
+      <VarDeclaration ID="36C3CACEEEE8F426" Name="STATUS" Type="STRING" Comment="Service Status" />
+      <VarDeclaration ID="23F52CFADC841CDD" Name="upDown" Type="BOOL" />
+      <VarDeclaration ID="D7D48A17C8462FC8" Name="motorOn" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="" LeftInterface="">
+    <ServiceSequence Name="" />
+  </Service>
+</FBType>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="204a4b45-7c77-48ac-adb2-fd6800af4364" Name="TWO_POS_CONVEYOR_TRANSPORT" Comment="Extracted Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="10" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Author="Dmitrii" Date="4/30/2023" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initializes the symbolic link data destination FB with N (1 &lt;= N &lt;= 16) variables">
+        <With Var="watchdogTimeout" />
+      </Event>
+      <Event Name="MOVE_TO_1" Comment="Set Event">
+        <With Var="watchdogTimeout" />
+      </Event>
+      <Event Name="MOVE_TO_2" Comment="Set Event">
+        <With Var="watchdogTimeout" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization confirm" />
+      <Event Name="TIMEOUT" Comment="Delayed Event" />
+      <Event Name="DONE" Comment="Event Output" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="watchdogTimeout" Type="TIME" Comment="Delay Time" />
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="FB4" Type="SYMLINKMULTIVARDST_277E97BEC1451D2C" x="1300" y="1760" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=2;VALUE${I}:BOOL,BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}sensor1'" />
+      <Parameter Name="NAME2" Value="'$${PATH}sensor2'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="2" Name="FB6" Type="SYMLINKMULTIVARSRC_277E97BEC1451D2C" x="3880" y="1600" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=2;VALUE${I}:BOOL,BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}move_to_1'" />
+      <Parameter Name="NAME2" Value="'$${PATH}move_to_2'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="3" Name="moveTo1" Type="E_SR" x="2960" y="1320" Namespace="IEC61499.Standard" />
+    <FB ID="6" Name="moveTo2" Type="E_SR" x="2980" y="1840" Namespace="IEC61499.Standard" />
+    <FB ID="7" Name="watchdog" Type="E_DELAY" x="1840" y="1160" Namespace="IEC61499.Standard" />
+    <FB ID="8" Name="reachedSensor1" Type="E_F_TRIG" x="2280" y="1680" Namespace="IEC61499.Standard" />
+    <FB ID="9" Name="reachedSensor2" Type="E_F_TRIG" x="2320" y="2240" Namespace="IEC61499.Standard" />
+    <FB ID="10" Name="FB1" Type="E_MERGE" x="3740" y="1080" Namespace="IEC61499.Standard" />
+    <Input Name="MOVE_TO_1" x="640" y="1272" Type="Event" />
+    <Input Name="MOVE_TO_2" x="640" y="1332" Type="Event" />
+    <Input Name="INIT" x="655.7083" y="1772" Type="Event" />
+    <Input Name="watchdogTimeout" x="653.1458" y="1532" Type="Data" />
+    <Output Name="TIMEOUT" x="4285.177" y="952" Type="Event" />
+    <Output Name="INITO" x="4779.115" y="1532" Type="Event" />
+    <Output Name="DONE" x="4300" y="1092" Type="Event" />
+    <EventConnections>
+      <Connection Source="FB4.CNF" Destination="reachedSensor1.EI" dx1="70" />
+      <Connection Source="FB4.CNF" Destination="reachedSensor2.EI" dx1="81.625" />
+      <Connection Source="reachedSensor1.EO" Destination="moveTo1.R" dx1="46.47925" />
+      <Connection Source="reachedSensor2.EO" Destination="moveTo2.R" dx1="46.47925" />
+      <Connection Source="moveTo2.EO" Destination="FB6.REQ" dx1="50" />
+      <Connection Source="moveTo1.EO" Destination="FB6.REQ" dx1="68.35449" />
+      <Connection Source="FB4.INITO" Destination="FB6.INIT">
+        <Points>
+          <Points>
+            <X>462.09375</X>
+            <Y>450</Y>
+          </Points>
+          <Points>
+            <X>474.59375</X>
+            <Y>450</Y>
+          </Points>
+          <Points>
+            <X>474.59375</X>
+            <Y>397.5</Y>
+          </Points>
+          <Points>
+            <X>662.5</X>
+            <Y>397.5</Y>
+          </Points>
+          <Points>
+            <X>662.5</X>
+            <Y>427.5</Y>
+          </Points>
+          <Points>
+            <X>812.5</X>
+            <Y>427.5</Y>
+          </Points>
+          <Points>
+            <X>812.5</X>
+            <Y>410</Y>
+          </Points>
+          <Points>
+            <X>965</X>
+            <Y>410</Y>
+          </Points>
+        </Points>
+      </Connection>
+      <Connection Source="watchdog.EO" Destination="moveTo1.R" dx1="48.5" />
+      <Connection Source="watchdog.EO" Destination="moveTo2.R" dx1="468.5" />
+      <Connection Source="moveTo1.EO" Destination="watchdog.STOP" dx1="50" dx2="30" dy="-270" />
+      <Connection Source="moveTo2.EO" Destination="watchdog.STOP">
+        <Points>
+          <Points>
+            <X>805.4114</X>
+            <Y>470</Y>
+          </Points>
+          <Points>
+            <X>817.9114</X>
+            <Y>470</Y>
+          </Points>
+          <Points>
+            <X>817.9114</X>
+            <Y>442.5</Y>
+          </Points>
+          <Points>
+            <X>727.5</X>
+            <Y>442.5</Y>
+          </Points>
+          <Points>
+            <X>727.5</X>
+            <Y>397.5</Y>
+          </Points>
+          <Points>
+            <X>447.5</X>
+            <Y>397.5</Y>
+          </Points>
+          <Points>
+            <X>447.5</X>
+            <Y>315</Y>
+          </Points>
+          <Points>
+            <X>455</X>
+            <Y>315</Y>
+          </Points>
+        </Points>
+      </Connection>
+      <Connection Source="MOVE_TO_1" Destination="moveTo1.S">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+        <Points>
+          <Points>
+            <X>239.927063</X>
+            <Y>305</Y>
+          </Points>
+          <Points>
+            <X>249.927063</X>
+            <Y>305</Y>
+          </Points>
+          <Points>
+            <X>249.927063</X>
+            <Y>387.5</Y>
+          </Points>
+          <Points>
+            <X>557.5</X>
+            <Y>387.5</Y>
+          </Points>
+          <Points>
+            <X>557.5</X>
+            <Y>340</Y>
+          </Points>
+          <Points>
+            <X>735</X>
+            <Y>340</Y>
+          </Points>
+        </Points>
+      </Connection>
+      <Connection Source="MOVE_TO_2" Destination="moveTo2.S">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="watchdog.EO" Destination="TIMEOUT" dx1="48.5" />
+      <Connection Source="INIT" Destination="FB4.INIT" />
+      <Connection Source="FB6.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="MOVE_TO_1" Destination="watchdog.START" dx1="120">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="MOVE_TO_2" Destination="watchdog.START" dx1="126.2917">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB4.INITO" Destination="FB4.REQ" dx1="101.625" dx2="70" dy="-110" />
+      <Connection Source="reachedSensor2.EO" Destination="FB1.EI2" dx1="46.47925" />
+      <Connection Source="FB1.EO" Destination="DONE" />
+      <Connection Source="reachedSensor1.EO" Destination="FB1.EI1" dx1="46.47925" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="FB4.VALUE1" Destination="reachedSensor1.QI" dx1="90" />
+      <Connection Source="FB4.VALUE2" Destination="reachedSensor2.QI" dx1="41.625" />
+      <Connection Source="moveTo2.Q" Destination="FB6.VALUE2" />
+      <Connection Source="moveTo1.Q" Destination="FB6.VALUE1" dx1="68.35449" />
+      <Connection Source="watchdogTimeout" Destination="watchdog.DT" dx1="46.72925" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

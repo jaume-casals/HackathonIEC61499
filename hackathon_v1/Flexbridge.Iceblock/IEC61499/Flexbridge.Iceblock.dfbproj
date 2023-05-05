@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{16688901-A641-4CE1-8D68-86880F2F7B1E}</ProjectGuid>
+    <ProjectTypeGuids>{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Windows</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Flexbridge.Iceblock</RootNamespace>
+    <AssemblyName>Flexbridge.Iceblock</AssemblyName>
+    <NxtVersion>22.0.0.0</NxtVersion>
+    <CheckConnectionsStrictly>TRUE</CheckConnectionsStrictly>
+    <ProjectType>IEC61499</ProjectType>
+    <CheckGenericInstances>False</CheckGenericInstances>
+    <ConvertStringValues>False</ConvertStringValues>
+    <HMIProject>Flexbridge.Iceblock.HMI</HMIProject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'Windows' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows' ">
+    <Version>1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Flexbridge.Iceblock.iecproj" />
+    <None Include="Project.doc.xml" />
+    <None Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default\Flexbridge.Iceblock.snapshot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration" />
+    <Folder Include="License" />
+    <Folder Include="Log" />
+    <Folder Include="SnapshotCompiles" />
+    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}" />
+    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIO_IN.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="AIO_OUT.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="AIO_TRIGGERED_IN.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="DIO_IN_4CH.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="DIO_IN_8CH.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="DIO_OUT.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="DIO_TRIGGERED_IN_4CH.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="DIO_TRIGGERED_IN_8CH.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="SYSFS_IO.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="SYSTEM_TEMP.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+    <Compile Include="SYSTEM_TIME.fbt">
+      <IEC61499Type>Service</IEC61499Type>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Runtime.Base">
+      <Version>22.0.0.15</Version>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(SharpDevelopBinPath)\NxtControl.Build.61499.Targets" />
+</Project>

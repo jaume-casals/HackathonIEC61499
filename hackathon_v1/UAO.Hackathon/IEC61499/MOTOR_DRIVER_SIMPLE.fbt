@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="3957744c-7b34-4833-a990-36b8bbaae078" Name="MOTOR_DRIVER_SIMPLE" Comment="Extracted Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="3" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Author="Dmitrii" Date="4/28/2023" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initializes the symbolic link data source FB with N (1 &lt;= N &lt;= 16) variables">
+        <With Var="QI" />
+      </Event>
+      <Event Name="MOVE_FORWARD" Comment="Set Event" />
+      <Event Name="MOVE_BACKWARD" Comment="Set Event" />
+      <Event Name="STOP" Comment="Set Event" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization confirm">
+        <With Var="QO" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" Comment="INIT event input qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="PLC_OUT" Type="SYMLINKMULTIVARSRC_277E97BEC1451D2C" x="5320" y="1920" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=2;VALUE${I}:BOOL,BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}move_forward'" />
+      <Parameter Name="NAME2" Value="'$${PATH}move_backward'" />
+    </FB>
+    <FB ID="2" Name="FORWARD" Type="E_SR" x="3780" y="1660" Namespace="IEC61499.Standard" />
+    <FB ID="3" Name="BACKWARD" Type="E_SR" x="3780" y="2260" Namespace="IEC61499.Standard" />
+    <Input Name="INIT" x="4631.271" y="1932" Type="Event" />
+    <Input Name="QI" x="4525.063" y="2192" Type="Data" />
+    <Input Name="MOVE_FORWARD" x="2776" y="1672" Type="Event" />
+    <Input Name="MOVE_BACKWARD" x="2796" y="2272" Type="Event" />
+    <Input Name="STOP" x="2800" y="1912" Type="Event" />
+    <Output Name="INITO" x="6073.125" y="1932" Type="Event" />
+    <Output Name="QO" x="6073.125" y="2192" Type="Data" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="PLC_OUT.INIT" />
+      <Connection Source="PLC_OUT.INITO" Destination="INITO" />
+      <Connection Source="BACKWARD.EO" Destination="PLC_OUT.REQ" dx1="50" />
+      <Connection Source="FORWARD.EO" Destination="PLC_OUT.REQ" dx1="68.354" />
+      <Connection Source="MOVE_FORWARD" Destination="FORWARD.S" />
+      <Connection Source="MOVE_BACKWARD" Destination="BACKWARD.S" />
+      <Connection Source="MOVE_FORWARD" Destination="BACKWARD.R" dx1="40" />
+      <Connection Source="MOVE_BACKWARD" Destination="FORWARD.R" dx1="40" />
+      <Connection Source="STOP" Destination="FORWARD.R" dx1="45.83325" />
+      <Connection Source="STOP" Destination="BACKWARD.R" dx1="245.8333" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="QI" Destination="PLC_OUT.QI" />
+      <Connection Source="PLC_OUT.QO" Destination="QO" />
+      <Connection Source="FORWARD.Q" Destination="PLC_OUT.VALUE1" dx1="68.354" />
+      <Connection Source="BACKWARD.Q" Destination="PLC_OUT.VALUE2" dx1="70" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

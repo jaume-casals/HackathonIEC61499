@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="31859725-79d4-473d-99f4-0029b75c499a" Name="CHECKPOINT_DISCOVERY_CAT" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="HMI.Alias" Value="" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="5" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="1/24/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT">
+        <With Var="SD_ID" />
+        <With Var="mqtt_endpoint" />
+        <With Var="request_topic" />
+        <With Var="response_topic" />
+      </Event>
+      <Event Name="START" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="STARTO" />
+      <Event Name="INITO" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="SD_ID" Type="STRING" />
+      <VarDeclaration Name="mqtt_endpoint" Type="STRING" />
+      <VarDeclaration Name="request_topic" Type="STRING" />
+      <VarDeclaration Name="response_topic" Type="STRING" />
+    </InputVars>
+    <Plugs>
+      <AdapterDeclaration ID="4" Name="ServiceInfo" Type="ADP_SERVICE_INFO" Namespace="UAO.Hackathon" x="5040" y="340" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="SD_INTERFACE" Type="SERVICE_DISCOVERY_INTERFACE" x="3140" y="340" Namespace="nxtControl.AvahiXMPP">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="PUBLISH_SERVICE_TYPE" Value="'_dynamic_adapter._tcp'" />
+    </FB>
+    <FB ID="2" Name="SD_MANAGER" Type="SERVICE_DISCOVERY_MANAGER" x="620" y="340" Namespace="nxtControl.AvahiXMPP">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="RESOLVE_OUR_OWN" Value="FALSE" />
+      <Parameter Name="LISTENING_PORT" Value="5298" />
+    </FB>
+    <FB ID="3" Name="SERVICE_INFO_JSON" Type="SERVICE_INFO_JSON_SERIALIZE" x="1980" y="340" Namespace="UAO.Hackathon" />
+    <FB ID="5" Name="IThis" Type="CHECKPOINT_DISCOVERY_CAT_HMI" x="3380" y="2300" Namespace="UAO.Hackathon">
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <Input Name="INIT" x="180" y="352" Type="Event" />
+    <Input Name="SD_ID" x="1020" y="1972" Type="Data" />
+    <Input Name="mqtt_endpoint" x="1020" y="2032" Type="Data" />
+    <Input Name="request_topic" x="1020" y="2092" Type="Data" />
+    <Input Name="START" x="180" y="412" Type="Event" />
+    <Input Name="response_topic" x="1020" y="2152" Type="Data" />
+    <Output Name="STARTO" x="5620" y="992" Type="Event" />
+    <Output Name="INITO" x="5620" y="932" Type="Event" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="SD_MANAGER.INIT" />
+      <Connection Source="SD_INTERFACE.INITO" Destination="INITO" dx1="117.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_MANAGER.STARTO" Destination="SERVICE_INFO_JSON.REQ">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SERVICE_INFO_JSON.CNF" Destination="SD_INTERFACE.PUBLISH_SERVICE" />
+      <Connection Source="SD_MANAGER.INITO" Destination="SERVICE_INFO_JSON.INIT" />
+      <Connection Source="SERVICE_INFO_JSON.INITO" Destination="SD_INTERFACE.INIT" />
+      <Connection Source="START" Destination="SD_MANAGER.START" />
+      <Connection Source="SD_INTERFACE.INITO" Destination="ServiceInfo.UPD">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_INTERFACE.PUBLISH_CNF" Destination="STARTO" dx1="77.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_INTERFACE.INITO" Destination="IThis.INIT">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_INTERFACE.PUBLISH_CNF" Destination="IThis.PUBLISH_CNF" dx1="47.0625" dx2="90" dy="1490" />
+      <Connection Source="SD_MANAGER.STARTO" Destination="IThis.STARTO" dx1="60" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="mqtt_endpoint" Destination="SERVICE_INFO_JSON.mqtt_endpoint" dx1="197.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="request_topic" Destination="SERVICE_INFO_JSON.request_topic" dx1="251.396">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SERVICE_INFO_JSON.service_info_json" Destination="SD_INTERFACE.PUBLISH_TXT" dx1="40" />
+      <Connection Source="SD_ID" Destination="SERVICE_INFO_JSON.SD_ID" dx1="302.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_ID" Destination="ServiceInfo.SD_ID" dx1="3382.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_ID" Destination="SD_INTERFACE.SD_ID" dx1="302.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="mqtt_endpoint" Destination="ServiceInfo.mqtt_endpoint" dx1="3277.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="request_topic" Destination="ServiceInfo.request_topic" dx1="3331.396">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="response_topic" Destination="SERVICE_INFO_JSON.response_topic" dx1="258.1875">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="response_topic" Destination="ServiceInfo.response_topic" dx1="3338.188">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_ID" Destination="IThis.SD_ID" dx1="152.146" />
+      <Connection Source="mqtt_endpoint" Destination="IThis.mqtt_endpoint" dx1="47.146" />
+      <Connection Source="request_topic" Destination="IThis.request_topic" dx1="41.396" />
+      <Connection Source="response_topic" Destination="IThis.response_topic" dx1="48.1875" />
+      <Connection Source="SD_INTERFACE.STATUS" Destination="IThis.SD_INTERFACE_STATUS" dx1="47.0625" dx2="190" dy="690" />
+      <Connection Source="SD_MANAGER.STATUS" Destination="IThis.SD_MANAGER_STATUS" dx1="40" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

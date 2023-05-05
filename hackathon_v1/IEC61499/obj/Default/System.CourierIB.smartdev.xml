@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE System SYSTEM "../LibraryElement.dtd">
+<System Name="System">
+  <Device ID="b8d6a800-4123-4334-ac5b-ed67fabc9e0d" Name="CourierIB" Type="ECORT" x="542.4479" y="1280" Namespace="nxtControl.Standard">
+    <Resource ID="6A78331A0A575B8C" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="5B44B43444C22A16" Name="Courier" Type="COURIER_CAT" x="1400" y="1120" Namespace="Main" />
+        <FB ID="59FBA8E083D6D536" Name="FB5" Type="EVENTCHAINHEAD" x="980" y="220" Namespace="Runtime.Standard" Loaded="true">
+          <Parameter Name="NAME" Value="'INIT'" />
+        </FB>
+        <FB Name="START" Type="E_RESTART" x="80" y="100" Namespace="IEC61499.Standard" />
+        <EventConnections>
+          <Connection Source="FB5.INITO" Destination="FB5.TRIGGER" dx1="41.875" dx2="70" dy="-110" />
+          <Connection Source="START.COLD" Destination="FB5.INIT" dx1="68.60419" />
+          <Connection Source="START.WARM" Destination="FB5.INIT" dx1="48.60419" />
+        </EventConnections>
+        <DataConnections />
+        <AdapterConnections />
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+</System>

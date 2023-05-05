@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <EventInputs>
+    <Event Name="SD_SUBSCRIBED"></Event>
+    <Event Name="REQ_SERVICE_DETAIL_CNF">SERVICE_DETAIL_TXT</Event>
+    <Event Name="TIMEOUT"></Event>
+    <Event Name="REQ_SENT"></Event>
+    <Event Name="DATA_RECEIVED">RecPayload1</Event>
+  </EventInputs>
+  <EventOutputs />
+  <Inputs>
+    <Input Name="SERVICE_DETAIL_TXT" Type="STRING" />
+    <Input Name="RecPayload1" Type="STRING" />
+  </Inputs>
+  <Outputs />
+</Mapping>

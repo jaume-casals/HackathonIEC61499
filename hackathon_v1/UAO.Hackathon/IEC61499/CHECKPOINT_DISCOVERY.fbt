@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="b365d4fc-3e4e-4d67-82e7-f80c34c990f3" Name="CHECKPOINT_DISCOVERY" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="18" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT">
+        <With Var="SD_ID" />
+        <With Var="mqtt_endpoint" />
+        <With Var="request_topic" />
+        <With Var="response_topic" />
+      </Event>
+      <Event Name="START" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO">
+        <With Var="SDI_STATUS" />
+        <With Var="DM_STATUS" />
+      </Event>
+      <Event Name="STARTO">
+        <With Var="SDI_STATUS" />
+        <With Var="DM_STATUS" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="SD_ID" Type="STRING" />
+      <VarDeclaration Name="mqtt_endpoint" Type="STRING" />
+      <VarDeclaration Name="request_topic" Type="STRING" />
+      <VarDeclaration Name="response_topic" Type="STRING" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="DM_STATUS" Type="BOOL" />
+      <VarDeclaration Name="SDI_STATUS" Type="STRING" Comment="Service Status" />
+    </OutputVars>
+    <Plugs>
+      <AdapterDeclaration Name="ServiceInfo" Type="ADP_SERVICE_INFO" Namespace="UAO.Hackathon" x="5000" y="1900" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="FB1" Type="SERVICE_DISCOVERY_INTERFACE" x="3100" y="1900" Namespace="nxtControl.AvahiXMPP">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="PUBLISH_SERVICE_TYPE" Value="'_dynamic_adapter._tcp'" />
+    </FB>
+    <FB ID="3" Name="FB2" Type="SERVICE_DISCOVERY_MANAGER" x="580" y="1900" Namespace="nxtControl.AvahiXMPP">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="RESOLVE_OUR_OWN" Value="FALSE" />
+      <Parameter Name="LISTENING_PORT" Value="5298" />
+    </FB>
+    <FB ID="11" Name="FB3" Type="SERVICE_INFO_JSON_SERIALIZE" x="1940" y="1900" Namespace="UAO.Hackathon" />
+    <FB ID="13" Name="DM_LOGGER" Type="LOGGER_171F08AB360045DE1" x="1600" y="1020" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#CNT:=1" />
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="LEVEL" Value="1" />
+      <Parameter Name="DEST" Value="1" />
+    </FB>
+    <FB ID="14" Name="SDI_LOGGER" Type="LOGGER_171F08AB360045DE1" x="3940" y="880" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#CNT:=1" />
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="LEVEL" Value="1" />
+      <Parameter Name="DEST" Value="1" />
+    </FB>
+    <FB ID="16" UID="15" Name="FB4" Type="VALFORMAT_1942D31DAE3706DC9" x="3160" y="980" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#I:=3;VALUE${I}:STRING,STRING,STRING" />
+      <Parameter Name="FORMAT" Value="'SDI:%s (NAME: %s; TXT: %s)'" />
+    </FB>
+    <FB ID="18" UID="17" Name="FB5" Type="VALFORMAT_19531C35823000B3F" x="720" y="1120" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#I:=1;VALUE${I}:BOOL" />
+      <Parameter Name="FORMAT" Value="'DM status:%d'" />
+    </FB>
+    <Input Name="INIT" x="140" y="1912" Type="Event" />
+    <Input Name="SD_ID" x="980" y="3532" Type="Data" />
+    <Input Name="mqtt_endpoint" x="980" y="3592" Type="Data" />
+    <Input Name="request_topic" x="979.9999" y="3652" Type="Data" />
+    <Input Name="START" x="140" y="1972" Type="Event" />
+    <Input Name="response_topic" x="980" y="3712" Type="Data" />
+    <Output Name="DM_STATUS" x="3560.969" y="4092" Type="Data" />
+    <Output Name="SDI_STATUS" x="3559.656" y="4032" Type="Data" />
+    <Output Name="STARTO" x="5580" y="2552" Type="Event" />
+    <Output Name="INITO" x="5580" y="2492" Type="Event" />
+    <EventConnections>
+      <Connection Source="FB1.INITO" Destination="INITO" dx1="117.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB2.STARTO" Destination="FB3.REQ">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB3.CNF" Destination="FB1.PUBLISH_SERVICE" />
+      <Connection Source="FB2.INITO" Destination="FB3.INIT" />
+      <Connection Source="START" Destination="FB2.START" />
+      <Connection Source="FB1.INITO" Destination="ServiceInfo.UPD">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.PUBLISH_CNF" Destination="STARTO" dx1="77.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="INIT" Destination="DM_LOGGER.INIT" dx1="41.41669" />
+      <Connection Source="DM_LOGGER.INITO" Destination="FB2.INIT" dx1="40" dx2="50" dy="590" />
+      <Connection Source="FB2.INITO" Destination="FB5.REQ" dx1="52.33337" dx2="70" dy="-110" />
+      <Connection Source="FB2.STARTO" Destination="FB5.REQ" dx1="72.33337" dx2="70" dy="-170" />
+      <Connection Source="FB2.RESETO" Destination="FB5.REQ" dx1="92.33337" dx2="70" dy="-230" />
+      <Connection Source="FB3.INITO" Destination="SDI_LOGGER.INIT">
+        <Points>
+          <Points>
+            <X>674.869751</X>
+            <Y>485</Y>
+          </Points>
+          <Points>
+            <X>687.5</X>
+            <Y>485</Y>
+          </Points>
+          <Points>
+            <X>687.5</X>
+            <Y>457.5</Y>
+          </Points>
+          <Points>
+            <X>705</X>
+            <Y>457.5</Y>
+          </Points>
+          <Points>
+            <X>705</X>
+            <Y>230</Y>
+          </Points>
+          <Points>
+            <X>980</X>
+            <Y>230</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SDI_LOGGER.INITO" Destination="FB1.INIT" dx1="40" dx2="50" dy="590" />
+      <Connection Source="FB1.INITO" Destination="FB4.REQ">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.PUBLISH_CNF" Destination="FB4.REQ">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.STOP_PUBLISH_CNF" Destination="FB4.REQ">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB4.CNF" Destination="SDI_LOGGER.REQ" dx1="50" />
+      <Connection Source="FB5.CNF" Destination="DM_LOGGER.REQ" dx1="50" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="mqtt_endpoint" Destination="FB3.mqtt_endpoint" dx1="197.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="request_topic" Destination="FB3.request_topic" dx1="251.396">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB3.service_info_json" Destination="FB1.PUBLISH_TXT" dx1="40" />
+      <Connection Source="SD_ID" Destination="FB3.SD_ID" dx1="302.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_ID" Destination="ServiceInfo.SD_ID" dx1="3382.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="SD_ID" Destination="FB1.SD_ID" dx1="302.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="mqtt_endpoint" Destination="ServiceInfo.mqtt_endpoint" dx1="3277.146">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="request_topic" Destination="ServiceInfo.request_topic" dx1="3331.396">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="response_topic" Destination="FB3.response_topic" dx1="258.1875">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="response_topic" Destination="ServiceInfo.response_topic" dx1="3338.188">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB2.STATUS" Destination="DM_STATUS" dx1="40" />
+      <Connection Source="FB1.STATUS" Destination="SDI_STATUS" dx1="167.0625" dx2="49.65625" dy="690" />
+      <Connection Source="FB1.STATUS" Destination="FB4.VALUE1">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.SERVICE_DETAIL_NAME" Destination="FB4.VALUE2">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB1.SERVICE_DETAIL_TXT" Destination="FB4.VALUE3">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+      <Connection Source="FB4.RESULT" Destination="SDI_LOGGER.MESSAGE" dx1="41.54175" />
+      <Connection Source="FB2.STATUS" Destination="FB5.VALUE1" dx1="112.3334" dx2="30" dy="-490" />
+      <Connection Source="FB5.RESULT" Destination="DM_LOGGER.MESSAGE" dx1="41.54175" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

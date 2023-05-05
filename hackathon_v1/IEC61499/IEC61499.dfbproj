@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{3094307A-52AE-4C09-8CA3-AA619761D361}</ProjectGuid>
+    <ProjectTypeGuids>{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Windows</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>IEC61499</AssemblyName>
+    <NxtVersion>22.0.0.0</NxtVersion>
+    <CheckConnectionsStrictly>TRUE</CheckConnectionsStrictly>
+    <CreateHMI>false</CreateHMI>
+    <HMIProject>HMI</HMIProject>
+    <CATInstancesHaveIds>true</CATInstancesHaveIds>
+    <ProjectType>IEC61499</ProjectType>
+    <CheckGenericInstances>False</CheckGenericInstances>
+    <ConvertStringValues>False</ConvertStringValues>
+    <WebPage>flexbridge.se</WebPage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'Windows' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows' ">
+    <Version>1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nxtControl.AvahiXMPP">
+      <Version>22.0.0.0</Version>
+    </Reference>
+    <Reference Include="nxtControl.CommProtocols">
+      <Version>22.0.0.0</Version>
+    </Reference>
+    <Reference Include="nxtControl.Standard">
+      <Version>22.0.0.6</Version>
+    </Reference>
+    <Reference Include="Runtime.Base">
+      <Version>22.0.0.15</Version>
+    </Reference>
+    <Reference Include="SE.AppBase">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppCommonProcess">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppConveying">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppLiquidFood">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppSequence">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppSingleLinePowerMonitoring">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppStateManagement">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.AppWWW">
+      <Version>22.0.0.16</Version>
+    </Reference>
+    <Reference Include="SE.DPAC">
+      <Version>22.0.0.24</Version>
+    </Reference>
+    <Reference Include="SE.FieldDevice">
+      <Version>22.0.0.21</Version>
+    </Reference>
+    <Reference Include="SE.HwCommon">
+      <Version>22.0.0.14</Version>
+    </Reference>
+    <Reference Include="SE.IoATV">
+      <Version>22.0.0.21</Version>
+    </Reference>
+    <Reference Include="SE.IoNet">
+      <Version>22.0.0.1</Version>
+    </Reference>
+    <Reference Include="SE.IoTMx">
+      <Version>22.0.0.15</Version>
+    </Reference>
+    <Reference Include="SE.IoX80">
+      <Version>22.0.0.14</Version>
+    </Reference>
+    <Reference Include="SE.ModbusGateway">
+      <Version>22.0.0.9</Version>
+    </Reference>
+    <Reference Include="SE.Standard">
+      <Version>22.0.0.3</Version>
+    </Reference>
+    <Reference Include="Standard.IoEtherNetIP">
+      <Version>22.0.0.13</Version>
+    </Reference>
+    <Reference Include="Standard.IoModbus">
+      <Version>22.0.0.24</Version>
+    </Reference>
+    <Reference Include="Standard.IoModbusSlave">
+      <Version>22.0.0.13</Version>
+    </Reference>
+    <Reference Include="Standard.OPCUAClient">
+      <Version>22.0.0.6</Version>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CHECKPOINT_CAT\CHECKPOINT_CAT.cfg">
+      <DependentUpon>CHECKPOINT_CAT.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="Configuration\Certificates\Certificates.xml" />
+    <None Include="COURIER_CAT\COURIER_CAT.cfg">
+      <DependentUpon>COURIER_CAT.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="IEC61499.iecproj" />
+    <none Include="Languages\neutral\Dictionary.Resources.xml" />
+    <None Include="MOTOR_SWITCH\MOTOR_SWITCH.cfg">
+      <DependentUpon>MOTOR_SWITCH.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER.cfg">
+      <DependentUpon>PRODUCTION_SCHEDULER.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="Project.doc.xml" />
+    <None Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default\IEC61499.snapshot" />
+    <None Include="System\c71f5ea4-171a-40fc-9fea-83e4fe61f97c.hcf">
+      <DependentUpon>System.sys</DependentUpon>
+      <IEC61499Type>System</IEC61499Type>
+    </None>
+    <None Include="System\snapshot.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+    <None Include="System\System.cfg">
+      <DependentUpon>System.sys</DependentUpon>
+      <IEC61499Type>System</IEC61499Type>
+    </None>
+    <None Include="System\System.Device.Properties.xml">
+      <DependentUpon>System.sys</DependentUpon>
+      <IEC61499Type>System</IEC61499Type>
+    </None>
+    <None Include="System\System.opcuaclient.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+    <None Include="System\System.Topology.Binding.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLINKER.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+    </Compile>
+    <Compile Include="CHECKPOINT_CAT\CHECKPOINT_CAT.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="CHECKPOINT_CAT\CHECKPOINT_CAT_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>CHECKPOINT_CAT.fbt</DependentUpon>
+      <HMI>..\HMI\CHECKPOINT_CAT\CHECKPOINT_CAT_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="COURIER_CAT\COURIER_CAT.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="COURIER_CAT\COURIER_CAT_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>COURIER_CAT.fbt</DependentUpon>
+      <HMI>..\HMI\COURIER_CAT\COURIER_CAT_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="MOTOR_SWITCH\MOTOR_SWITCH.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="MOTOR_SWITCH\MOTOR_SWITCH_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>MOTOR_SWITCH.fbt</DependentUpon>
+      <HMI>..\HMI\MOTOR_SWITCH\MOTOR_SWITCH_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>PRODUCTION_SCHEDULER.fbt</DependentUpon>
+      <HMI>..\HMI\PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="System\System.sys">
+      <IEC61499Type>System</IEC61499Type>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration" />
+    <Folder Include="Configuration\Certificates" />
+    <Folder Include="License" />
+    <Folder Include="Log" />
+    <Folder Include="SnapshotCompiles" />
+    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}" />
+    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHECKPOINT_CAT\CHECKPOINT_CAT_CAT.offline.xml">
+      <DependentUpon>CHECKPOINT_CAT.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="CHECKPOINT_CAT\CHECKPOINT_CAT_CAT.opcua.xml">
+      <DependentUpon>CHECKPOINT_CAT.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="CHECKPOINT_CAT\CHECKPOINT_CAT_HMI.opcua.xml">
+      <DependentUpon>CHECKPOINT_CAT.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="COURIER_CAT\COURIER_CAT_CAT.offline.xml">
+      <DependentUpon>COURIER_CAT.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="COURIER_CAT\COURIER_CAT_CAT.opcua.xml">
+      <DependentUpon>COURIER_CAT.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="COURIER_CAT\COURIER_CAT_HMI.offline.xml">
+      <DependentUpon>COURIER_CAT.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="COURIER_CAT\COURIER_CAT_HMI.opcua.xml">
+      <DependentUpon>COURIER_CAT.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="MOTOR_SWITCH\MOTOR_SWITCH_CAT.offline.xml">
+      <DependentUpon>MOTOR_SWITCH.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="MOTOR_SWITCH\MOTOR_SWITCH_CAT.opcua.xml">
+      <DependentUpon>MOTOR_SWITCH.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="MOTOR_SWITCH\MOTOR_SWITCH_HMI.offline.xml">
+      <DependentUpon>MOTOR_SWITCH.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="MOTOR_SWITCH\MOTOR_SWITCH_HMI.opcua.xml">
+      <DependentUpon>MOTOR_SWITCH.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_CAT.offline.xml">
+      <DependentUpon>PRODUCTION_SCHEDULER.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="PRODUCTION_SCHEDULER\PRODUCTION_SCHEDULER_CAT.opcua.xml">
+      <DependentUpon>PRODUCTION_SCHEDULER.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="System\System.opcua.xml">
+      <DependentUpon>System.sys</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flexbridge.Iceblock\IEC61499\Flexbridge.Iceblock.dfbproj">
+      <Project>{16688901-a641-4ce1-8d68-86880f2f7b1e}</Project>
+      <Name>Flexbridge.Iceblock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UAO.Hackathon\IEC61499\UAO.Hackathon.dfbproj">
+      <Project>{a26db02f-239e-448f-861b-d55384b760cc}</Project>
+      <Name>UAO.Hackathon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(SharpDevelopBinPath)\NxtControl.Build.61499.Targets" />
+</Project>

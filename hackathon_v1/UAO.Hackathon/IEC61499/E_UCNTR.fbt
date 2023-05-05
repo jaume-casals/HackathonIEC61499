@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="ae8dbe16-68db-4dd5-ad6c-0d00d93dbdda" Name="E_UCNTR" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="2/8/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="CU" Comment="Count up">
+        <With Var="PVH" />
+        <With Var="PVL" />
+      </Event>
+      <Event Name="CD" Comment="Count down">
+        <With Var="PVH" />
+        <With Var="PVL" />
+      </Event>
+      <Event Name="R" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CUO" Comment="Execution Confirmation">
+        <With Var="QH" />
+        <With Var="QL" />
+        <With Var="CV" />
+      </Event>
+      <Event Name="CDO">
+        <With Var="QH" />
+        <With Var="QL" />
+        <With Var="CV" />
+      </Event>
+      <Event Name="RO">
+        <With Var="QH" />
+        <With Var="QL" />
+        <With Var="CV" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="PVH" Type="UINT" Comment="Preset value high" />
+      <VarDeclaration Name="PVL" Type="UINT" Comment="Preset value low" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QH" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="QL" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="CV" Type="UINT" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="CU,CD,R,CNT" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="608.9412" y="385.4117" />
+      <ECState Name="CD" Comment="Normal execution" x="1597.647" y="752.9412">
+        <ECAction Algorithm="CD" Output="CDO" />
+      </ECState>
+      <ECState Name="CU" x="272" y="880">
+        <ECAction Algorithm="CU" Output="CUO" />
+      </ECState>
+      <ECState Name="R" x="1512" y="284">
+        <ECAction Algorithm="R" Output="RO" />
+      </ECState>
+      <ECTransition Source="START" Destination="CD" Condition="CD" x="1154.893" y="501.1107">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="258.1968,109.0704,323.0952,133.1949" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="CU" Condition="CU" x="479.9242" y="679.5146">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="130.9646,156.1454,110.6179,191.4133" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="R" Condition="R" x="1221.592" y="385.0638">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="286.3639,101.6612,345.6681,95.00146" />
+      </ECTransition>
+      <ECTransition Source="R" Destination="START" Condition="1" x="1070.697" y="164.0059">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="297.7695,27.03645,238.4653,33.69615" />
+      </ECTransition>
+      <ECTransition Source="CU" Destination="START" Condition="1" x="245.599" y="656.201">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="41.64732,180.6928,59.0708,151.3236" />
+      </ECTransition>
+      <ECTransition Source="CD" Destination="START" Condition="1" x="1329.464" y="920.42">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="381.7101,267.0891,316.8117,242.9645" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="CU" Comment="Initialization algorithm">
+      <ST Text="CV := CV + 1;&#xD;&#xA;QL := CV &lt;= PVL;&#xD;&#xA;QH := CV &gt;= PVH;" />
+    </Algorithm>
+    <Algorithm Name="CD" Comment="Normally executed algorithm">
+      <ST Text="IF CV &gt; 0 THEN&#xD;&#xA;	CV := CV - 1;&#xD;&#xA;	QL := CV &lt;= PVL;&#xD;&#xA;	QH := CV &gt;= PVH;&#xD;&#xA;END_IF;" />
+    </Algorithm>
+    <Algorithm Name="R">
+      <ST Text="CV := 0;&#xD;&#xA;QL := FALSE;&#xD;&#xA;QH := FALSE;" />
+    </Algorithm>
+    <Algorithm Name="CNT">
+      <ST Text="QL := CV &lt;= PVL;&#xD;&#xA;QH := CV &gt;= PVH;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

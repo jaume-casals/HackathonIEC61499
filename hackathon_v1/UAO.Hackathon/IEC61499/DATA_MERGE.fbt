@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="365f8aea-41ab-4c57-86c5-80beb986e2a0" Name="DATA_MERGE" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/28/2022" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="EI1" Comment="Normal Execution Request">
+        <With Var="data1" />
+      </Event>
+      <Event Name="EI2">
+        <With Var="data2" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="EO" Comment="Execution Confirmation">
+        <With Var="data" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="data1" Type="STRING[255]" Comment="Input event qualifier" />
+      <VarDeclaration Name="data2" Type="STRING[255]" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="data" Type="STRING[255]" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="USEDATA2,USEDATA1" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="928.9412" y="353.4117" />
+      <ECState Name="s1" Comment="Initialization" x="1531.53" y="769.1765">
+        <ECAction Algorithm="USEDATA1" Output="EO" />
+      </ECState>
+      <ECState Name="s2" Comment="Normal execution" x="277.647" y="868.9412">
+        <ECAction Algorithm="USEDATA2" Output="EO" />
+      </ECState>
+      <ECTransition Source="START" Destination="s1" Condition="EI1" x="1286.472" y="498.7112">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="303.4067,107.0855,341.4728,133.3498" />
+      </ECTransition>
+      <ECTransition Source="s1" Destination="START" Condition="1" x="1229.293" y="642.1229">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="327.2752,178.9271,289.209,152.6628" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="s2" Condition="EI2" x="654.2992" y="673.2783">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="187.9832,155.2645,144.6961,189.5283" />
+      </ECTransition>
+      <ECTransition Source="s2" Destination="START" Condition="1" x="592.5095" y="535.6917">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="129.18,144.926,172.4671,110.6622" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="USEDATA2" Comment="Normally executed algorithm">
+      <ST Text=";&#xD;&#xA;data:=data2;" />
+    </Algorithm>
+    <Algorithm Name="USEDATA1">
+      <ST Text=";&#xD;&#xA;data:=data1;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

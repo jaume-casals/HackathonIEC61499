@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="1fbb725f-6e68-4b86-87e8-f8f6868d5d79" Name="AIO_TRIGGERED_IN" Comment="Service Interface Function Block Type" Namespace="Flexbridge.Iceblock">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmBH" Version="0.0" Author="josef" Date="16/09/2021" Remarks="template" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Service Initialization" />
+      <Event Name="START">
+        <With Var="Sampling_Hz" />
+        <With Var="TriggerThreshold" />
+      </Event>
+      <Event Name="STOP" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="CNF">
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="TRIGGERED">
+        <With Var="STATUS" />
+        <With Var="DateTime" />
+        <With Var="MicrosecDelta" />
+        <With Var="AI0" />
+        <With Var="AI1" />
+        <With Var="AI2" />
+        <With Var="AI3" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="Sampling_Hz" Type="UINT" InitialValue="1" />
+      <VarDeclaration Name="TriggerThreshold" Type="UINT" InitialValue="10" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="STATUS" Type="STRING" Comment="Service Status" />
+      <VarDeclaration Name="DateTime" Type="DATE_AND_TIME" />
+      <VarDeclaration Name="MicrosecDelta" Type="UINT" />
+      <VarDeclaration Name="AI0" Type="UINT" />
+      <VarDeclaration Name="AI1" Type="UINT" />
+      <VarDeclaration Name="AI2" Type="UINT" />
+      <VarDeclaration Name="AI3" Type="UINT" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="RESOURCE" LeftInterface="DIO_TRIGGERED_IN_4CH">
+    <ServiceSequence Name="normal_establishment">
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INIT+" Parameters="PARAMS" />
+        <OutputPrimitive Interface="RESOURCE" Event="initialize" Parameters="PARAMS" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INITO+" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="unsuccessful_establishment">
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INIT+" Parameters="PARAMS" />
+        <OutputPrimitive Interface="RESOURCE" Event="initialize" Parameters="PARAMS" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INITO-" Parameters="STATUS" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="request_confirm">
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="REQ+" Parameters="SD" />
+        <OutputPrimitive Interface="RESOURCE" Event="request" Parameters="SD" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="CNF+" Parameters="RD" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="request_inhibited">
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="REQ-" Parameters="SD" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="CNF-" Parameters="STATUS" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="request_error">
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="REQ+" Parameters="SD" />
+        <OutputPrimitive Interface="RESOURCE" Event="request" Parameters="SD" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="CNF-" Parameters="STATUS" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="indication_response">
+      <ServiceTransaction>
+        <InputPrimitive Interface="RESOURCE" Event="indicate" Parameters="RD" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="IND+" Parameters="RD" />
+      </ServiceTransaction>
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="RSP" Parameters="QI,SD" />
+        <OutputPrimitive Interface="RESOURCE" Event="response" Parameters="QI,SD" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="indication_inhibited">
+      <ServiceTransaction>
+        <InputPrimitive Interface="RESOURCE" Event="indicate" Parameters="RD,QI=FALSE" />
+        <OutputPrimitive Interface="RESOURCE" Event="inhibited" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="error_indication">
+      <ServiceTransaction>
+        <InputPrimitive Interface="RESOURCE" Event="error" Parameters="STATUS" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="IND-" Parameters="STATUS" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="application_initiated_termination">
+      <ServiceTransaction>
+        <InputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INIT-" />
+        <OutputPrimitive Interface="RESOURCE" Event="terminate" />
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INITO-" Parameters="STATUS" />
+      </ServiceTransaction>
+    </ServiceSequence>
+    <ServiceSequence Name="resource_initiated_termination">
+      <ServiceTransaction>
+        <OutputPrimitive Interface="DIO_TRIGGERED_IN_4CH" Event="INITO-" Parameters="STATUS" />
+      </ServiceTransaction>
+    </ServiceSequence>
+  </Service>
+</FBType>

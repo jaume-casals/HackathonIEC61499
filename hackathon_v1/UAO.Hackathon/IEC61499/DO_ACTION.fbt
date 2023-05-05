@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="63c25c87-2211-44b8-872b-68c35a681a44" Name="DO_ACTION" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="2/8/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="S" Comment="Action start" />
+      <Event Name="OK" Comment="Action done" />
+      <Event Name="NOK" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="S_O" />
+      <Event Name="OK_O" />
+      <Event Name="NOK_O" />
+    </EventOutputs>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="452.9412" y="737.4117" />
+      <ECState Name="S" x="980" y="728.0001">
+        <ECAction Output="S_O" />
+      </ECState>
+      <ECState Name="OK" x="2008" y="552">
+        <ECAction Output="OK_O" />
+      </ECState>
+      <ECState Name="NOK" x="1984" y="808.0001">
+        <ECAction Output="NOK_O" />
+      </ECState>
+      <ECTransition Source="START" Destination="S" Condition="S" x="741.941" y="731.3784">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="170.8954,183.0203,198.7028,182.6269" />
+      </ECTransition>
+      <ECTransition Source="S" Destination="OK" Condition="OK" x="1449.135" y="508.1155">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="322.0653,125.4179,396.5685,112.101" />
+      </ECTransition>
+      <ECTransition Source="OK" Destination="START" Condition="1" x="1380.625" y="202.1207">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="409.5386,11.41005,303.7896,24.58312" />
+      </ECTransition>
+      <ECTransition Source="S" Destination="NOK" Condition="NOK" x="1451.786" y="948.7185">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="326.7505,245.9609,397.256,250.3998" />
+      </ECTransition>
+      <ECTransition Source="NOK" Destination="START" Condition="1" x="1411.377" y="1322.383">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="423.3949,373.6303,311.6489,370.4769" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT">
+      <ST Text=";" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

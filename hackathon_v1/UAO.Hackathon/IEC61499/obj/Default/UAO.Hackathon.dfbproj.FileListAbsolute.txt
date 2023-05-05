@@ -1,0 +1,3 @@
+C:\Users\Jaume\Desktop\hackathon_v1\UAO.Hackathon\IEC61499\bin\Default\UAO.Hackathon.dll
+C:\Users\Jaume\Desktop\hackathon_v1\UAO.Hackathon\IEC61499\obj\Default\UAO.Hackathon.dfbproj.CoreCompileInputs.cache
+C:\Users\Jaume\Desktop\hackathon_v1\UAO.Hackathon\IEC61499\obj\Default\UAO.Hackathon.dll

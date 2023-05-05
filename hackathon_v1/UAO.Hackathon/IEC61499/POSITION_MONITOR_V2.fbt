@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="5ffe608f-ed5a-4abe-b734-bb03ab6722ae" Name="POSITION_MONITOR_V2" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="22" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/30/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="RESET">
+        <With Var="counter" />
+      </Event>
+      <Event Name="CNT_UPDATE">
+        <With Var="counter" />
+        <With Var="backwardFlag" />
+      </Event>
+      <Event Name="STOP_IND" Comment="Motor stop indicatin. used to capture position" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="RESETO" Comment="Reset confirmation">
+        <With Var="position" />
+        <With Var="capturedPosition" />
+      </Event>
+      <Event Name="RESET_COUNTER" />
+      <Event Name="CAPTUREO" Comment="Position capture confirmation">
+        <With Var="position" />
+        <With Var="capturedPosition" />
+      </Event>
+      <Event Name="CNF">
+        <With Var="position" />
+        <With Var="capturedPosition" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="counter" Type="DINT" />
+      <VarDeclaration Name="backwardFlag" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="position" Type="DINT" />
+      <VarDeclaration Name="capturedPosition" Type="DINT" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="positionStorage" Type="BASIC_STORAGE_DINT" x="2940" y="820" Namespace="UAO.Hackathon">
+      <Parameter Name="presetValue" Value="0" />
+    </FB>
+    <FB ID="7" UID="3" Name="FB1" Type="ADD_112C76C471B7A99C2" x="4980" y="1400" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:DINT" />
+    </FB>
+    <FB ID="8" UID="4" Name="FB2" Type="SUB_112C76C471B7A99C2" x="4980" y="2160" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;IN${CNT}:DINT" />
+    </FB>
+    <FB ID="9" UID="5" Name="FB3" Type="DS_SELECTX_158B4FD3BC4D9A1F5" x="5620" y="1600" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNTX:=2;CNTY:=1;DI${CNTX,_,CNTY}:DINT" />
+    </FB>
+    <FB ID="10" Name="CaptureDelay" Type="E_DELAY" x="2380" y="860" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#100ms" />
+    </FB>
+    <FB ID="20" UID="17" Name="FB7" Type="ANY2ANY_135542315C2320DF5" x="3720" y="1880" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=1;IN${CNT}:BOOL;OUT${CNT}:UINT" />
+    </FB>
+    <FB ID="19" Name="SelectOperation" Type="E_DEMUX" x="4160" y="1780" Namespace="IEC61499.Standard" />
+    <FB ID="21" Name="FB4" Type="E_MERGE" x="6260" y="880" Namespace="IEC61499.Standard" />
+    <FB ID="22" Name="FB5" Type="E_MERGE" x="5360" y="500" Namespace="IEC61499.Standard" />
+    <Input Name="CNT_UPDATE" x="940" y="1892" Type="Event" />
+    <Input Name="counter" x="940" y="1732" Type="Data" />
+    <Input Name="backwardFlag" x="960" y="2092" Type="Data" />
+    <Input Name="RESET" x="812" y="372" Type="Event" />
+    <Input Name="STOP_IND" x="860" y="872" Type="Event" />
+    <Output Name="CAPTUREO" x="4880" y="152" Type="Event" />
+    <Output Name="RESETO" x="3880" y="632" Type="Event" />
+    <Output Name="RESET_COUNTER" x="6120" y="492" Type="Event" />
+    <Output Name="position" x="6480" y="1912" Type="Data" />
+    <Output Name="capturedPosition" x="3920" y="1092" Type="Data" />
+    <Output Name="CNF" x="6580" y="792" Type="Event" />
+    <EventConnections>
+      <Connection Source="RESET" Destination="positionStorage.RESET" dx1="1647.75" />
+      <Connection Source="FB1.CNF" Destination="FB3.REQ1" dx1="67.47949" />
+      <Connection Source="FB2.CNF" Destination="FB3.REQ2" dx1="50" />
+      <Connection Source="CaptureDelay.EO" Destination="positionStorage.UPDATE" dx1="48.5" />
+      <Connection Source="CNT_UPDATE" Destination="FB7.REQ" />
+      <Connection Source="FB7.CNF" Destination="SelectOperation.EI" dx1="50" />
+      <Connection Source="SelectOperation.EO0" Destination="FB1.REQ" dx1="43.91699" />
+      <Connection Source="SelectOperation.EO1" Destination="FB2.REQ" dx1="43.91699" />
+      <Connection Source="positionStorage.CNF" Destination="FB4.EI1" />
+      <Connection Source="FB3.IND" Destination="FB4.EI2" dx1="50" />
+      <Connection Source="FB4.EO" Destination="CNF" dx1="40" />
+      <Connection Source="positionStorage.CNF" Destination="FB5.EI2" dx1="928.3018">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="positionStorage.RESETO" Destination="RESETO" dx1="46.604" />
+      <Connection Source="positionStorage.RESETO" Destination="FB5.EI1" dx1="46.604" />
+      <Connection Source="FB5.EO" Destination="RESET_COUNTER" dx1="41.5415" />
+      <Connection Source="STOP_IND" Destination="CaptureDelay.START" />
+      <Connection Source="RESET" Destination="CaptureDelay.STOP" dx1="417.75">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="positionStorage.CNF" Destination="CAPTUREO" dx1="70" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="positionStorage.value" Destination="FB1.IN1" dx1="46.604" />
+      <Connection Source="FB1.OUT" Destination="FB3.DI1_1" dx1="47.47949" />
+      <Connection Source="positionStorage.value" Destination="FB2.IN1" dx1="46.604" />
+      <Connection Source="FB2.OUT" Destination="FB3.DI2_1" dx1="70" />
+      <Connection Source="FB3.OUT1" Destination="position" dx1="70" />
+      <Connection Source="positionStorage.value" Destination="capturedPosition" />
+      <Connection Source="FB3.OUT1" Destination="positionStorage.newValue" dx1="70" dx2="30" dy="-630" />
+      <Connection Source="FB7.OUT1" Destination="SelectOperation.K" dx1="40" />
+      <Connection Source="backwardFlag" Destination="FB7.IN1" />
+      <Connection Source="counter" Destination="FB1.IN2" dx1="40" />
+      <Connection Source="counter" Destination="FB2.IN2" dx1="136.9584" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

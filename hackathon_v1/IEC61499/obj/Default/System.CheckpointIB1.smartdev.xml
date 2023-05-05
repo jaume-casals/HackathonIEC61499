@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE System SYSTEM "../LibraryElement.dtd">
+<System Name="System">
+  <Device ID="e9e9fd0d-3ec6-48af-a236-e62b4e987d7a" Name="CheckpointIB1" Type="ECORT" x="544.6666" y="1860" Namespace="nxtControl.Standard">
+    <Resource ID="852F57E5FD2EB994" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="64D10FBFE6DA0299" Name="Checkpoint1" Type="CHECKPOINT_CAT" x="1320" y="340" Namespace="Main">
+          <Parameter Name="SD_ID" Value="'checkpoint_1'" />
+          <Parameter Name="mqtt_endpoint" Value="'192.168.8.1:1883'" />
+          <Parameter Name="order_data" Value="'product1.red.drill.bake.sort'" />
+        </FB>
+        <FB Name="START" Type="E_RESTART" x="80" y="100" Namespace="IEC61499.Standard" />
+        <EventConnections>
+          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" dx1="48.60425" />
+          <Connection Source="START.WARM" Destination="Checkpoint1.INIT" dx1="48.60425" />
+        </EventConnections>
+        <DataConnections />
+        <AdapterConnections />
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+</System>

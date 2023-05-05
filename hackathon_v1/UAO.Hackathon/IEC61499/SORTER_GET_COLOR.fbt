@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="84ad94c5-0648-464b-bb70-fbfd4aab3607" Name="SORTER_GET_COLOR" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="1/17/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="limit1" />
+        <With Var="limit2" />
+        <With Var="input" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="color" />
+        <With Var="color_name" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="limit1" Type="REAL" />
+      <VarDeclaration Name="limit2" Type="REAL" />
+      <VarDeclaration Name="input" Type="REAL" Comment="Input value from analog sensor" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="color" Type="USINT" />
+      <VarDeclaration Name="color_name" Type="STRING[15]" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="REQ" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="240.9412" y="245.4117" />
+      <ECState Name="REQ" Comment="Normal execution" x="1017.647" y="248.9412">
+        <ECAction Algorithm="REQ" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="REQ" Condition="REQ" x="644.4462" y="162.641">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="138.327,36.70891,183.9529,36.914" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="START" Condition="1" x="644.1053" y="331.8485">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="183.8393,86.91461,138.2134,86.70728" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="REQ" Comment="Normally executed algorithm">
+      <ST Text="IF input &lt;= limit1 THEN&#xD;&#xA;    color := 0;&#xD;&#xA;    color_name :='white';&#xD;&#xA;ELSIF input &lt;= limit2 THEN&#xD;&#xA;	color := 1;&#xD;&#xA;    color_name :='red';&#xD;&#xA;ELSE&#xD;&#xA;	color := 2;&#xD;&#xA;    color_name :='blue';&#xD;&#xA;END_IF;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

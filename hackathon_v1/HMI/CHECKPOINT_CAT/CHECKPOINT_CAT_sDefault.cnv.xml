@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <EventInputs>
+    <Event Name="INITIALIZED"></Event>
+    <Event Name="PUBLISHED"></Event>
+    <Event Name="RESET"></Event>
+  </EventInputs>
+  <EventOutputs />
+  <Inputs />
+  <Outputs />
+</Mapping>

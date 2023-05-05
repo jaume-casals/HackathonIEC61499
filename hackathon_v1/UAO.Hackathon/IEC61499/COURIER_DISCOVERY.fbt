@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="8907a4ee-8886-4db0-8162-b2842790c9a9" Name="COURIER_DISCOVERY" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="9" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT">
+        <With Var="SD_ID" />
+      </Event>
+      <Event Name="START" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" />
+      <Event Name="STARTO" />
+      <Event Name="REQ_SERVICE_DETAIL_CNF">
+        <With Var="SERVICE_DETAIL_TXT" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="SD_ID" Type="STRING[64]" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="SERVICE_DETAIL_TXT" Type="STRING" />
+    </OutputVars>
+    <Plugs>
+      <AdapterDeclaration Name="ServiceInfo" Type="ADP_SERVICE_INFO" Namespace="UAO.Hackathon" x="5560" y="760" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="FB1" Type="SERVICE_DISCOVERY_INTERFACE" x="2420" y="500" Namespace="nxtControl.AvahiXMPP">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="BROWSE_SERVICE_TYPE" Value="'_dynamic_adapter._tcp'" />
+    </FB>
+    <FB ID="3" Name="FB2" Type="SERVICE_DISCOVERY_MANAGER" x="1080" y="500" Namespace="nxtControl.AvahiXMPP">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="RESOLVE_OUR_OWN" Value="FALSE" />
+      <Parameter Name="LISTENING_PORT" Value="5298" />
+    </FB>
+    <FB ID="8" Name="FB3" Type="SERVICE_INFO_JSON_DESERIALIZE" x="3900" y="500" Namespace="UAO.Hackathon" />
+    <Input Name="INIT" x="460" y="512" Type="Event" />
+    <Input Name="SD_ID" x="580" y="1432" Type="Data" />
+    <Input Name="START" x="460" y="572" Type="Event" />
+    <Output Name="REQ_SERVICE_DETAIL_CNF" x="4980" y="1792" Type="Event" />
+    <Output Name="SERVICE_DETAIL_TXT" x="4971.635" y="1892" Type="Data" />
+    <Output Name="STARTO" x="5400" y="1432" Type="Event" />
+    <Output Name="INITO" x="5400" y="452" Type="Event" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="FB2.INIT" />
+      <Connection Source="FB2.INITO" Destination="FB1.INIT" />
+      <Connection Source="FB1.INITO" Destination="FB3.INIT" />
+      <Connection Source="FB3.CNF" Destination="ServiceInfo.UPD" dx1="100" />
+      <Connection Source="FB2.STARTO" Destination="FB1.BROWSE_SUBSCRIBE" dx1="40" />
+      <Connection Source="FB1.SERVICE_FOUND_IND" Destination="FB1.REQ_SERVICE_DETAIL" dx1="70" dx2="70" dy="-410" />
+      <Connection Source="FB1.REQ_SERVICE_DETAIL_CNF" Destination="FB3.REQ" dx1="137.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB3.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="FB1.BROWSE_SUBSCRIBE_CNF" Destination="STARTO" dx1="97.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="START" Destination="FB2.START" />
+      <Connection Source="FB1.REQ_SERVICE_DETAIL_CNF" Destination="REQ_SERVICE_DETAIL_CNF" dx1="67.0625" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="SD_ID" Destination="ServiceInfo.SD_ID">
+        <Points>
+          <Points>
+            <X>282.2552</X>
+            <Y>365</Y>
+          </Points>
+          <Points>
+            <X>450</X>
+            <Y>365</Y>
+          </Points>
+          <Points>
+            <X>450</X>
+            <Y>575</Y>
+          </Points>
+          <Points>
+            <X>1210</X>
+            <Y>575</Y>
+          </Points>
+          <Points>
+            <X>1210</X>
+            <Y>250</Y>
+          </Points>
+          <Points>
+            <X>1385</X>
+            <Y>250</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.SERVICE_DETAIL_TXT" Destination="FB3.json_string" dx1="157.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB3.mqtt_endpoint" Destination="ServiceInfo.mqtt_endpoint" dx1="80" />
+      <Connection Source="FB3.request_topic" Destination="ServiceInfo.request_topic" dx1="60" />
+      <Connection Source="FB3.response_topic" Destination="ServiceInfo.response_topic" dx1="40" />
+      <Connection Source="SD_ID" Destination="FB1.SD_ID">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.SERVICE_DETAIL_TXT" Destination="SERVICE_DETAIL_TXT" dx1="47.0625" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

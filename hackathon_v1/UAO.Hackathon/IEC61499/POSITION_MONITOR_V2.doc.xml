@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <author>
+       <personname>
+          <firstname>Dmitrii</firstname>
+          <surname>Drozdov</surname>
+       </personname>
+       <email>dd@flexbridge.se</email>
+    </author>
+    <abstract><wysiwyg_a><p>Simple counter axis position monitor. Position is calculated dynamically based on last captured value and counter input.</p><p>New value is captured when the motor is stopped (after a small delay). This FB will also fire an event to reset counter (connect to hscAction.SYNC).</p><p>
+  </p></wysiwyg_a></abstract>
+  </info>
+<wysiwyg><p>
+  </p><p>
+  </p></wysiwyg></section>
+

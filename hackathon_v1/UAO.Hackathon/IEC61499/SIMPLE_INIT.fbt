@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="11c0f149-f3d8-482d-8764-2a34851a7738" Name="SIMPLE_INIT" Comment="Basic Function Block Type" Namespace="UAO.Hackathon">
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/28/2023" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="QI" />
+        <With Var="switch" />
+      </Event>
+      <Event Name="ERROR" />
+      <Event Name="REQ">
+        <With Var="switch" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="QO" />
+      </Event>
+      <Event Name="MOTOR_ON" />
+      <Event Name="MOTOR_OFF" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" Comment="Input event qualifier" />
+      <VarDeclaration Name="switch" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,ERR" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="552.9412" y="429.4117" />
+      <ECState Name="MOTORS_ON" Comment="Initialization" x="1351.53" y="705.1765">
+        <ECAction Output="MOTOR_ON" />
+      </ECState>
+      <ECState Name="DONE" x="708" y="1648">
+        <ECAction Output="MOTOR_OFF" />
+        <ECAction Algorithm="INIT" Output="INITO" />
+      </ECState>
+      <ECState Name="ERROR" x="1724" y="1612">
+        <ECAction Output="MOTOR_OFF" />
+        <ECAction Output="INITO" />
+      </ECState>
+      <ECTransition Source="START" Destination="MOTORS_ON" Condition="INIT" x="998.2583" y="495.4319">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="226.8155,111.4925,274.8834,128.0911" />
+      </ECTransition>
+      <ECTransition Source="MOTORS_ON" Destination="ERROR" Condition="ERROR" x="1590.087" y="1113.856">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="386.2739,240.9998,414.9449,308.4731" />
+      </ECTransition>
+      <ECTransition Source="MOTORS_ON" Destination="DONE" Condition="switch" x="1096.614" y="1218.87">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="301.9354,273.3051,254.2442,343.1767" />
+      </ECTransition>
+      <ECTransition Source="ERROR" Destination="START" Condition="1" x="1135.135" y="1095.706">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="329.1057,325.1024,240.1297,235.2505" />
+      </ECTransition>
+      <ECTransition Source="DONE" Destination="START" Condition="1" x="630.0556" y="1113.706">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="163.5251,331.1024,151.7102,238.2505" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text="&#xD;&#xA;QO:=TRUE;" />
+    </Algorithm>
+    <Algorithm Name="ERR">
+      <ST Text="QO:=FALSE;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

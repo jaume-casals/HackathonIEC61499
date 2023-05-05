@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="440fa773-935c-4786-bf08-79e0478d06d6" Name="CHECKPOINT_DISCOVERY_CAT_HMI" Comment="Service Interface Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.Persistence.Storage" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="1/24/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event ID="D3092D87E2A83848" Name="INIT">
+        <With Var="QI" />
+      </Event>
+      <Event ID="29DB0E0CD1E8D506" Name="PUBLISH_CNF">
+        <With Var="SD_ID" />
+        <With Var="mqtt_endpoint" />
+        <With Var="request_topic" />
+        <With Var="response_topic" />
+        <With Var="SD_INTERFACE_STATUS" />
+      </Event>
+      <Event ID="FFF32191A7052C43" Name="STARTO">
+        <With Var="SD_ID" />
+        <With Var="mqtt_endpoint" />
+        <With Var="request_topic" />
+        <With Var="response_topic" />
+        <With Var="SD_MANAGER_STATUS" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event ID="6D58F70EBCEB6AEC" Name="INITO">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+      <Event ID="2D89F85D183E4954" Name="CNF" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration ID="1DF0C2C20A67D94C" Name="QI" Type="BOOL" />
+      <VarDeclaration ID="32B015DDDBF5EA8A" Name="SD_ID" Type="STRING" />
+      <VarDeclaration ID="EC365564C7392DE7" Name="mqtt_endpoint" Type="STRING" />
+      <VarDeclaration ID="7EBF04CAC138B800" Name="request_topic" Type="STRING" />
+      <VarDeclaration ID="F23D11437E5B3C01" Name="response_topic" Type="STRING" />
+      <VarDeclaration ID="8D4D6973AC865066" Name="SD_INTERFACE_STATUS" Type="STRING" />
+      <VarDeclaration ID="CEDAB2217058E66D" Name="SD_MANAGER_STATUS" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration ID="7F0FA0C986105C1C" Name="QO" Type="BOOL" Comment="Event Output Qualifier" />
+      <VarDeclaration ID="11A2ADC3DA7B90D1" Name="STATUS" Type="STRING" Comment="Service Status" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="" LeftInterface="">
+    <ServiceSequence Name="" />
+  </Service>
+</FBType>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="1a1ca871-f8ac-4ef1-b1e4-582df2b1c1c0" Name="ORDER_DATA_STORAGE" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="4" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" />
+    </EventOutputs>
+    <Sockets>
+      <AdapterDeclaration ID="1" Name="DataIn" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" x="360" y="700" />
+    </Sockets>
+    <Plugs>
+      <AdapterDeclaration ID="2" Name="DataOut" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" x="2620" y="460" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="4" UID="3" Name="FB1" Type="BUFFER_196036C8B0617F9B3" x="1480" y="280" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=2;DIN${CNT}:STRING(64),STRING(64)" />
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="MODE" Value="0" />
+      <Parameter Name="MAXSIZE" Value="64" />
+    </FB>
+    <Input Name="INIT" x="60" y="292" Type="Event" />
+    <Frame Name="COMMENT1" X="880" Y="1120" Width="765.7551" Height="241.4584" IsComment="true">
+      <Parameter Name="BackgroundColor" Value="LemonChiffon" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopCenter" />
+      <Parameter Name="MoveStyle" Value="None" />
+      <Parameter Name="Text" Value="TODO&#xD;&#xA;Replace with correct data format&#xD;&#xA;and storage implementation" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Output Name="INITO" x="3520" y="292" Type="Event" />
+    <EventConnections>
+      <Connection Source="DataIn.UPD" Destination="FB1.PUT" dx1="57.3125">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="INIT" Destination="FB1.INIT" />
+      <Connection Source="DataOut.REQ" Destination="FB1.GET" dx1="47.3125" dx2="130" dy="-290" />
+      <Connection Source="FB1.GETO" Destination="DataOut.UPD" />
+      <Connection Source="FB1.INITO" Destination="INITO" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="DataIn.SD_ID" Destination="FB1.DIN1">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="DataIn.order_data" Destination="FB1.DIN2" />
+      <Connection Source="FB1.DOUT1" Destination="DataOut.SD_ID" dx1="438.0209">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.DOUT2" Destination="DataOut.order_data" dx1="478.0209">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

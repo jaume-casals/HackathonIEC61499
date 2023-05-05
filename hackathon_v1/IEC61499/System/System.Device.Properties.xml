@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DefaultProfile>
+    <Device Name="CourierIB">
+      <Property Name="IPAddress" Value="192.168.8.10" IsPassword="false" />
+      <ComplexProperty Name="Configuration" Expanded="true">
+        <GroupProperty Name="Deploy" Expanded="true" Enabled="true">
+          <Property Name="AutoStart" Value="True" IsPassword="false" />
+        </GroupProperty>
+        <GroupProperty Name="Boot" Expanded="true" Enabled="true">
+          <Property Name="BootMode" Value="Run" IsPassword="false" />
+        </GroupProperty>
+      </ComplexProperty>
+    </Device>
+    <Device Name="CheckpointIB1">
+      <Property Name="IPAddress" Value="192.168.8.1" IsPassword="false" />
+      <ComplexProperty Name="Configuration" Expanded="true">
+        <GroupProperty Name="Deploy" Expanded="true" Enabled="true">
+          <Property Name="AutoStart" Value="True" IsPassword="false" />
+        </GroupProperty>
+        <GroupProperty Name="Boot" Expanded="true" Enabled="true">
+          <Property Name="BootMode" Value="Run" IsPassword="false" />
+        </GroupProperty>
+      </ComplexProperty>
+    </Device>
+    <Device Name="M251">
+      <ComplexProperty Name="Security" Expanded="true">
+        <Property Name="UseEncryption" Value="True" IsPassword="false" />
+      </ComplexProperty>
+      <ComplexProperty Name="Configuration" Expanded="true">
+        <GroupProperty Name="Deploy" Expanded="true" Enabled="true">
+          <Property Name="AutoStart" Value="true" IsPassword="false" />
+          <Property Name="AutoSwap" Value="True" IsPassword="false" />
+        </GroupProperty>
+      </ComplexProperty>
+    </Device>
+  </DefaultProfile>
+  <Profile Name="(Local Test)">
+    <Device Name="CourierIB">
+      <Property Name="IPAddress" Value="127.0.0.1" IsPassword="false" />
+      <ComplexProperty Name="Ports" Expanded="true">
+        <Property Name="Archive" Value="51497" IsPassword="false" />
+      </ComplexProperty>
+    </Device>
+    <Device Name="CheckpointIB1">
+      <Property Name="IPAddress" Value="127.0.0.1" IsPassword="false" />
+      <ComplexProperty Name="Ports" Expanded="true">
+        <Property Name="Deploy" Value="51500" IsPassword="false" />
+      </ComplexProperty>
+    </Device>
+    <Device Name="M251">
+      <ComplexProperty Name="Ports" Expanded="true">
+        <Property Name="Deploy" Value="51509" IsPassword="false" />
+        <Property Name="Archive" Value="51508" IsPassword="false" />
+      </ComplexProperty>
+    </Device>
+  </Profile>
+</DeviceProperties>

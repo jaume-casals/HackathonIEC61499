@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="MQTTPUBLISH_73D9883955B65591" Comment="Generic Interface Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.FBType.ImplementingType" Value="nxtControl.CommProtocols#DYNGEN_MQTTPUBLISH" />
+  <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="nxtControl.CommProtocols#CNTX:=1" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmBH" Version="0.0" Author="SESA489471" Date="05/11/2020" Remarks="Template" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Request events for dedicated input data sets">
+        <With Var="QI" />
+        <With Var="ConnectionID" />
+      </Event>
+      <Event Name="PUBLISH_ALL">
+        <With Var="Topic1" />
+        <With Var="Payload1" />
+        <With Var="RootPath" />
+        <With Var="IsRetain1" />
+        <With Var="QOS1" />
+      </Event>
+      <Event Name="PUBLISH1">
+        <With Var="Topic1" />
+        <With Var="Payload1" />
+        <With Var="RootPath" />
+        <With Var="IsRetain1" />
+        <With Var="QOS1" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Confirmation from Resource for a dedicated request">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="IND">
+        <With Var="STATUS" />
+        <With Var="QO" />
+      </Event>
+      <Event Name="PUBLISH_ALLO" Comment="Indication from Resource">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="PUBLISHO1" />
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" />
+      <VarDeclaration Name="ConnectionID" Type="STRING" />
+      <VarDeclaration Name="RootPath" Type="STRING" />
+      <VarDeclaration Name="QOS1" Type="SINT" />
+      <VarDeclaration Name="IsRetain1" Type="BOOL" />
+      <VarDeclaration Name="Topic1" Type="STRING" />
+      <VarDeclaration Name="Payload1" Type="STRING" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Input data from resource" />
+      <VarDeclaration Name="STATUS" Type="STRING" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Name="START" />
+    </ECC>
+  </BasicFB>
+</FBType>

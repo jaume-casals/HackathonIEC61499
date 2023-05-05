@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="3b191c47-aabe-4c27-8196-8a3467852426" Name="TWO_POS_AXIS" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="7" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="4/29/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request" />
+      <Event Name="EXTEND" Comment="Normal Execution Request">
+        <With Var="watchdogTimeout" />
+      </Event>
+      <Event Name="RETRACT">
+        <With Var="watchdogTimeout" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="extendedRefSwitch" />
+        <With Var="retractedRefSwitch" />
+      </Event>
+      <Event Name="DONE" Comment="Execution Confirmation">
+        <With Var="retractedRefSwitch" />
+        <With Var="extendedRefSwitch" />
+      </Event>
+      <Event Name="TIMEOUT">
+        <With Var="retractedRefSwitch" />
+        <With Var="extendedRefSwitch" />
+      </Event>
+      <Event Name="CNF" Comment="Confirmation of an explicit or implicit data read request">
+        <With Var="extendedRefSwitch" />
+        <With Var="retractedRefSwitch" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="watchdogTimeout" Type="TIME" Comment="Delay Time" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="extendedRefSwitch" Type="BOOL" Comment="Current value(i) in the named variable array element" />
+      <VarDeclaration Name="retractedRefSwitch" Type="BOOL" Comment="Current value(i) in the named variable array element" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="3" UID="1" Name="PLC_IN" Type="SYMLINKMULTIVARDST_277E97BEC1451D2C" x="760" y="1540" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=2;VALUE${I}:BOOL,BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}extended_ref_switch'" />
+      <Parameter Name="NAME2" Value="'$${PATH}retracted_ref_switch'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="4" UID="2" Name="PLC_OUT" Type="SYMLINKMULTIVARSRC_277E97BEC1451D2C" x="2880" y="1480" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=2;VALUE${I}:BOOL,BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}motor_extend'" />
+      <Parameter Name="NAME2" Value="'$${PATH}motor_retract'" />
+    </FB>
+    <FB ID="5" Name="FB3" Type="E_DELAY" x="1620" y="180" Namespace="IEC61499.Standard" />
+    <FB ID="6" Name="FB4" Type="DOUBLE_ACTING_CYLINDER_V2" x="1720" y="760" Namespace="UAO.Hackathon" />
+    <FB ID="7" Name="DelayedIOupdateAfterInit" Type="E_DELAY" x="840" y="2260" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="T#200ms" />
+    </FB>
+    <Input Name="INIT" x="12" y="12" Type="Event" />
+    <Input Name="EXTEND" x="12" y="72" Type="Event" />
+    <Input Name="RETRACT" x="12" y="192" Type="Event" />
+    <Input Name="watchdogTimeout" x="513.1458" y="852" Type="Data" />
+    <Output Name="CNF" x="3572.156" y="2252" Type="Event" />
+    <Output Name="extendedRefSwitch" x="3563.302" y="2312" Type="Data" />
+    <Output Name="retractedRefSwitch" x="3563.302" y="2372" Type="Data" />
+    <Output Name="INITO" x="3300" y="152" Type="Event" />
+    <Output Name="DONE" x="3300" y="212" Type="Event" />
+    <Output Name="TIMEOUT" x="3300" y="92" Type="Event" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="PLC_IN.INIT" dx1="109.4167" />
+      <Connection Source="PLC_IN.INITO" Destination="PLC_OUT.INIT" dx1="50" />
+      <Connection Source="EXTEND" Destination="FB3.START" dx1="40" />
+      <Connection Source="RETRACT" Destination="FB3.START" />
+      <Connection Source="FB3.EO" Destination="TIMEOUT" dx1="48.5" />
+      <Connection Source="PLC_OUT.INITO" Destination="FB4.INIT" dx1="40" dx2="30" dy="-110" />
+      <Connection Source="FB4.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="FB3.EO" Destination="FB4.TIMEOUT" dx1="48.5" dx2="130" dy="350" />
+      <Connection Source="EXTEND" Destination="FB4.EXTEND" dx1="40" />
+      <Connection Source="RETRACT" Destination="FB4.RETRACT" dx1="48.52087" />
+      <Connection Source="PLC_IN.CNF" Destination="FB4.REQ" dx1="70" />
+      <Connection Source="FB4.CNF" Destination="PLC_OUT.REQ" dx1="40" />
+      <Connection Source="FB4.DONE" Destination="DONE" dx1="74.79175" />
+      <Connection Source="FB4.DONE" Destination="FB3.STOP" dx1="74.79175" dx2="50" dy="-170" />
+      <Connection Source="PLC_IN.INITO" Destination="DelayedIOupdateAfterInit.START" dx1="121.625" dx2="50" dy="530" />
+      <Connection Source="DelayedIOupdateAfterInit.EO" Destination="PLC_IN.REQ" dx1="48.5" dx2="90" dy="-110" />
+      <Connection Source="PLC_IN.CNF" Destination="CNF" dx1="101.625" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="PLC_IN.QO" Destination="PLC_OUT.QI" dx1="70" />
+      <Connection Source="watchdogTimeout" Destination="FB3.DT" dx1="46.72925" />
+      <Connection Source="FB4.extend" Destination="PLC_OUT.VALUE1" dx1="40" />
+      <Connection Source="FB4.retract" Destination="PLC_OUT.VALUE2" dx1="40" />
+      <Connection Source="PLC_IN.VALUE2" Destination="FB4.atHome" dx1="130" />
+      <Connection Source="PLC_IN.VALUE1" Destination="FB4.atEnd" dx1="110" />
+      <Connection Source="PLC_IN.VALUE1" Destination="extendedRefSwitch" dx1="61.625" />
+      <Connection Source="PLC_IN.VALUE2" Destination="retractedRefSwitch" dx1="41.625" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

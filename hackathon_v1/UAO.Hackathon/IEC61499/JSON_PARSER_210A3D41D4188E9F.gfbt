@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="JSON_PARSER_210A3D41D4188E9F" Comment="Generic Interface Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Runtime.FBType.ImplementingType" Value="Runtime.Standard#DYNGEN_JSON_PARSER" />
+  <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Base#CNT:=4;valueOut${CNT}:STRING,STRING,STRING,STRING" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Schneider Electric" Version="0.0" Author="SESA471728" Date="30/03/2021" Remarks="Template" />
+  <CompilerInfo>
+    <Compiler Language="Cpp" Vendor="nxtControl" Product="builtin " Version="1.0" />
+  </CompilerInfo>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="SET_PATH" Comment="Event dedicated for JSON path management">
+        <With Var="pathIn1" />
+        <With Var="pathIn2" />
+        <With Var="pathIn3" />
+        <With Var="pathIn4" />
+      </Event>
+      <Event Name="LOAD" Comment="Event dedicated for payload management">
+        <With Var="payload" />
+      </Event>
+      <Event Name="PARSE" Comment="Event dedicated for parse payload management" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="SET_PATH_CNF" Comment="Confirmation for JSON path management event">
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="LOAD_CNF" Comment="Confirmation for payload management event">
+        <With Var="STATUS" />
+      </Event>
+      <Event Name="PARSE_CNF" Comment="Confirmation for json parse management event">
+        <With Var="STATUS" />
+        <With Var="pathOut1" />
+        <With Var="pathOut2" />
+        <With Var="pathOut3" />
+        <With Var="pathOut4" />
+        <With Var="typeOut1" />
+        <With Var="typeOut2" />
+        <With Var="typeOut3" />
+        <With Var="typeOut4" />
+        <With Var="valueOut1" />
+        <With Var="valueOut2" />
+        <With Var="valueOut3" />
+        <With Var="valueOut4" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="payload" Type="STRING" Comment="JSON payload to parse" />
+      <VarDeclaration Name="pathIn1" Type="STRING" Comment="JSON path " />
+      <VarDeclaration Name="pathIn2" Type="STRING" Comment="JSON path " />
+      <VarDeclaration Name="pathIn3" Type="STRING" Comment="JSON path " />
+      <VarDeclaration Name="pathIn4" Type="STRING" Comment="JSON path " />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="STATUS" Type="STRING" Comment="Status" />
+      <VarDeclaration Name="pathOut1" Type="STRING" Comment="JSON output path" />
+      <VarDeclaration Name="typeOut1" Type="USINT" Comment="Type of the output value" />
+      <VarDeclaration Name="valueOut1" Type="STRING" Comment="Output value" />
+      <VarDeclaration Name="pathOut2" Type="STRING" Comment="JSON output path" />
+      <VarDeclaration Name="typeOut2" Type="USINT" Comment="Type of the output value" />
+      <VarDeclaration Name="valueOut2" Type="STRING" Comment="Output value" />
+      <VarDeclaration Name="pathOut3" Type="STRING" Comment="JSON output path" />
+      <VarDeclaration Name="typeOut3" Type="USINT" Comment="Type of the output value" />
+      <VarDeclaration Name="valueOut3" Type="STRING" Comment="Output value" />
+      <VarDeclaration Name="pathOut4" Type="STRING" Comment="JSON output path" />
+      <VarDeclaration Name="typeOut4" Type="USINT" Comment="Type of the output value" />
+      <VarDeclaration Name="valueOut4" Type="STRING" Comment="Output value" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <ECC>
+      <ECState Name="START" />
+    </ECC>
+  </BasicFB>
+</FBType>

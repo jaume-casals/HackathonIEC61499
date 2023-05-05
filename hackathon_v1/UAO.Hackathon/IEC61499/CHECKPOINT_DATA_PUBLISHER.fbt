@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="c04fed7c-0685-4adb-b239-45f6f437aafa" Name="CHECKPOINT_DATA_PUBLISHER" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="12" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" />
+    </EventOutputs>
+    <Sockets>
+      <AdapterDeclaration ID="1" Name="ServiceInfo" Type="ADP_SERVICE_INFO" Namespace="UAO.Hackathon" x="620" y="1040" />
+      <AdapterDeclaration ID="2" Name="Data" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" x="3800" y="380" />
+    </Sockets>
+    <Plugs>
+      <AdapterDeclaration ID="12" Name="blinker" Type="ADP_INDICATION" Namespace="UAO.Hackathon" x="4740" y="1600" />
+    </Plugs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="3" Name="FB1" Type="MQTT_CONNECTION" x="1900" y="200" Namespace="nxtControl.CommProtocols">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="Username" Value="''" />
+      <Parameter Name="Password" Value="''" />
+      <Parameter Name="CleanSession" Value="TRUE" />
+      <Parameter Name="KeepAlive" Value="T#0ms" />
+      <Parameter Name="WillTopic" Value="''" />
+      <Parameter Name="WillMsg" Value="''" />
+      <Parameter Name="CACertFile" Value="''" />
+      <Parameter Name="Certificate" Value="''" />
+      <Parameter Name="CertificateKey" Value="''" />
+    </FB>
+    <FB ID="4" Name="response_publisher" Type="MQTTPUBLISH_73D9883955B65591" x="6000" y="200" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="nxtControl.CommProtocols#CNTX:=1" />
+      <Parameter Name="RootPath" Value="''" />
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="QOS1" Value="1" />
+      <Parameter Name="IsRetain1" Value="FALSE" />
+    </FB>
+    <FB ID="6" UID="5" Name="FB3" Type="JSON_FORMAT_14067FD7F1E628556" x="4800" y="200" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Base#CNT:=2;value${CNT}:STRING,STRING" />
+      <Parameter Name="format" Value="'{order:{SD_ID:&quot;%s&quot;,data:&quot;%s&quot;}}'" />
+    </FB>
+    <FB ID="8" Name="request_subscriber" Type="MQTTSUBSCRIBE_73D9883955B65591" x="2960" y="200" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="nxtControl.CommProtocols#CNTX:=1" />
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="RootPath" Value="''" />
+      <Parameter Name="QOS1" Value="0" />
+    </FB>
+    <FB ID="9" Name="FB5" Type="E_REND" x="1280" y="200" Namespace="IEC61499.Standard" />
+    <FB ID="10" Name="FB6" Type="MQTT_BROKER" x="620" y="200" Namespace="nxtControl.CommProtocols">
+      <Parameter Name="QI" Value="TRUE" />
+      <Parameter Name="URI" Value="'0.0.0.0:1883'" />
+    </FB>
+    <Input Name="INIT" x="200" y="212" Type="Event" />
+    <Frame Name="COMMENT1" X="3660" Y="880" Width="720.8594" Height="301.8229" IsComment="true">
+      <Parameter Name="BackgroundColor" Value="LemonChiffon" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
+      <Parameter Name="TextAlignment" Value="TopCenter" />
+      <Parameter Name="MoveStyle" Value="None" />
+      <Parameter Name="Text" Value="&#xD;&#xA;Here subscriber could be&#xD;&#xA;checking for a specific request&#xD;&#xA;from 'RecPayload1', i.e. &quot;GET&quot;" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Output Name="INITO" x="6920" y="212" Type="Event" />
+    <EventConnections>
+      <Connection Source="Data.UPD" Destination="FB3.REQ" dx1="50" />
+      <Connection Source="FB1.INITO" Destination="request_subscriber.INIT" />
+      <Connection Source="FB3.SET_FORMAT_CNF" Destination="response_publisher.INIT" />
+      <Connection Source="FB3.CNF" Destination="response_publisher.PUBLISH1" dx1="65.47949" />
+      <Connection Source="ServiceInfo.UPD" Destination="FB5.EI2" dx1="50" />
+      <Connection Source="FB5.EO" Destination="FB1.INIT" />
+      <Connection Source="response_publisher.INITO" Destination="INITO" />
+      <Connection Source="INIT" Destination="FB6.INIT" />
+      <Connection Source="FB6.INITO" Destination="FB5.EI1" />
+      <Connection Source="request_subscriber.TOPICINDEX1" Destination="Data.REQ" />
+      <Connection Source="request_subscriber.INTO" Destination="request_subscriber.SUBSCRIBE" dx1="66.72925" dx2="70" dy="-110" />
+      <Connection Source="request_subscriber.SUBSRIBEO" Destination="FB3.SET_FORMAT" dx1="70" />
+      <Connection Source="request_subscriber.TOPICINDEX1" Destination="blinker.ONCE" dx1="46.72925" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="ServiceInfo.mqtt_endpoint" Destination="FB1.URL" dx1="535.9584">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.SD_ID" Destination="FB1.ConnectionID" dx1="495.9584">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.SD_ID" Destination="response_publisher.ConnectionID">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB3.payload" Destination="response_publisher.Payload1" dx1="45.47949" />
+      <Connection Source="Data.SD_ID" Destination="FB3.value1" dx1="477.3125">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="Data.order_data" Destination="FB3.value2" dx1="477.3125">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.request_topic" Destination="request_subscriber.Topic1" dx1="1775.958">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.response_topic" Destination="response_publisher.Topic1" dx1="4835.958">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="ServiceInfo.SD_ID" Destination="request_subscriber.ConnectionID">
+        <Attribute Name="Configuration.Connections.CrossReference" Value="True" />
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

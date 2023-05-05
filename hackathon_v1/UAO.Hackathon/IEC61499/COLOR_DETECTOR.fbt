@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="aff70b50-f876-4074-bcfc-bf44bc0b0751" Name="COLOR_DETECTOR" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="4" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="5/4/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request" />
+      <Event Name="START" Comment="Start color detection" />
+      <Event Name="STOP" Comment="Stop color detection and capture measured value." />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm" />
+      <Event Name="STARTO" Comment="Color detection started" />
+      <Event Name="STOPO" Comment="Color detection stopped">
+        <With Var="color" />
+        <With Var="color_name" />
+      </Event>
+    </EventOutputs>
+    <OutputVars>
+      <VarDeclaration Name="color" Type="USINT" Comment="Color code: 0='white', 1='red', 2='blue'" />
+      <VarDeclaration Name="color_name" Type="STRING[15]" Comment="Color: white, red or blue" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="sample_color" Type="SORTER_SAMPLE_COLOR" x="1560" y="900" Namespace="UAO.Hackathon">
+      <Parameter Name="limit1" Value="41.1345" />
+      <Parameter Name="limit2" Value="62.2675" />
+    </FB>
+    <FB ID="4" UID="3" Name="plc_in" Type="SYMLINKMULTIVARDST_197068ABA215D7EBA" x="580" y="900" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=1;VALUE${I}:REAL" />
+      <Parameter Name="NAME1" Value="'$${PATH}color_sensor'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <Input Name="INIT" x="12" y="12" Type="Event" />
+    <Input Name="START" x="6.072937" y="372" Type="Event" />
+    <Input Name="STOP" x="17.91663" y="432" Type="Event" />
+    <Frame Name="COMMENT1" X="1480" Y="1460" Width="780.127" Height="413.8021" IsComment="true">
+      <Parameter Name="BackgroundColor" Value="Lavender" />
+      <Parameter Name="TextColor" Value="Black" />
+      <Parameter Name="Font" Value="Courier New, 9.75pt" />
+      <Parameter Name="TextAlignment" Value="TopCenter" />
+      <Parameter Name="MoveStyle" Value="None" />
+      <Parameter Name="Text" Value="NOTE:&#xD;&#xA;Color sensor limit values&#xD;&#xA;WHITE |  RED  | BLUE &#xD;&#xA;      ^       ^&#xD;&#xA;      |       |&#xD;&#xA;    limit1  limit2" />
+      <Parameter Name="NxtLayerIdentifier" Value="" />
+    </Frame>
+    <Output Name="INITO" x="2118.229" y="12" Type="Event" />
+    <Output Name="STARTO" x="2289.479" y="512" Type="Event" />
+    <Output Name="STOPO" x="2301.323" y="572" Type="Event" />
+    <Output Name="color" x="2414.042" y="972" Type="Data" />
+    <Output Name="color_name" x="2416.729" y="1032" Type="Data" />
+    <EventConnections>
+      <Connection Source="plc_in.CNF" Destination="sample_color.SAMPLE_READ" dx1="61.625" />
+      <Connection Source="START" Destination="sample_color.START" dx1="936.0729" />
+      <Connection Source="STOP" Destination="sample_color.STOP" dx1="947.9167" />
+      <Connection Source="sample_color.STARTO" Destination="STARTO" dx1="40" dx2="39.47925" dy="-110" />
+      <Connection Source="sample_color.STOPO" Destination="STOPO" dx1="31.8125" />
+      <Connection Source="INIT" Destination="plc_in.INIT" dx1="49.41669" />
+      <Connection Source="plc_in.INITO" Destination="INITO" dx1="50" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="plc_in.VALUE1" Destination="sample_color.sample_in" dx1="41.625" />
+      <Connection Source="sample_color.color" Destination="color" dx1="91.8125" />
+      <Connection Source="sample_color.color_name" Destination="color_name" dx1="111.8125" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

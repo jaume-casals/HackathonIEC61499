@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="98f82cbe-9249-4557-a4ee-0146b78b7ef8" Name="PRODUCTION_SCHEDULER" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="HMI.Alias" Value="" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="3" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <Plugs>
+      <AdapterDeclaration Name="TokenOutput" Type="ADP_PRODUCTION_TOKEN" Namespace="UAO.Hackathon" x="1900" y="940" />
+    </Plugs>
+    <AdapterInputs>
+      <Adapter Name="OrderDataUpstream" Type="ADP_ORDER_DATA" Namespace="UAO.Hackathon" />
+      <Adapter Name="FinishedToken" Type="ADP_PRODUCTION_TOKEN" Namespace="UAO.Hackathon" />
+    </AdapterInputs>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="FB1" Type="ORDER_DATA_STORAGE" x="1480" y="400" Namespace="UAO.Hackathon" />
+    <Input Name="OrderDataUpstream" x="0.135498" y="572" Type="Adapter" />
+    <Input Name="FinishedToken" x="12" y="12" Type="Adapter" />
+    <AdapterConnections>
+      <Connection Source="OrderDataUpstream" Destination="FB1.DataIn" dx1="40" />
+    </AdapterConnections>
+  </FBNetwork>
+</FBType>

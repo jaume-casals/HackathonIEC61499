@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="5ead639d-54ca-4569-a692-030d67003859" Name="COURIER_CAT_HMI" Comment="Service Interface Function Block Type" Namespace="Main">
+  <Attribute Name="Runtime.Persistence.Storage" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="Dmitrii" Date="12/17/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event ID="3B18DAADD94D50BA" Name="INIT">
+        <With Var="QI" />
+      </Event>
+      <Event ID="549BF34FED106F40" Name="SD_SUBSCRIBED" />
+      <Event ID="88023A92D6D0329D" Name="REQ_SERVICE_DETAIL_CNF">
+        <With Var="SERVICE_DETAIL_TXT" />
+      </Event>
+      <Event ID="6D889C0173C5065C" Name="TIMEOUT" />
+      <Event ID="661FF6D253DAFD75" Name="REQ_SENT" />
+      <Event ID="A7AF62A8ACB683BF" Name="DATA_RECEIVED">
+        <With Var="RecPayload1" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event ID="A4ED5DA9F2CC81B7" Name="INITO">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration ID="4451A98F973889A" Name="QI" Type="BOOL" />
+      <VarDeclaration ID="93E619C85ED2DC6E" Name="SERVICE_DETAIL_TXT" Type="STRING" />
+      <VarDeclaration ID="96D570A3BF4C3C79" Name="RecPayload1" Type="STRING" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration ID="53B47BBA901B3078" Name="QO" Type="BOOL" Comment="Event Output Qualifier" />
+      <VarDeclaration ID="CBA421652E35A471" Name="STATUS" Type="STRING" Comment="Service Status" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="" LeftInterface="">
+    <ServiceSequence Name="" />
+  </Service>
+</FBType>

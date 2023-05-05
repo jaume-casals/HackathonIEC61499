@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="bb950e96-ddf3-46ba-b8f2-64cf88b6bb0d" Name="SERVICE_INFO_JSON_DESERIALIZE" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="7" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="12/30/2022" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" />
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="json_string" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" />
+      <Event Name="CNF">
+        <With Var="SD_ID" />
+        <With Var="mqtt_endpoint" />
+        <With Var="request_topic" />
+        <With Var="response_topic" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="json_string" Type="STRING" Comment="Input event qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="SD_ID" Type="STRING" />
+      <VarDeclaration Name="mqtt_endpoint" Type="STRING" />
+      <VarDeclaration Name="request_topic" Type="STRING" />
+      <VarDeclaration Name="response_topic" Type="STRING" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="6" UID="2" Name="FB1" Type="JSON_PARSER_210A3D41D4188E9F" x="2000" y="180" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Base#CNT:=4;valueOut${CNT}:STRING,STRING,STRING,STRING" />
+      <Parameter Name="pathIn1" Value="'service_info.SD_ID'" />
+      <Parameter Name="pathIn2" Value="'service_info.mqtt_endpoint'" />
+      <Parameter Name="pathIn3" Value="'service_info.request_topic'" />
+      <Parameter Name="pathIn4" Value="'service_info.response_topic'" />
+    </FB>
+    <FB ID="3" Name="FB2" Type="ADD_REMOVE_SLASH" x="780" y="180" Namespace="UAO.Hackathon" />
+    <Input Name="REQ" x="20" y="252" Type="Event" />
+    <Input Name="json_string" x="20" y="452" Type="Data" />
+    <Input Name="INIT" x="20" y="12" Type="Event" />
+    <Output Name="SD_ID" x="3000" y="692" Type="Data" />
+    <Output Name="mqtt_endpoint" x="3000" y="872" Type="Data" />
+    <Output Name="request_topic" x="3000" y="1052" Type="Data" />
+    <Output Name="response_topic" x="3000" y="1232" Type="Data" />
+    <Output Name="CNF" x="2980" y="312" Type="Event" />
+    <Output Name="INITO" x="2980" y="192" Type="Event" />
+    <EventConnections>
+      <Connection Source="REQ" Destination="FB2.REMOVE_SLASH" />
+      <Connection Source="INIT" Destination="FB1.SET_PATH" dx1="1491.417">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB2.REMOVE_SLASHO" Destination="FB1.LOAD" />
+      <Connection Source="FB1.LOAD_CNF" Destination="FB1.PARSE" dx1="88.14575" dx2="90" dy="-220">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.SET_PATH_CNF" Destination="INITO" />
+      <Connection Source="FB1.PARSE_CNF" Destination="CNF" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="json_string" Destination="FB2.InputString" />
+      <Connection Source="FB2.OutputString" Destination="FB1.payload" dx1="250.0625">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.valueOut1" Destination="SD_ID">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.valueOut2" Destination="mqtt_endpoint">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.valueOut3" Destination="request_topic">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.valueOut4" Destination="response_topic">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

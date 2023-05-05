@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="009bbab0-d3a4-42ad-849e-01761a841a89" Name="SHARED_SWITCH" Comment="Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="32" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="Flexbridge AB" Version="0.0" Author="brink" Date="2/8/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="C_ON" Comment="Increment 'on' counter" />
+      <Event Name="C_OFF" Comment="Decrement 'on' counter" />
+      <Event Name="R" />
+      <Event Name="S_CNF" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="clientCounter" />
+      </Event>
+      <Event Name="RO">
+        <With Var="clientCounter" />
+      </Event>
+      <Event Name="S_REQ">
+        <With Var="switch_out" />
+        <With Var="clientCounter" />
+      </Event>
+    </EventOutputs>
+    <OutputVars>
+      <VarDeclaration Name="switch_out" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="clientCounter" Type="UINT" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="3" Name="counter" Type="E_UCNTR" x="460" y="1580" Namespace="UAO.Hackathon">
+      <Parameter Name="PVL" Value="0" />
+      <Parameter Name="PVH" Value="1" />
+    </FB>
+    <FB ID="8" Name="expect_on_off" Type="E_SWITCH" x="1040" y="1580" Namespace="IEC61499.Standard" />
+    <FB ID="11" Name="switch_already_on" Type="E_SWITCH" x="2160" y="2020" Namespace="IEC61499.Standard" />
+    <FB ID="12" Name="switch_already_off" Type="E_SWITCH" x="2160" y="1580" Namespace="IEC61499.Standard" />
+    <FB ID="16" Name="switch_is_on" Type="E_RS" x="2580" y="1100" Namespace="IEC61499.Standard" />
+    <FB ID="20" Name="merge_already_correct" Type="E_MERGE" x="2940" y="1920" Namespace="IEC61499.Standard" />
+    <FB ID="23" Name="merge_set_or_correct" Type="E_MERGE" x="4160" y="1540" Namespace="IEC61499.Standard" />
+    <FB ID="28" Name="when_switch_set" Type="E_PERMIT" x="2700" y="620" Namespace="IEC61499.Standard" />
+    <FB ID="30" Name="switch_setting_or_set" Type="E_SWITCH" x="3700" y="620" Namespace="IEC61499.Standard" />
+    <FB ID="31" Name="setting_switch" Type="E_RS" x="3240" y="620" Namespace="IEC61499.Standard" />
+    <FB ID="32" Name="switch_is_off" Type="NOT_42C76073DCEB1A7A" x="1700" y="1580" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.Standard#CNT:=1;OUT${CNT}:BOOL" />
+    </FB>
+    <Input Name="C_ON" x="80" y="1592" Type="Event" />
+    <Input Name="C_OFF" x="80" y="1652" Type="Event" />
+    <Input Name="S_CNF" x="80" y="632" Type="Event" />
+    <Input Name="R" x="80" y="1712" Type="Event" />
+    <Output Name="clientCounter" x="2825" y="2752" Type="Data" />
+    <Output Name="RO" x="4580" y="2472" Type="Event" />
+    <Output Name="CNF" x="4580" y="1552" Type="Event" />
+    <Output Name="switch_out" x="4580" y="1372" Type="Data" />
+    <Output Name="S_REQ" x="4580" y="692" Type="Event" />
+    <EventConnections>
+      <Connection Source="C_ON" Destination="counter.CU" />
+      <Connection Source="C_OFF" Destination="counter.CD" />
+      <Connection Source="counter.CUO" Destination="expect_on_off.EI" />
+      <Connection Source="switch_already_off.EO1" Destination="merge_already_correct.EI1" dx1="379.7292">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="switch_already_on.EO1" Destination="merge_already_correct.EI2" dx1="379.7292">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="S_CNF" Destination="when_switch_set.EI" />
+      <Connection Source="switch_already_off.EO0" Destination="switch_is_on.R" dx1="50">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="switch_already_on.EO0" Destination="switch_is_on.S" dx1="99.72925">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="switch_setting_or_set.EO1" Destination="S_REQ" />
+      <Connection Source="merge_already_correct.EO" Destination="merge_set_or_correct.EI2" dx1="41.5415" />
+      <Connection Source="switch_setting_or_set.EO0" Destination="merge_set_or_correct.EI1" dx1="59.729">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="merge_set_or_correct.EO" Destination="CNF" />
+      <Connection Source="setting_switch.EO" Destination="switch_setting_or_set.EI" />
+      <Connection Source="when_switch_set.EO" Destination="setting_switch.R" />
+      <Connection Source="switch_is_on.EO" Destination="setting_switch.S" dx1="318.3542">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="R" Destination="counter.R" />
+      <Connection Source="counter.RO" Destination="RO" dx1="60" />
+      <Connection Source="expect_on_off.EO1" Destination="switch_already_on.EI" dx1="179.7292">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="switch_is_off.CNF" Destination="switch_already_off.EI" />
+      <Connection Source="expect_on_off.EO0" Destination="switch_is_off.REQ" />
+      <Connection Source="counter.CDO" Destination="expect_on_off.EI" dx1="70" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="counter.QH" Destination="expect_on_off.G" dx1="144.5834">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="switch_is_on.Q" Destination="switch_out" />
+      <Connection Source="setting_switch.Q" Destination="when_switch_set.PERMIT" dx1="98.35425" dx2="80" dy="-420">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="setting_switch.Q" Destination="switch_setting_or_set.G" />
+      <Connection Source="switch_is_off.OUT1" Destination="switch_already_off.G" dx1="40" />
+      <Connection Source="switch_is_on.Q" Destination="switch_is_off.IN1" dx1="48.35425" dx2="80" dy="-380">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="switch_is_on.Q" Destination="switch_already_on.G" dx1="48.35425" dx2="540" dy="-380">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="counter.CV" Destination="clientCounter" dx1="47.45837" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

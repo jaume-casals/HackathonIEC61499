@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.2
+Project("{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}") = "IEC61499", "IEC61499\IEC61499.dfbproj", "{3094307A-52AE-4C09-8CA3-AA619761D361}"
+EndProject
+Project("{E25C2A81-DD87-490C-A304-820B0BA163F2}") = "AssetLinkData", "AssetLinkData\AssetLinkData.assetLinkDataproj", "{EEFBF753-3008-4F2B-9281-3E00D72FB390}"
+EndProject
+Project("{B8625A29-8134-4135-BEBD-5371646CD051}") = "TopologyManager", "Topology\TopologyManager.topologyproj", "{A767A9B8-8B52-43AA-A2E8-6F744A899DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMI", "HMI\HMI.csproj", "{F5A0D60C-53A5-48C9-A47F-C89AE4A29A60}"
+EndProject
+Project("{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}") = "UAO.Hackathon", "UAO.Hackathon\IEC61499\UAO.Hackathon.dfbproj", "{A26DB02F-239E-448F-861B-D55384B760CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAO.Hackathon.HMI", "UAO.Hackathon\HMI\UAO.Hackathon.HMI.csproj", "{4E59BE9C-18DA-40C3-8FBC-29269408A10E}"
+EndProject
+Project("{E25C2A81-DD87-490C-A304-820B0BA163F2}") = "UAO.Hackathon.AssetLinkData", "UAO.Hackathon\AssetLinkData\UAO.Hackathon.AssetLinkData.assetLinkDataproj", "{C6F55EF7-5EDA-4B2D-A94A-D67A7E40EB0A}"
+EndProject
+Project("{B8625A29-8134-4135-BEBD-5371646CD051}") = "UAO.Hackathon.TopologyManager", "UAO.Hackathon\Topology\UAO.Hackathon.TopologyManager.topologyproj", "{F5B8B6EB-DAC6-430B-AB07-89AA88746ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flexbridge.Iceblock.HMI", "Flexbridge.Iceblock\HMI\Flexbridge.Iceblock.HMI.csproj", "{09626101-5769-46ED-BE66-0BDD7E9DD1A8}"
+EndProject
+Project("{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}") = "Flexbridge.Iceblock", "Flexbridge.Iceblock\IEC61499\Flexbridge.Iceblock.dfbproj", "{16688901-A641-4CE1-8D68-86880F2F7B1E}"
+EndProject
+Project("{E25C2A81-DD87-490C-A304-820B0BA163F2}") = "Flexbridge.Iceblock.AssetLinkData", "Flexbridge.Iceblock\AssetLinkData\Flexbridge.Iceblock.AssetLinkData.assetLinkDataproj", "{DAA14361-33CB-4CA8-9B16-18F0CE124B83}"
+EndProject
+Project("{B8625A29-8134-4135-BEBD-5371646CD051}") = "Flexbridge.Iceblock.TopologyManager", "Flexbridge.Iceblock\Topology\Flexbridge.Iceblock.TopologyManager.topologyproj", "{F8C0CA74-FB2A-4374-8DD3-1A99EAA40B03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows = Debug|Windows
+		Release|Windows = Release|Windows
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3094307A-52AE-4C09-8CA3-AA619761D361}.Debug|Windows.ActiveCfg = Debug|Windows
+		{3094307A-52AE-4C09-8CA3-AA619761D361}.Debug|Windows.Build.0 = Debug|Windows
+		{3094307A-52AE-4C09-8CA3-AA619761D361}.Release|Windows.ActiveCfg = Release|Windows
+		{3094307A-52AE-4C09-8CA3-AA619761D361}.Release|Windows.Build.0 = Release|Windows
+		{EEFBF753-3008-4F2B-9281-3E00D72FB390}.Debug|Windows.ActiveCfg = Debug|Windows
+		{EEFBF753-3008-4F2B-9281-3E00D72FB390}.Debug|Windows.Build.0 = Debug|Windows
+		{EEFBF753-3008-4F2B-9281-3E00D72FB390}.Release|Windows.ActiveCfg = Release|Windows
+		{EEFBF753-3008-4F2B-9281-3E00D72FB390}.Release|Windows.Build.0 = Release|Windows
+		{A767A9B8-8B52-43AA-A2E8-6F744A899DD5}.Debug|Windows.ActiveCfg = Debug|Windows
+		{A767A9B8-8B52-43AA-A2E8-6F744A899DD5}.Debug|Windows.Build.0 = Debug|Windows
+		{A767A9B8-8B52-43AA-A2E8-6F744A899DD5}.Release|Windows.ActiveCfg = Release|Windows
+		{A767A9B8-8B52-43AA-A2E8-6F744A899DD5}.Release|Windows.Build.0 = Release|Windows
+		{F5A0D60C-53A5-48C9-A47F-C89AE4A29A60}.Debug|Windows.ActiveCfg = Debug|Windows
+		{F5A0D60C-53A5-48C9-A47F-C89AE4A29A60}.Debug|Windows.Build.0 = Debug|Windows
+		{F5A0D60C-53A5-48C9-A47F-C89AE4A29A60}.Release|Windows.ActiveCfg = Release|Windows
+		{F5A0D60C-53A5-48C9-A47F-C89AE4A29A60}.Release|Windows.Build.0 = Release|Windows
+		{A26DB02F-239E-448F-861B-D55384B760CC}.Debug|Windows.ActiveCfg = Debug|Windows
+		{A26DB02F-239E-448F-861B-D55384B760CC}.Debug|Windows.Build.0 = Debug|Windows
+		{A26DB02F-239E-448F-861B-D55384B760CC}.Release|Windows.ActiveCfg = Release|Windows
+		{A26DB02F-239E-448F-861B-D55384B760CC}.Release|Windows.Build.0 = Release|Windows
+		{4E59BE9C-18DA-40C3-8FBC-29269408A10E}.Debug|Windows.ActiveCfg = Debug|Windows
+		{4E59BE9C-18DA-40C3-8FBC-29269408A10E}.Debug|Windows.Build.0 = Debug|Windows
+		{4E59BE9C-18DA-40C3-8FBC-29269408A10E}.Release|Windows.ActiveCfg = Release|Windows
+		{4E59BE9C-18DA-40C3-8FBC-29269408A10E}.Release|Windows.Build.0 = Release|Windows
+		{C6F55EF7-5EDA-4B2D-A94A-D67A7E40EB0A}.Debug|Windows.ActiveCfg = Debug|Windows
+		{C6F55EF7-5EDA-4B2D-A94A-D67A7E40EB0A}.Debug|Windows.Build.0 = Debug|Windows
+		{C6F55EF7-5EDA-4B2D-A94A-D67A7E40EB0A}.Release|Windows.ActiveCfg = Release|Windows
+		{C6F55EF7-5EDA-4B2D-A94A-D67A7E40EB0A}.Release|Windows.Build.0 = Release|Windows
+		{F5B8B6EB-DAC6-430B-AB07-89AA88746ED1}.Debug|Windows.ActiveCfg = Debug|Windows
+		{F5B8B6EB-DAC6-430B-AB07-89AA88746ED1}.Debug|Windows.Build.0 = Debug|Windows
+		{F5B8B6EB-DAC6-430B-AB07-89AA88746ED1}.Release|Windows.ActiveCfg = Release|Windows
+		{F5B8B6EB-DAC6-430B-AB07-89AA88746ED1}.Release|Windows.Build.0 = Release|Windows
+		{09626101-5769-46ED-BE66-0BDD7E9DD1A8}.Debug|Windows.ActiveCfg = Debug|Windows
+		{09626101-5769-46ED-BE66-0BDD7E9DD1A8}.Debug|Windows.Build.0 = Debug|Windows
+		{09626101-5769-46ED-BE66-0BDD7E9DD1A8}.Release|Windows.ActiveCfg = Release|Windows
+		{09626101-5769-46ED-BE66-0BDD7E9DD1A8}.Release|Windows.Build.0 = Release|Windows
+		{16688901-A641-4CE1-8D68-86880F2F7B1E}.Debug|Windows.ActiveCfg = Debug|Windows
+		{16688901-A641-4CE1-8D68-86880F2F7B1E}.Debug|Windows.Build.0 = Debug|Windows
+		{16688901-A641-4CE1-8D68-86880F2F7B1E}.Release|Windows.ActiveCfg = Release|Windows
+		{16688901-A641-4CE1-8D68-86880F2F7B1E}.Release|Windows.Build.0 = Release|Windows
+		{DAA14361-33CB-4CA8-9B16-18F0CE124B83}.Debug|Windows.ActiveCfg = Debug|Windows
+		{DAA14361-33CB-4CA8-9B16-18F0CE124B83}.Debug|Windows.Build.0 = Debug|Windows
+		{DAA14361-33CB-4CA8-9B16-18F0CE124B83}.Release|Windows.ActiveCfg = Release|Windows
+		{DAA14361-33CB-4CA8-9B16-18F0CE124B83}.Release|Windows.Build.0 = Release|Windows
+		{F8C0CA74-FB2A-4374-8DD3-1A99EAA40B03}.Debug|Windows.ActiveCfg = Debug|Windows
+		{F8C0CA74-FB2A-4374-8DD3-1A99EAA40B03}.Debug|Windows.Build.0 = Debug|Windows
+		{F8C0CA74-FB2A-4374-8DD3-1A99EAA40B03}.Release|Windows.ActiveCfg = Release|Windows
+		{F8C0CA74-FB2A-4374-8DD3-1A99EAA40B03}.Release|Windows.Build.0 = Release|Windows
+	EndGlobalSection
+EndGlobal

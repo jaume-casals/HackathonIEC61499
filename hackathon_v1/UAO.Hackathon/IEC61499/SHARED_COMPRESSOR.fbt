@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="5eb38d64-7c1b-4799-bbad-99d798c8e534" Name="SHARED_COMPRESSOR" Comment="Extracted Composite Function Block Type" Namespace="UAO.Hackathon">
+  <Attribute Name="Configuration.FB.IDCounter" Value="2" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Author="Dmitrii" Date="4/29/2023" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Init" />
+      <Event Name="REQ_ON" Comment="Increment 'on' counter" />
+      <Event Name="REQ_OFF" Comment="Decrement 'on' counter" />
+      <Event Name="RESET_COUNTER" Comment="Reset counter" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization confirm">
+        <With Var="clientCounter" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="clientCounter" />
+      </Event>
+    </EventOutputs>
+    <OutputVars>
+      <VarDeclaration Name="clientCounter" Type="UINT" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="PlcOut" Type="SYMLINKMULTIVARSRC_1559B0FF8170C9BA0" x="2040" y="840" Namespace="UAO.Hackathon">
+      <Attribute Name="Configuration.GenericFBType.InterfaceParams" Value="Runtime.System#I:=1;VALUE${I}:BOOL" />
+      <Parameter Name="NAME1" Value="'$${PATH}compressor'" />
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="2" Name="sharedSwitch" Type="SHARED_SWITCH" x="1000" y="780" Namespace="UAO.Hackathon" />
+    <Input Name="REQ_ON" x="336.8229" y="492" Type="Event" />
+    <Input Name="REQ_OFF" x="326.1667" y="572" Type="Event" />
+    <Input Name="RESET_COUNTER" x="260" y="952" Type="Event" />
+    <Input Name="INIT" x="695.7084" y="1632" Type="Event" />
+    <Output Name="CNF" x="3332.156" y="912" Type="Event" />
+    <Output Name="clientCounter" x="3188.688" y="1152" Type="Data" />
+    <Output Name="INITO" x="3379.115" y="452" Type="Event" />
+    <EventConnections>
+      <Connection Source="sharedSwitch.S_REQ" Destination="PlcOut.REQ" />
+      <Connection Source="PlcOut.CNF" Destination="sharedSwitch.S_CNF" dx1="60" dx2="110" dy="-230" />
+      <Connection Source="PlcOut.INITO" Destination="INITO" dx1="56.875" />
+      <Connection Source="REQ_ON" Destination="sharedSwitch.C_ON" dx1="45.17712" />
+      <Connection Source="REQ_OFF" Destination="sharedSwitch.C_OFF" dx1="40" />
+      <Connection Source="RESET_COUNTER" Destination="sharedSwitch.R" dx1="45.25" />
+      <Connection Source="INIT" Destination="PlcOut.INIT" dx1="625.7083" />
+      <Connection Source="sharedSwitch.CNF" Destination="CNF">
+        <Points>
+          <Points>
+            <X>382.8958</X>
+            <Y>205</Y>
+          </Points>
+          <Points>
+            <X>397.8958</X>
+            <Y>205</Y>
+          </Points>
+          <Points>
+            <X>397.8958</X>
+            <Y>192.5</Y>
+          </Points>
+          <Points>
+            <X>657.5</X>
+            <Y>192.5</Y>
+          </Points>
+          <Points>
+            <X>657.5</X>
+            <Y>235</Y>
+          </Points>
+          <Points>
+            <X>833.039</X>
+            <Y>235</Y>
+          </Points>
+        </Points>
+      </Connection>
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="sharedSwitch.switch_out" Destination="PlcOut.VALUE1" dx1="40" />
+      <Connection Source="sharedSwitch.clientCounter" Destination="clientCounter">
+        <Points>
+          <Points>
+            <X>382.8958</X>
+            <Y>315</Y>
+          </Points>
+          <Points>
+            <X>412.5</X>
+            <Y>315</Y>
+          </Points>
+          <Points>
+            <X>412.5</X>
+            <Y>337.5</Y>
+          </Points>
+          <Points>
+            <X>657.5</X>
+            <Y>337.5</Y>
+          </Points>
+          <Points>
+            <X>657.5</X>
+            <Y>295</Y>
+          </Points>
+          <Points>
+            <X>797.172</X>
+            <Y>295</Y>
+          </Points>
+        </Points>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>
