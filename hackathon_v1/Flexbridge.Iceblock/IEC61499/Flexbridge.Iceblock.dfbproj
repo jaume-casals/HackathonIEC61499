@@ -38,15 +38,12 @@
   <ItemGroup>
     <None Include="Flexbridge.Iceblock.iecproj" />
     <None Include="Project.doc.xml" />
-    <None Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default\Flexbridge.Iceblock.snapshot" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration" />
     <Folder Include="License" />
     <Folder Include="Log" />
     <Folder Include="SnapshotCompiles" />
-    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}" />
-    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIO_IN.fbt">

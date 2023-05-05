@@ -15,6 +15,7 @@
         <FB ID="876B93327C0BC7A3" Name="FB3" Type="EVENTCHAINHEAD" x="4040" y="320" Namespace="Runtime.Standard" Loaded="true">
           <Parameter Name="NAME" Value="'INIT'" />
         </FB>
+        <FB ID="780CB84E95A9B1CC" Name="extender_test" Type="TWO_POS_AXIS" x="2920" y="1500" Namespace="UAO.Hackathon" />
         <FB ID="88A73DB9AA5DE69F" Name="BMTM3" Type="BMTM3" x="0" y="0" Namespace="SE.IoTMx">
           <Parameter Name="busId" Value="'BMTM3'" />
           <Parameter Name="enableSymlinkOC" Value="TRUE" />
@@ -82,8 +83,8 @@
           <Parameter Name="DI03" Value="''" />
           <Parameter Name="DI04" Value="''" />
           <Parameter Name="DI05" Value="''" />
-          <Parameter Name="DI06" Value="''" />
-          <Parameter Name="DI07" Value="''" />
+          <Parameter Name="DI06" Value="'extender_test.extended_ref_switch'" />
+          <Parameter Name="DI07" Value="'extender_test.retracted_ref_switch'" />
           <Parameter Name="DI08" Value="''" />
           <Parameter Name="DI09" Value="''" />
           <Parameter Name="DI10" Value="''" />

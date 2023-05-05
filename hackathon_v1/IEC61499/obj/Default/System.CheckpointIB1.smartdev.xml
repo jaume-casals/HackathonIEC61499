@@ -11,7 +11,7 @@
         </FB>
         <FB Name="START" Type="E_RESTART" x="80" y="100" Namespace="IEC61499.Standard" />
         <EventConnections>
-          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" dx1="48.60425" />
+          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" dx1="68.60425" />
           <Connection Source="START.WARM" Destination="Checkpoint1.INIT" dx1="48.60425" />
         </EventConnections>
         <DataConnections />

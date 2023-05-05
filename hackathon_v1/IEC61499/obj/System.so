@@ -18,6 +18,12 @@
       </FB>
       <FB ID="F5F4F764F78FC567" Name="Courier" Type="COURIER_CAT" x="2260" y="1380" Namespace="Main" />
       <FB ID="7AE58CE596471883" Name="JustAnEmptyCAT" Type="PRODUCTION_SCHEDULER" x="3260" y="1380" Namespace="Main" />
+      <FB ID="3E4BAE4D4BF3A6C9" Name="extender_test" Type="TWO_POS_AXIS" x="2060" y="1740" Namespace="UAO.Hackathon" />
+      <FB ID="33CED9B9E8EB3EAB" Name="conveyor_counter" Type="CONVEYOR_WITH_COUNTER" x="1020" y="2460" Namespace="UAO.Hackathon" />
+      <FB ID="FCE6C08ABF1D7037" Name="encoder_axis" Type="ENCODER_AXIS_SINGLE_PHASE" x="3280" y="1780" Namespace="UAO.Hackathon" />
+      <FB ID="D052151515817D77" Name="shared_compressor" Type="SHARED_COMPRESSOR" x="3220" y="2440" Namespace="UAO.Hackathon" />
+      <FB ID="261859D39CE45CB4" Name="conveyor_transport" Type="TWO_POS_CONVEYOR_TRANSPORT" x="1880" y="2360" Namespace="UAO.Hackathon" />
+      <FB ID="77A8D5762DC24BFA" Name="vacuum_control" Type="VACUUM_CONTROL" x="1900" y="2940" Namespace="UAO.Hackathon" />
       <AdapterConnections>
         <Connection Source="Courier.DataDownstream" Destination="JustAnEmptyCAT.OrderDataUpstream" />
       </AdapterConnections>
@@ -38,7 +44,7 @@
         <Parameter Name="MoveStyle" Value="AnyContained" />
         <Parameter Name="NxtLayerIdentifier" Value="" />
       </Frame>
-      <Frame Name="COMMENT2" X="1180" Y="520" Width="1279.313" Height="220" IsComment="true">
+      <Frame Name="COMMENT2" X="1180" Y="520" Width="1279.313" Height="241.4583" IsComment="true">
         <Parameter Name="BackgroundColor" Value="LemonChiffon" />
         <Parameter Name="TextColor" Value="Black" />
         <Parameter Name="Font" Value="Microsoft Sans Serif, 10pt" />
@@ -83,7 +89,7 @@
           <Parameter Name="order_data" Value="'product1.red.drill.bake.sort'" />
         </FB>
         <EventConnections>
-          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" dx1="48.60425" />
+          <Connection Source="START.COLD" Destination="Checkpoint1.INIT" dx1="68.60425" />
           <Connection Source="START.WARM" Destination="Checkpoint1.INIT" dx1="48.60425" />
         </EventConnections>
       </FBNetwork>
@@ -104,6 +110,12 @@
         <FB ID="876B93327C0BC7A3" Name="FB3" Type="EVENTCHAINHEAD" x="4040" y="320" Namespace="Runtime.Standard" Loaded="true">
           <Parameter Name="NAME" Value="'INIT'" />
         </FB>
+        <FB ID="780CB84E95A9B1CC" Name="extender_test" Type="TWO_POS_AXIS" x="2920" y="1500" Namespace="UAO.Hackathon" />
+        <FB ID="6588964C416B3AF0" Name="conveyor_transport" Type="TWO_POS_CONVEYOR_TRANSPORT" x="1880" y="2360" Namespace="UAO.Hackathon" />
+        <FB ID="880FAFC49B3EFE4D" Name="conveyor_counter" Type="CONVEYOR_WITH_COUNTER" x="1020" y="2460" Namespace="UAO.Hackathon" />
+        <FB ID="90DBF7CCA457CF01" Name="shared_compressor" Type="SHARED_COMPRESSOR" x="3220" y="2440" Namespace="UAO.Hackathon" />
+        <FB ID="3FA6977582327DB0" Name="encoder_axis" Type="ENCODER_AXIS_SINGLE_PHASE" x="3280" y="1780" Namespace="UAO.Hackathon" />
+        <FB ID="2095B4BF1C8029F7" Name="vacuum_control" Type="VACUUM_CONTROL" x="1900" y="2940" Namespace="UAO.Hackathon" />
         <FB ID="88A73DB9AA5DE69F" Name="BMTM3" Type="BMTM3" x="0" y="0" Namespace="SE.IoTMx">
           <Parameter Name="busId" Value="'BMTM3'" />
           <Parameter Name="enableSymlinkOC" Value="TRUE" />
@@ -165,14 +177,14 @@
           <Parameter Name="ScanRate" Value="100" />
         </FB>
         <FB ID="B32927E9C1EA8422" Name="TM3DI16_G" Type="TM3DI16_G" x="0" y="0" Namespace="SE.IoTMx">
-          <Parameter Name="DI00" Value="''" />
-          <Parameter Name="DI01" Value="''" />
-          <Parameter Name="DI02" Value="''" />
+          <Parameter Name="DI00" Value="'encoder_axis.SensorDriver.ref_switch'" />
+          <Parameter Name="DI01" Value="'conveyor_transport.sensor2'" />
+          <Parameter Name="DI02" Value="'conveyor_transport.sensor1'" />
           <Parameter Name="DI03" Value="''" />
           <Parameter Name="DI04" Value="''" />
           <Parameter Name="DI05" Value="''" />
-          <Parameter Name="DI06" Value="''" />
-          <Parameter Name="DI07" Value="''" />
+          <Parameter Name="DI06" Value="'extender_test.extended_ref_switch'" />
+          <Parameter Name="DI07" Value="'extender_test.retracted_ref_switch'" />
           <Parameter Name="DI08" Value="''" />
           <Parameter Name="DI09" Value="''" />
           <Parameter Name="DI10" Value="''" />
@@ -291,4 +303,10 @@
   </Device>
   <Mapping From="APP1.Courier" To="CourierIB.RES0" />
   <Mapping From="APP1.Checkpoint1" To="CheckpointIB1.RES0" />
+  <Mapping From="APP1.extender_test" To="M251.RES0" />
+  <Mapping From="APP1.conveyor_transport" To="M251.RES0" />
+  <Mapping From="APP1.conveyor_counter" To="M251.RES0" />
+  <Mapping From="APP1.shared_compressor" To="M251.RES0" />
+  <Mapping From="APP1.encoder_axis" To="M251.RES0" />
+  <Mapping From="APP1.vacuum_control" To="M251.RES0" />
 </System>

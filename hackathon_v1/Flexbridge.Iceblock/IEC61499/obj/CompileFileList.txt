@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CompileFileList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/DeploySnapshot.xsd">
-  <FileItem Name="Flexbridge.Iceblock#AIO_IN.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#AIO_IN.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>3646ED30B878974A</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#AIO_OUT.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#AIO_OUT.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>173F9977268A8DB58</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#AIO_TRIGGERED_IN.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#AIO_TRIGGERED_IN.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>77264F670DA30FFE</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#DIO_IN_4CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#DIO_IN_4CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>1836A0012B3DEC408</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#DIO_IN_8CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#DIO_IN_8CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>203E2696A174E4A28</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#DIO_OUT.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:28</Modified>
+  <FileItem Name="Flexbridge.Iceblock#DIO_OUT.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:44</Modified>
     <Hash>196E8C0D0080C3B72</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#DIO_TRIGGERED_IN_4CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#DIO_TRIGGERED_IN_4CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>514DC52269F0C087</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#DIO_TRIGGERED_IN_8CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#DIO_TRIGGERED_IN_8CH.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>1789442F8E48EA234</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#SYSFS_IO.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#SYSFS_IO.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>16486541872115B0C</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#SYSTEM_TEMP.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#SYSTEM_TEMP.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>47F5D34C68514CA3</Hash>
   </FileItem>
-  <FileItem Name="Flexbridge.Iceblock#SYSTEM_TIME.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+  <FileItem Name="Flexbridge.Iceblock#SYSTEM_TIME.bin" Library="Flexbridge.Iceblock.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
     <Hash>141A15EA580A3C484</Hash>
   </FileItem>
   <LibraryItem Name="nxtControl.AvahiXMPP" Version="22.0.0.0" />

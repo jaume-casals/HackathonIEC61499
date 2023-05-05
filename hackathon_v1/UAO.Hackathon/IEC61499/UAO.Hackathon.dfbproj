@@ -60,7 +60,6 @@
       <DependentUpon>POSITION_MONITOR_V2.fbt</DependentUpon>
     </None>
     <None Include="Project.doc.xml" />
-    <None Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default\UAO.Hackathon.snapshot" />
     <None Include="SORTER_GET_COLOR.doc.xml">
       <DependentUpon>SORTER_GET_COLOR.fbt</DependentUpon>
     </None>
@@ -77,8 +76,6 @@
     <Folder Include="License" />
     <Folder Include="Log" />
     <Folder Include="SnapshotCompiles" />
-    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}" />
-    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADD_REMOVE_SLASH.fbt">

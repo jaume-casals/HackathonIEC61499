@@ -1,283 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CompileFileList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/DeploySnapshot.xsd">
-  <FileItem Name="UAO.Hackathon#ADD_REMOVE_SLASH.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADD_REMOVE_SLASH.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>116CF62BF0872289D</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#BASIC_STORAGE_DINT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#BASIC_STORAGE_DINT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1523137A768504BEE</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ADP_ORDER_DATA.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADP_ORDER_DATA.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>218E4DAB9A0E43818</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CHECKPOINT_DATA_GENERATOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CHECKPOINT_DATA_GENERATOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1364ACA3A86C7A3F4</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ADP_SERVICE_INFO.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADP_SERVICE_INFO.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>4204B03ED27C5908</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ADP_INDICATION.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADP_INDICATION.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>652B0AEFF762E833</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#MQTTPUBLISH_73D9883955B65591.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#MQTTPUBLISH_73D9883955B65591.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>73D9883955B65591</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#JSON_FORMAT_14067FD7F1E628556.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#JSON_FORMAT_14067FD7F1E628556.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>14067FD7F1E628556</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#MQTTSUBSCRIBE_73D9883955B65591.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#MQTTSUBSCRIBE_73D9883955B65591.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>73D9883955B65591</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CHECKPOINT_DATA_PUBLISHER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CHECKPOINT_DATA_PUBLISHER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>45D45F752528DBE6</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#JSON_PARSER_2442D0DD1B0E13218.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#JSON_PARSER_2442D0DD1B0E13218.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>2442D0DD1B0E13218</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DS_SELECTX_2536758B411A6CE51.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DS_SELECTX_2536758B411A6CE51.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>2536758B411A6CE51</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CHECKPOINT_DATA_SUBSCRIBER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CHECKPOINT_DATA_SUBSCRIBER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>158909774D8924916</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#JSON_FORMAT_12F3DFA5AB90F4A4.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#JSON_FORMAT_12F3DFA5AB90F4A4.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>12F3DFA5AB90F4A4</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#JSON_FORMAT_12EFF7739F51B62A.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#JSON_FORMAT_12EFF7739F51B62A.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>12EFF7739F51B62A</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SERVICE_INFO_JSON_SERIALIZE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SERVICE_INFO_JSON_SERIALIZE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>8271F7C41ED2D344</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#LOGGER_171F08AB360045DE1.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#LOGGER_171F08AB360045DE1.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>171F08AB360045DE1</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#VALFORMAT_1942D31DAE3706DC9.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#VALFORMAT_1942D31DAE3706DC9.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1942D31DAE3706DC9</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#VALFORMAT_19531C35823000B3F.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#VALFORMAT_19531C35823000B3F.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>19531C35823000B3F</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CHECKPOINT_DISCOVERY.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CHECKPOINT_DISCOVERY.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>2506388536DD425A4</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CHECKPOINT_DISCOVERY_CAT_HMI.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CHECKPOINT_DISCOVERY_CAT_HMI.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>2406CDEE5A1E12455</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CHECKPOINT_DISCOVERY_CAT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CHECKPOINT_DISCOVERY_CAT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>209043017456832F8</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#COARSE_MOVE_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#COARSE_MOVE_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>21653DD5381EC00FD</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#REAL_MIN.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#REAL_MIN.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>36A40C3982903B05</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SORTER_GET_COLOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SORTER_GET_COLOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1204356FF68A928DD</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DS_SELECTX_994D7139963587B2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DS_SELECTX_994D7139963587B2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>994D7139963587B2</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SORTER_SAMPLE_COLOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SORTER_SAMPLE_COLOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>245E36ED7603B842F</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_197068ABA215D7EBA.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_197068ABA215D7EBA.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>197068ABA215D7EBA</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#COLOR_DETECTOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#COLOR_DETECTOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>22642E00302BC3798</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1559B0FF8170C9BA0</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1559B0FF8170C9BA0</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#CONVEYOR_WITH_COUNTER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#CONVEYOR_WITH_COUNTER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>176D5FCC722C2C218</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#JSON_PARSER_210A3D41D4188E9F.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#JSON_PARSER_210A3D41D4188E9F.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>210A3D41D4188E9F</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SERVICE_INFO_JSON_DESERIALIZE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SERVICE_INFO_JSON_DESERIALIZE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>121C610480A060DE1</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#COURIER_DISCOVERY.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#COURIER_DISCOVERY.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>13253CCBAF7BDBFE7</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DATA_MERGE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DATA_MERGE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>96F6ECF764C28534</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DOUBLE_ACTING_CYLINDER_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DOUBLE_ACTING_CYLINDER_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>146B0A9F42737B07</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DO_2ACTION.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DO_2ACTION.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1913E173D7CBEE952</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DO_ACTION.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DO_ACTION.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>236AB8C8327AAD333</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARSRC_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARSRC_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>277E97BEC1451D2C</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#MOTOR_DRIVER_SIMPLE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#MOTOR_DRIVER_SIMPLE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>86FA79C238D9F8CE</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#STEPPER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#STEPPER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1332F0A9779EE043D</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_1970440D3083DA789.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_1970440D3083DA789.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1970440D3083DA789</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SUB_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SUB_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>112C76C471B7A99C2</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ANY2ANY_224D31E05D5CB53B5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ANY2ANY_224D31E05D5CB53B5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>224D31E05D5CB53B5</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SENSOR_DRIVER_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SENSOR_DRIVER_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>373A31B6ECFC34F4</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SIMPLE_INIT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SIMPLE_INIT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>23920BDE1E9251B95</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ADD_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADD_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>112C76C471B7A99C2</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#DS_SELECTX_158B4FD3BC4D9A1F5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#DS_SELECTX_158B4FD3BC4D9A1F5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>158B4FD3BC4D9A1F5</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ANY2ANY_135542315C2320DF5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ANY2ANY_135542315C2320DF5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>135542315C2320DF5</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#POSITION_MONITOR_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#POSITION_MONITOR_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>22A15C88EC9DF6BC</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#COMPARE_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#COMPARE_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>112C76C471B7A99C2</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ENCODER_AXIS_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ENCODER_AXIS_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>103C7B8E9304D8FBA</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#E_UCNTR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#E_UCNTR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>13333583D66A2D827</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#INSTRUCTION_EXTRACTOR_BASIC.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#INSTRUCTION_EXTRACTOR_BASIC.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>2390213E0F1BC8F1F</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#COMPARE_5059E05E0748EACE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#COMPARE_5059E05E0748EACE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>5059E05E0748EACE</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SELECT_5059E05E0748EACE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SELECT_5059E05E0748EACE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>5059E05E0748EACE</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ANY2ANY_2559F3670C2742D4.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ANY2ANY_2559F3670C2742D4.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>2559F3670C2742D4</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#INSTRUCTION_EXTRACTOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#INSTRUCTION_EXTRACTOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>21396B30F8BD87D2A</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#BUFFER_196036C8B0617F9B3.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#BUFFER_196036C8B0617F9B3.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>196036C8B0617F9B3</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ORDER_DATA_STORAGE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ORDER_DATA_STORAGE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1559E60A4ED2E0489</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#NOT_42C76073DCEB1A7A.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#NOT_42C76073DCEB1A7A.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>42C76073DCEB1A7A</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SHARED_SWITCH.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SHARED_SWITCH.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>61D07DDE95C0FFD7</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SHARED_COMPRESSOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SHARED_COMPRESSOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>3187A85AA6E86B4</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#SYMLINKMULTIVARDST_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>277E97BEC1451D2C</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#TWO_POS_AXIS.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#TWO_POS_AXIS.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>240AFCC3501CB08A9</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#TWO_POS_CONVEYOR_TRANSPORT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#TWO_POS_CONVEYOR_TRANSPORT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>347E4CBA49D3B0F5</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#VACUUM_CONTROL.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#VACUUM_CONTROL.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>30273FFE41539FBE</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ADPI_PRODUCTION_SERVICE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADPI_PRODUCTION_SERVICE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>1480E01C0B034905C</Hash>
   </FileItem>
-  <FileItem Name="UAO.Hackathon#ADP_PRODUCTION_TOKEN.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
-    <Modified>2023-05-05T16:35:30</Modified>
+  <FileItem Name="UAO.Hackathon#ADP_PRODUCTION_TOKEN.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{5836DCF5-1608-4110-88F0-5D9DB35B2746}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+    <Modified>2023-05-05T18:33:46</Modified>
     <Hash>22D9B99ADB8BC60F</Hash>
   </FileItem>
   <LibraryItem Name="nxtControl.AvahiXMPP" Version="22.0.0.0" />

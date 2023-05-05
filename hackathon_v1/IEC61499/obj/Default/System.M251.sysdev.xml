@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<System Name="System" ProjectName="hackathon_v1" ProjectGuid="{3094307A-52AE-4C09-8CA3-AA619761D361}" BuildTime="2023-05-05 13:35:52Z" DeployTime="" StudioVersion="IEC 61499 IDE, Neo v22.0 g4711 32b857d Sun Sep 25 16:17:52 2022" SnapshotGuid="{A8B88C09-9D92-49D2-82A1-92246DF20DD5}">
+<System Name="System" ProjectName="hackathon_v1" ProjectGuid="{3094307A-52AE-4C09-8CA3-AA619761D361}" BuildTime="2023-05-05 15:52:08Z" DeployTime="" StudioVersion="IEC 61499 IDE, Neo v22.0 g4711 32b857d Sun Sep 25 16:17:52 2022" SnapshotGuid="{8AC4CFAF-9914-4D4F-8F8D-B03DE24D5DEF}">
   <Device ID="c71f5ea4-171a-40fc-9fea-83e4fe61f97c" Name="M251" Type="M251_dPAC" Namespace="SE.DPAC">
     <Resource ID="CC17591F3619B5A0" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
       <FBNetwork>
@@ -14,6 +14,7 @@
         <FB ID="876B93327C0BC7A3" Name="FB3" Type="EVENTCHAINHEAD" Namespace="Runtime.Standard">
           <Parameter Name="NAME" Value="'INIT'" />
         </FB>
+        <FB ID="780CB84E95A9B1CC" Name="extender_test" Type="TWO_POS_AXIS" Namespace="UAO.Hackathon" />
         <FB ID="88A73DB9AA5DE69F" Name="BMTM3" Type="BMTM3" Namespace="SE.IoTMx">
           <Parameter Name="busId" Value="'BMTM3'" />
           <Parameter Name="enableSymlinkOC" Value="TRUE" />
@@ -81,8 +82,8 @@
           <Parameter Name="DI03" Value="''" />
           <Parameter Name="DI04" Value="''" />
           <Parameter Name="DI05" Value="''" />
-          <Parameter Name="DI06" Value="''" />
-          <Parameter Name="DI07" Value="''" />
+          <Parameter Name="DI06" Value="'extender_test.extended_ref_switch'" />
+          <Parameter Name="DI07" Value="'extender_test.retracted_ref_switch'" />
           <Parameter Name="DI08" Value="''" />
           <Parameter Name="DI09" Value="''" />
           <Parameter Name="DI10" Value="''" />

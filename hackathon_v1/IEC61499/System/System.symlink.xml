@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SymbLinks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Symblink SymblinkName="M251.RES0.extender_test.extended_ref_switch" IsExposed="true" IOConnected="TM3DI16_G.DI06" />
+  <Symblink SymblinkName="M251.RES0.extender_test.retracted_ref_switch" IsExposed="true" IOConnected="TM3DI16_G.DI07" />
+  <Symblink SymblinkName="M251.RES0.M251_HSCAction.HscAction" IsExposed="true" IOConnected="" />
+  <Symblink SymblinkName="M251.RES0.FEn" IsExposed="true" IOConnected="" />
+  <Symblink SymblinkName="M251.RES0.extender_test.motor_extend" IsExposed="true" IOConnected="" />
+  <Symblink SymblinkName="M251.RES0.extender_test.motor_retract" IsExposed="true" IOConnected="" />
+</SymbLinks>

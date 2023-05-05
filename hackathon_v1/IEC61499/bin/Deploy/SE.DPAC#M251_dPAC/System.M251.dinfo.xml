@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeployInformation ProjectName="hackathon_v1" ProjectGuid="{3094307A-52AE-4C09-8CA3-AA619761D361}" System="System" DeviceName="M251" DeviceID="c71f5ea4-171a-40fc-9fea-83e4fe61f97c">
+  <UsedDll>IEC61499.exe|SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll|SE.DPAC.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll|Runtime.Base.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll|UAO.Hackathon.dll|SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll</UsedDll>
+  <FileName>C:\Users\Jaume\Documents\HackathonIEC61499\hackathon_v1\IEC61499\System\System.sys</FileName>
+  <BuildTime>2023-05-05 16:06:33Z</BuildTime>
+  <StudioVersion>IEC 61499 IDE, Neo v22.0 g4711 32b857d Sun Sep 25 16:17:52 2022</StudioVersion>
+  <StudioInfo>V1;E7D7D171E254EFFA80FD2AAEDF49A4D3D4C805A3DB48A2D3D4C82EACC548A5BFF8C52CABD848FAEDD4C52CF9E65FF0F5D8C83F8CD740FAA2D5CA28A9D759F7F0D3F43DF38D7DEDF0D7CE28B6F158F6FB80D078F28F19ACAF8AEA66F7846CDAB289E87BFB9B15DCDE8E860A83801CA6A88B9A0FF1801CE2A4;</StudioInfo>
+  <ConfigFolder>C:\Users\Jaume\Documents\HackathonIEC61499\hackathon_v1\IEC61499\bin\Deploy\SE.DPAC#M251_dPAC\Configuration</ConfigFolder>
+  <Actions />
+  <DeviceFileName>System.M251.smartdev.xml</DeviceFileName>
+  <DependenciesFileName>System.M251.fbdep.txt</DependenciesFileName>
+  <SnapshotGuid>{930B438F-1C23-440D-909D-3E9F1CCE7A73}</SnapshotGuid>
+</DeployInformation>

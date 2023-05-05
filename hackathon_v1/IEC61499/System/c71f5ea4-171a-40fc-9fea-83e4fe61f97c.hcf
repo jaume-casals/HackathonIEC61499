@@ -29,14 +29,14 @@
         </ItemProperty>
         <ItemProperty>
           <Name>buscycletolerance</Name>
-          <Value xsi:type="xsd:unsignedInt">30</Value>
+          <Value xsi:type="xsd:string">30</Value>
           <HWParameters>
             <string>busCycleTolerance</string>
           </HWParameters>
         </ItemProperty>
         <ItemProperty>
           <Name>buscycleactionwhenmissed</Name>
-          <Value xsi:type="xsd:unsignedInt">1</Value>
+          <Value xsi:type="xsd:string">1</Value>
           <HWParameters>
             <string>busCycleActionWhenMissed</string>
           </HWParameters>
@@ -102,7 +102,7 @@
               <ItemProperties>
                 <ItemProperty>
                   <Name>ScanRate</Name>
-                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <Value xsi:type="xsd:string">100</Value>
                   <HWParameters>
                     <string>ScanRate</string>
                   </HWParameters>
@@ -155,7 +155,7 @@
               <ItemProperties>
                 <ItemProperty>
                   <Name>ScanRate</Name>
-                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <Value xsi:type="xsd:string">100</Value>
                   <HWParameters>
                     <string>ScanRate</string>
                   </HWParameters>
@@ -208,7 +208,7 @@
               <ItemProperties>
                 <ItemProperty>
                   <Name>ScanRate</Name>
-                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <Value xsi:type="xsd:string">100</Value>
                   <HWParameters>
                     <string>ScanRate</string>
                   </HWParameters>
@@ -261,7 +261,7 @@
               <ItemProperties>
                 <ItemProperty>
                   <Name>ScanRate</Name>
-                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <Value xsi:type="xsd:string">100</Value>
                   <HWParameters>
                     <string>ScanRate</string>
                   </HWParameters>
@@ -314,7 +314,7 @@
               <ItemProperties>
                 <ItemProperty>
                   <Name>ScanRate</Name>
-                  <Value xsi:type="xsd:unsignedInt">100</Value>
+                  <Value xsi:type="xsd:string">100</Value>
                   <HWParameters>
                     <string>ScanRate</string>
                   </HWParameters>
@@ -501,14 +501,14 @@
             </ItemProperty>
           </ItemProperties>
           <ParameterValues>
-            <ParameterValue Name="DI00" Value="''" />
-            <ParameterValue Name="DI01" Value="''" />
-            <ParameterValue Name="DI02" Value="''" />
+            <ParameterValue Name="DI00" Value="'encoder_axis.SensorDriver.ref_switch'" />
+            <ParameterValue Name="DI01" Value="'conveyor_transport.sensor2'" />
+            <ParameterValue Name="DI02" Value="'conveyor_transport.sensor1'" />
             <ParameterValue Name="DI03" Value="''" />
             <ParameterValue Name="DI04" Value="''" />
             <ParameterValue Name="DI05" Value="''" />
-            <ParameterValue Name="DI06" Value="''" />
-            <ParameterValue Name="DI07" Value="''" />
+            <ParameterValue Name="DI06" Value="'extender_test.extended_ref_switch'" />
+            <ParameterValue Name="DI07" Value="'extender_test.retracted_ref_switch'" />
             <ParameterValue Name="DI08" Value="''" />
             <ParameterValue Name="DI09" Value="''" />
             <ParameterValue Name="DI10" Value="''" />

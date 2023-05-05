@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeployFiles xmlns="http://tempuri.org/DeploySnapshot.xsd">
+  <Deployable>
+    <DeployInformation Type="Working">
+      <FileGroup Name="FileList">
+        <FileItem Name="DataTypes/SE.IoTMx#HSC_ACTION.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#getHscAction.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARSRC_2029F62F95A2C4452.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#hscAction.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/Main#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="IEC61499.exe" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:48</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.DPAC#DS_SELECTX_2536758B411A6CE51.bin" Library="SE.DPAC.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-06-01T16:29:22</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.DPAC#DPAC_FULLINIT.bin" Library="SE.DPAC.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-06-01T16:29:22</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#DOUBLE_ACTING_CYLINDER_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARDST_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARSRC_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#TWO_POS_AXIS.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#TWO_POS_CONVEYOR_TRANSPORT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARDST_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#CONVEYOR_WITH_COUNTER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#E_UCNTR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#NOT_42C76073DCEB1A7A.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#SHARED_SWITCH.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#SHARED_COMPRESSOR.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#MOTOR_DRIVER_SIMPLE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#STEPPER.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARDST_1970440D3083DA789.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SUB_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#ANY2ANY_224D31E05D5CB53B5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#SENSOR_DRIVER_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#SIMPLE_INIT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#BASIC_STORAGE_DINT.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#ADD_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#DS_SELECTX_158B4FD3BC4D9A1F5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#ANY2ANY_135542315C2320DF5.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#POSITION_MONITOR_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#COARSE_MOVE_V2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Basics/UAO.Hackathon#COMPARE_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#ENCODER_AXIS_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Composites/UAO.Hackathon#VACUUM_CONTROL.bin" Library="UAO.Hackathon.dll" BuildSnapshot="{6BC0B51C-C7CA-4B63-87AA-013D68C43188}">
+          <Modified>2023-05-05T18:33:46</Modified>
+        </FileItem>
+        <FileItem Name="Services/SE.IoTMx#BM_TM3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#BMTM3_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#time2Udint.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Adapters/SE.IoTMx#ITm3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#MUL_2449E3A5F7EE2D347.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#BMTM3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM251MDESE_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#cpuComputeDiagnostics.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="HMIAccessors/SE.HwCommon#CPUDiagnostics_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#MIBGET_396FFC399AF15E31.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#CPUDiagnostics.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM251MDESE.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3XHSC202_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#IoLedsColumn_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SMOOTH_10153BBD9364EDF49.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#IoLedsColumn.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput8Channel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#digitalInputChannelValue.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#COMPARE_10593E80BE744DDAF.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SELECT_10593E80BE744DDAF.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#checkSymlinkName.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#OR_8036BCB1C7C04BD2.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#CALC_FORMULAR_41E164C47DDBF33E.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_IN_407C1B1F63E48C5D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_IN_59136FFBF98FF248.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARSRC_298DC1F529059FB5.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput8Channel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#DigitalOutput8Channel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#digitalOutputChannelValue.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#BITMAN_273F4BD1E5145B7F.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARDST_298DC1F529059FB5.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#ADD_176240CABF78064B2.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_OUT_127753DFEE1CA6E0A.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_IN_26BAEEF6985C5C58.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#DigitalOutput8Channel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput2Channel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#OR_88A3DD8EC65DD11C.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#CALC_FORMULAR_1147A89DBB2DF6E7D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput2Channel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Adapters/SE.IoTMx#IHscChannel.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#ADD_2449E3A5F7EE2D347.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#OR_550FE6D62F509EB3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#E_REND_X_1122770BAB85676D3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3XHSC202_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#hscAllowRun.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="DataTypes/SE.IoTMx#HSC_ERROR_TM3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#hscSimple.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#hscValueToVtq.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#HSC_Simple_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="DataTypes/SE.IoTMx#HW_CAT_ACTION_ID.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#demuxHscAction.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#getHscErrorMessage.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#busCycleToTime.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARDST_2029F62F95A2C4452.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARSRC_1752D1238F8AA14A0.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARSRC_1062E2880CABB842A.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#HSC_Simple.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3DI16_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#OR_148CCC6046D4CE74C.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#OR_88A3DD8EC65DD11C.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3DI16_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3AM6_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#AnalogInputChannel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#analogValueValidation.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#normalize.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#overflowSelection.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARSRC_17288534159D2E88D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SMOOTH_18376B4A53F9B80C6.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#CALC_FORMULAR_52A9CBB2C0C3002A.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#AnalogInputChannel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#TM3AM6ReadConf.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#AnalogOutputChannel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#denormalize.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#checkInvalidInitEventChain.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARDST_17288534159D2E88D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#VTQ_DECODE_34F66A85C36D6AE6.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#ANY2ANY_243151A3E32A9D4B1.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.HwCommon#VTQ_DECODE_569FB4FC2585A298.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.HwCommon#AnalogOutputChannel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-23T16:52:02</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#OR_65BD917F4F2EC165.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#PD_ANY_IN_719A9D49EF382714.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#PD_ANY_IN_2513F42EC7F53B1B0.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#PD_ANY_OUT_15A66AAAAF26BAC8.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#E_REND_X_788445660B9A4244.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3AM6_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ16T_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ16T_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ32TK_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#OR_169B00D031196E7C4.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Basics/SE.IoTMx#E_REND_X_3135830B7CAB0A29.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:40</Modified>
+        </FileItem>
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ32TK.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" BuildSnapshot="{930B438F-1C23-440D-909D-3E9F1CCE7A73}">
+          <Modified>2022-05-24T14:44:42</Modified>
+        </FileItem>
+      </FileGroup>
+      <FileGroup Name="DeployList">
+        <FileItem Name="DataTypes/SE.IoTMx#HSC_ACTION.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#getHscAction.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARSRC_2029F62F95A2C4452.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#hscAction.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/Main#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="IEC61499.exe" />
+        <FileItem Name="Basics/SE.DPAC#DS_SELECTX_2536758B411A6CE51.bin" Library="SE.DPAC.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.DPAC#DPAC_FULLINIT.bin" Library="SE.DPAC.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#DOUBLE_ACTING_CYLINDER_V2.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARDST_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARSRC_277E97BEC1451D2C.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#TWO_POS_AXIS.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#TWO_POS_CONVEYOR_TRANSPORT.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARDST_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARSRC_1559B0FF8170C9BA0.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#CONVEYOR_WITH_COUNTER.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#E_UCNTR.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#NOT_42C76073DCEB1A7A.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#SHARED_SWITCH.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#SHARED_COMPRESSOR.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#MOTOR_DRIVER_SIMPLE.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#STEPPER.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SYMLINKMULTIVARDST_1970440D3083DA789.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SUB_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#ANY2ANY_224D31E05D5CB53B5.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#SENSOR_DRIVER_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#SIMPLE_INIT.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#BASIC_STORAGE_DINT.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#ADD_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#DS_SELECTX_158B4FD3BC4D9A1F5.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#ANY2ANY_135542315C2320DF5.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#POSITION_MONITOR_V2.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#COARSE_MOVE_V2.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Basics/UAO.Hackathon#COMPARE_112C76C471B7A99C2.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#ENCODER_AXIS_SINGLE_PHASE.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Composites/UAO.Hackathon#VACUUM_CONTROL.bin" Library="UAO.Hackathon.dll" />
+        <FileItem Name="Services/SE.IoTMx#BM_TM3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#BMTM3_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#time2Udint.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Adapters/SE.IoTMx#ITm3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#MUL_2449E3A5F7EE2D347.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#BMTM3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM251MDESE_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#cpuComputeDiagnostics.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="HMIAccessors/SE.HwCommon#CPUDiagnostics_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#MIBGET_396FFC399AF15E31.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#CPUDiagnostics.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM251MDESE.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3XHSC202_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#IoLedsColumn_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SMOOTH_10153BBD9364EDF49.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#IoLedsColumn.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput8Channel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#digitalInputChannelValue.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#COMPARE_10593E80BE744DDAF.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SELECT_10593E80BE744DDAF.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#checkSymlinkName.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#OR_8036BCB1C7C04BD2.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#CALC_FORMULAR_41E164C47DDBF33E.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_IN_407C1B1F63E48C5D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_IN_59136FFBF98FF248.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARSRC_298DC1F529059FB5.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput8Channel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#DigitalOutput8Channel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#digitalOutputChannelValue.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#BITMAN_273F4BD1E5145B7F.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARDST_298DC1F529059FB5.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#ADD_176240CABF78064B2.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_OUT_127753DFEE1CA6E0A.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#PD_ANY_IN_26BAEEF6985C5C58.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#DigitalOutput8Channel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput2Channel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#OR_88A3DD8EC65DD11C.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#CALC_FORMULAR_1147A89DBB2DF6E7D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#DigitalInput2Channel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Adapters/SE.IoTMx#IHscChannel.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#ADD_2449E3A5F7EE2D347.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#OR_550FE6D62F509EB3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#E_REND_X_1122770BAB85676D3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3XHSC202_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#hscAllowRun.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="DataTypes/SE.IoTMx#HSC_ERROR_TM3.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#hscSimple.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#hscValueToVtq.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#HSC_Simple_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="DataTypes/SE.IoTMx#HW_CAT_ACTION_ID.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#demuxHscAction.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#getHscErrorMessage.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#busCycleToTime.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARDST_2029F62F95A2C4452.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARSRC_1752D1238F8AA14A0.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#SYMLINKMULTIVARSRC_1062E2880CABB842A.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#HSC_Simple.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3DI16_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#OR_148CCC6046D4CE74C.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#OR_88A3DD8EC65DD11C.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3DI16_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3AM6_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#AnalogInputChannel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#analogValueValidation.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#normalize.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#overflowSelection.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARSRC_17288534159D2E88D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SMOOTH_18376B4A53F9B80C6.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#CALC_FORMULAR_52A9CBB2C0C3002A.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#AnalogInputChannel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#TM3AM6ReadConf.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#AnalogOutputChannel_HMI.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#denormalize.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#checkInvalidInitEventChain.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#SYMLINKMULTIVARDST_17288534159D2E88D.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#VTQ_DECODE_34F66A85C36D6AE6.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#ANY2ANY_243151A3E32A9D4B1.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.HwCommon#VTQ_DECODE_569FB4FC2585A298.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.HwCommon#AnalogOutputChannel.bin" Library="SE.HwCommon.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#OR_65BD917F4F2EC165.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#PD_ANY_IN_719A9D49EF382714.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#PD_ANY_IN_2513F42EC7F53B1B0.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#PD_ANY_OUT_15A66AAAAF26BAC8.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#E_REND_X_788445660B9A4244.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3AM6_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ16T_G_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ16T_G.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ32TK_HMI.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#OR_169B00D031196E7C4.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Basics/SE.IoTMx#E_REND_X_3135830B7CAB0A29.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+        <FileItem Name="Composites/SE.IoTMx#TM3DQ32TK.bin" Library="SE.IoTMx.94A492A0-8CBD-47BA-BA96-93422E1FB70E.dll" />
+      </FileGroup>
+    </DeployInformation>
+    <DeployInformation Type="HWConfig">
+      <FileGroup Name="FileList">
+        <FileItem Name="M251\HWConfig\TM3Config.xml">
+          <Modified>2023-05-05T19:06:29</Modified>
+        </FileItem>
+      </FileGroup>
+      <FileGroup Name="DeployList">
+        <FileItem Name="M251\HWConfig\TM3Config.xml" />
+      </FileGroup>
+    </DeployInformation>
+  </Deployable>
+</DeployFiles>

@@ -139,7 +139,6 @@
       <IEC61499Type>CAT</IEC61499Type>
     </None>
     <None Include="Project.doc.xml" />
-    <None Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default\IEC61499.snapshot" />
     <None Include="System\c71f5ea4-171a-40fc-9fea-83e4fe61f97c.hcf">
       <DependentUpon>System.sys</DependentUpon>
       <IEC61499Type>System</IEC61499Type>
@@ -212,8 +211,6 @@
     <Folder Include="License" />
     <Folder Include="Log" />
     <Folder Include="SnapshotCompiles" />
-    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}" />
-    <Folder Include="SnapshotCompiles\{9A1EBA22-7D64-4C54-9DE0-343E618AA457}\Default" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CHECKPOINT_CAT\CHECKPOINT_CAT_CAT.offline.xml">
@@ -286,6 +283,7 @@
       <Plugin>OPCUAConfigurator</Plugin>
       <IEC61499Type>CAT_OPCUA</IEC61499Type>
     </Content>
+    <Content Include="System\System.symlink.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Flexbridge.Iceblock\IEC61499\Flexbridge.Iceblock.dfbproj">

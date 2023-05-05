@@ -24,7 +24,7 @@
     <Interface Identifier="Ethernet1 Interface">
       <PhysicalAddress />
       <Endpoint Identifier="IP Address">
-        <IPAddress>192.168.10.89</IPAddress>
+        <IPAddress>192.168.10.90</IPAddress>
         <Domain>7f93ae11-cd8e-4bc1-9148-f91ad20da26a</Domain>
       </Endpoint>
     </Interface>
